@@ -49,6 +49,47 @@ export interface CalendarEntry {
   hookFormula?: string;
 }
 
+export interface ShortIdea {
+  ideaNumber: 1 | 2 | 3;
+  title: string;
+  hook: string;
+  cta: string;
+  bestTime: string;
+  robloxGame?: string;
+  audience: 'Both' | 'Established' | 'New Creator';
+  pillar: 'Start' | 'Grow' | 'Monetize' | 'Case Study';
+  gapExploited?: string;
+  hookFormula?: string;
+}
+
+export interface ShortsDay {
+  day: number;
+  dayOfWeek: string;
+  week: number;
+  theme: string;
+  ideas: ShortIdea[];
+}
+
+export interface LongFormIdea {
+  ideaNumber: 1 | 2 | 3;
+  title: string;
+  hook: string;
+  cta: string;
+  bestTime: string;
+  duration: string;
+  robloxGame?: string;
+  audience: 'Both' | 'Established' | 'New Creator';
+  pillar: 'Start' | 'Grow' | 'Monetize' | 'Case Study';
+  gapExploited?: string;
+  hookFormula?: string;
+}
+
+export interface LongFormWeek {
+  week: number;
+  weekTheme: string;
+  ideas: LongFormIdea[];
+}
+
 export interface MonetizationStream {
   name: string;
   rpm: string;
@@ -1156,5 +1197,1035 @@ export const hookFormulas: HookFormula[] = [
     bestPerformer: "janisjanis01 — 499K views",
     avgViews: "75K–499K",
     color: "#EC4899"
+  }
+];
+// NEW CALENDAR DATA — Two Separate Idea Banks
+export const shortsDays: ShortsDay[] = [
+  // ─── WEEK 1: POSITIONING & DIFFERENTIATION ───────────────
+  {
+    day: 1, dayOfWeek: "Mon", week: 1, theme: "The Competitor Gap Reveal",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "I Studied Every Roblox Shorts Educator — Here Are the 8 Things NONE of Them Teach",
+        hook: "Ventura, Ryvahn, moneyboymax, Chris Barrera — I watched every video. Here are the 8 gaps they all miss",
+        cta: "Comment 'GAPS' and I'll send you the full gap analysis PDF",
+        bestTime: "9 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Start",
+        gapExploited: "Competitor Gap Analysis as Content", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "Why Every Roblox Shorts Tutorial Is Teaching You the WRONG Strategy",
+        hook: "The #1 thing every Roblox Shorts educator gets wrong — and the fix that actually works in 2026",
+        cta: "Follow for the strategy they're not teaching you",
+        bestTime: "12 PM", robloxGame: "Escape Tsunami", audience: "Both", pillar: "Start",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Niche Has 8 Untapped Content Gaps — Here's #1",
+        hook: "Nobody in the Roblox Shorts space is targeting established YouTubers. That's a $10K/month gap sitting wide open",
+        cta: "Save this — I'm covering all 8 gaps this week",
+        bestTime: "5 PM", robloxGame: "General Roblox", audience: "Established", pillar: "Start",
+        gapExploited: "The Established YouTuber Angle (Zero Competition)", hookFormula: "Specific Dollar Amount Hook"
+      }
+    ]
+  },
+  {
+    day: 2, dayOfWeek: "Tue", week: 1, theme: "Hook Formula Breakdown",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Hook That Got Syrax 255K Views on a Roblox Shorts Tutorial",
+        hook: "This exact 3-second hook structure is responsible for 255K views. Here's the formula you can copy today",
+        cta: "Save this. Try it on your next Roblox Short and comment your views",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Time Efficiency Hook (Syrax 255K model)"
+      },
+      {
+        ideaNumber: 2,
+        title: "How Ventura's $10K Screenshot Thumbnail Gets 124K Views Every Time",
+        hook: "Income proof thumbnails outperform every other format in Roblox Shorts education. Here's the exact psychology",
+        cta: "Watch my full thumbnail breakdown — link in bio",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Income Proof Hook (Ventura 124K model)"
+      },
+      {
+        ideaNumber: 3,
+        title: "Fabiojit Got 1.6M Views With This One Hook Formula — Here's How to Use It for Roblox",
+        hook: "Fabiojit's 'I Went Pro in 10 Days' formula works on any game. Here's the Roblox Shorts version",
+        cta: "Follow — I'm testing this formula on Escape Tsunami this week",
+        bestTime: "7 PM", robloxGame: "Escape Tsunami, Troll Tower", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Challenge / Copy Hook (Fabiojit 1.6M model)"
+      }
+    ]
+  },
+  {
+    day: 3, dayOfWeek: "Wed", week: 1, theme: "Established Creator Angle",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "You Already Have Subscribers — Here's Why That's Your Unfair Advantage in Roblox Shorts",
+        hook: "Every Roblox Shorts educator targets beginners. If you already have an audience, you're sitting on a goldmine nobody is talking about",
+        cta: "Watch my full Established Creator Shorts Strategy — link in bio",
+        bestTime: "9 AM", robloxGame: "General Roblox", audience: "Established", pillar: "Start",
+        gapExploited: "The Established YouTuber Angle (Zero Competition)", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "How to Add Roblox Shorts to Your Existing Channel Without Confusing Your Audience",
+        hook: "Adding Shorts to an existing YouTube channel can 3x your growth — or tank it. Here's the difference",
+        cta: "Comment your subscriber count — I'll tell you the exact strategy for your channel size",
+        bestTime: "5 PM", robloxGame: "General Roblox", audience: "Established", pillar: "Start",
+        gapExploited: "The Established YouTuber Angle", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "One Long-Form Roblox Video = 10 Shorts. Here's the Clip-Finding System",
+        hook: "If you already have long-form Roblox videos, you're sitting on a Shorts library you haven't touched. Here's how to find the clips in 10 minutes",
+        cta: "Try this on your last video and comment how many clips you found",
+        bestTime: "8 PM", robloxGame: "99 Nights in Forest", audience: "Established", pillar: "Grow",
+        gapExploited: "The Established YouTuber Angle", hookFormula: "Time Efficiency Hook"
+      }
+    ]
+  },
+  {
+    day: 4, dayOfWeek: "Thu", week: 1, theme: "Roblox Game Trend Report",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "Escape Tsunami Was the #1 Roblox Game in Feb 2026 — Here's How Long the Shorts Window Lasts",
+        hook: "Escape Tsunami hit 425M Roblox hours in 2025. The Shorts window is still open — but not for long. Here's how to move fast",
+        cta: "Subscribe for weekly Roblox game trend reports — I'll tell you which game to cover BEFORE it peaks",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis (Nobody Does This)", hookFormula: "Income Proof Hook + Data Authority"
+      },
+      {
+        ideaNumber: 2,
+        title: "99 Nights in the Forest Is Generating 759K Views Per Short — Here's Why",
+        hook: "99 Nights in the Forest has a specific emotional hook that makes viewers rewatch 3x. Here's the exact content angle",
+        cta: "Make a 99 Nights Short using this angle today — comment your results",
+        bestTime: "4 PM", robloxGame: "99 Nights in the Forest", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Kick a Lucky Block vs. Troll Tower — Which Roblox Game Is Better for Shorts RIGHT NOW?",
+        hook: "I compared both games head-to-head for Shorts potential. The winner surprised me — and it's the one everyone is sleeping on",
+        cta: "Comment which game you're covering this week",
+        bestTime: "7 PM", robloxGame: "Kick a Lucky Block, Troll Tower", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Anti-Hype / Controversy Hook"
+      }
+    ]
+  },
+  {
+    day: 5, dayOfWeek: "Fri", week: 1, theme: "Pain Point Escape",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Escape 0-View Jail on Roblox Shorts (The Roblox-Specific Fix)",
+        hook: "Ryvahn's 141K-view video on view jail works — but there's a Roblox-specific version of this problem that's 3x easier to fix",
+        cta: "Comment 'JAIL' and I'll send you the full checklist",
+        bestTime: "9 AM", audience: "Both", pillar: "Start",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Pain Point Escape Hook (Ryvahn 141K model)"
+      },
+      {
+        ideaNumber: 2,
+        title: "Why Your Roblox Shorts Are Getting 50 Views (And the 3-Second Fix)",
+        hook: "If your Roblox Shorts are stuck at 50 views, it's almost always the first 3 seconds. Here's exactly what to change",
+        cta: "Drop your channel in the comments — I'll check your last Short",
+        bestTime: "4 PM", robloxGame: "Escape Tsunami", audience: "New Creator", pillar: "Start",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Pain Point Escape Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The #1 Reason Roblox Shorts Channels Die in Month 2 (It's Not What You Think)",
+        hook: "It's not the algorithm. It's not the game. It's this one thing that kills 90% of Roblox Shorts channels before they hit 1K subs",
+        cta: "Follow — I'm posting the fix tomorrow",
+        bestTime: "7 PM", audience: "New Creator", pillar: "Start",
+        gapExploited: "Consistency & Systems Content", hookFormula: "Anti-Hype / Controversy Hook"
+      }
+    ]
+  },
+  {
+    day: 6, dayOfWeek: "Sat", week: 1, theme: "Faceless & Boring Channel Formula",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The BORING Faceless Roblox Shorts Channel Making $5K/Month",
+        hook: "This faceless Roblox Shorts channel has zero personality, zero face cam, zero editing flair — and makes $5K/month. Here's the formula",
+        cta: "Follow for the full faceless Roblox Shorts system",
+        bestTime: "10 AM", robloxGame: "99 Nights in Forest, Escape Tsunami", audience: "New Creator", pillar: "Monetize",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Anti-Hype / Controversy Hook (Romayroh model)"
+      },
+      {
+        ideaNumber: 2,
+        title: "How to Start a Roblox Shorts Channel With Zero Equipment (Real Example)",
+        hook: "This creator started a Roblox Shorts channel with just a phone and free editing apps — here's exactly what they used to hit 10K subs",
+        cta: "Comment 'SETUP' and I'll send you the free equipment list",
+        bestTime: "2 PM", robloxGame: "Escape Tsunami", audience: "New Creator", pillar: "Start",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Challenge / Copy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Channel Niche Nobody Is Competing In (Yet)",
+        hook: "There's a Roblox Shorts sub-niche with almost zero competition and massive search demand. Here's what it is",
+        cta: "Save this before everyone else finds it",
+        bestTime: "6 PM", robloxGame: "Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Start",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Anti-Hype / Controversy Hook"
+      }
+    ]
+  },
+  {
+    day: 7, dayOfWeek: "Sun", week: 1, theme: "30-Day Challenge Launch",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "I'm Starting a Roblox Shorts Channel From 0 — Day 1 (Watch This)",
+        hook: "I'm documenting a Roblox Shorts channel from absolute zero. Here's what I'm doing in the first 24 hours",
+        cta: "Follow to watch the full 30-day challenge. Drop your starting sub count",
+        bestTime: "10 AM", robloxGame: "Escape Tsunami", audience: "New Creator", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series (Fabiojit 1.6M model, Roblox version)", hookFormula: "Challenge / Copy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "Week 1 Roblox Shorts Strategy Recap — What Worked, What Didn't",
+        hook: "After 7 days of Roblox Shorts content, here are the real numbers — and the one thing I'm changing in Week 2",
+        cta: "Subscribe to follow the full 30-day challenge",
+        bestTime: "2 PM", robloxGame: "Escape Tsunami, Troll Tower", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Income Proof Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The 3 Roblox Shorts I'm Making This Week (And Why I Chose These Games)",
+        hook: "Here's my exact content plan for Week 2 of the Roblox Shorts challenge — game selection, hook formulas, and posting times",
+        cta: "Comment what games you're covering this week",
+        bestTime: "6 PM", robloxGame: "99 Nights, Escape Tsunami, Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Challenge / Copy Hook"
+      }
+    ]
+  },
+
+  // ─── WEEK 2: ALGORITHM & HOOKS ────────────────────────────
+  {
+    day: 8, dayOfWeek: "Mon", week: 2, theme: "Algorithm Deep Dive",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How the YouTube Shorts Algorithm Actually Works for Roblox Content (2026)",
+        hook: "YouTube shows your Short to 1,000 people first. If they don't watch it, it's dead forever. Here's how to pass the test every time",
+        cta: "Watch my full algorithm breakdown — link in bio",
+        bestTime: "9 AM", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts Metric That Matters More Than Views",
+        hook: "Everyone obsesses over view count. The metric that actually predicts channel growth is this — and most Roblox creators have never checked it",
+        cta: "Check this metric right now and comment what you find",
+        bestTime: "4 PM", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Why Posting Roblox Shorts Every Day Actually HURTS Your Channel",
+        hook: "The data says posting every day tanks your average view duration. Here's the posting frequency that actually grows Roblox Shorts channels",
+        cta: "Comment your current posting schedule — I'll tell you if it's helping or hurting",
+        bestTime: "7 PM", audience: "Both", pillar: "Grow",
+        gapExploited: "Consistency & Systems Content", hookFormula: "Anti-Hype / Controversy Hook"
+      }
+    ]
+  },
+  {
+    day: 9, dayOfWeek: "Tue", week: 2, theme: "AI Workflow for Roblox Shorts",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Make a Viral Roblox Short in Under 5 Minutes Using AI",
+        hook: "Syrax made 255K views with this exact AI workflow. Here's the Roblox-specific version in 60 seconds",
+        cta: "Watch the full AI workflow breakdown — link in bio",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami, Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Time Efficiency Hook (Syrax 255K model)"
+      },
+      {
+        ideaNumber: 2,
+        title: "The AI Tool That Writes Roblox Shorts Scripts in 30 Seconds",
+        hook: "I tested 5 AI tools for writing Roblox Shorts scripts. One of them is so good it's almost unfair — here's which one",
+        cta: "Comment 'AI' and I'll send you the prompt template I use",
+        bestTime: "4 PM", robloxGame: "99 Nights in Forest", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "How Wealthify AI Makes Passive Roblox Shorts Income With AI Automation",
+        hook: "Wealthify AI built a passive income stream from Roblox Shorts using AI tools — no face cam, no editing, no community. Here's the exact stack",
+        cta: "Save this — the full AI stack breakdown is in my bio",
+        bestTime: "7 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Anti-Hype / Controversy Hook (Wealthify AI model)"
+      }
+    ]
+  },
+  {
+    day: 10, dayOfWeek: "Wed", week: 2, theme: "99 Nights in the Forest Deep Dive",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "Why 99 Nights in the Forest Shorts Are Going Viral Right Now",
+        hook: "99 Nights in the Forest has a specific survival mechanic that creates perfect Short-form tension. Here's how to use it",
+        cta: "Make a 99 Nights Short today and tag me — I'll feature the best ones",
+        bestTime: "9 AM", robloxGame: "99 Nights in the Forest", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The 3 Content Angles Making 99 Nights in the Forest Shorts Go Viral",
+        hook: "I analyzed the top 20 viral 99 Nights Shorts. Every single one uses one of these 3 content angles — here they are",
+        cta: "Which angle are you trying first? Comment below",
+        bestTime: "4 PM", robloxGame: "99 Nights in the Forest", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "99 Nights in the Forest vs. Escape Tsunami — Which Game Is Better for Roblox Shorts?",
+        hook: "I posted 5 Shorts on each game. Here are the real view counts — and the winner is not what I expected",
+        cta: "Subscribe to see the full data breakdown in my next long-form video",
+        bestTime: "7 PM", robloxGame: "99 Nights in Forest, Escape Tsunami", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Income Proof Hook"
+      }
+    ]
+  },
+  {
+    day: 11, dayOfWeek: "Thu", week: 2, theme: "Hook Writing Masterclass",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The 6 Hook Formulas Behind Every Viral Roblox Short (With Real View Counts)",
+        hook: "Ventura (124K), Ryvahn (141K), Syrax (255K), Fabiojit (1.6M) — all 6 hook formulas in 60 seconds",
+        cta: "Save this. Download the free Hook Swipe File — link in bio",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami, Troll Tower", audience: "Both", pillar: "Grow",
+        gapExploited: "Competitor Gap Analysis as Content", hookFormula: "Income Proof Hook + Data Authority"
+      },
+      {
+        ideaNumber: 2,
+        title: "How to Write a Roblox Shorts Hook in 60 Seconds (Template Included)",
+        hook: "Every viral Roblox Short hook follows this exact 3-part structure. Here's the template you can fill in for any game",
+        cta: "Comment 'HOOK' and I'll send you the template",
+        bestTime: "4 PM", robloxGame: "Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Worst Roblox Shorts Hook Mistake (And What to Say Instead)",
+        hook: "Starting your Roblox Short with 'Hey guys' is killing your views. Here's the exact first line that keeps people watching",
+        cta: "Drop your current first line in the comments — I'll rewrite it for you",
+        bestTime: "7 PM", robloxGame: "Troll Tower", audience: "New Creator", pillar: "Start",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Pain Point Escape Hook"
+      }
+    ]
+  },
+  {
+    day: 12, dayOfWeek: "Fri", week: 2, theme: "Thumbnail & Title Strategy",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Roblox Shorts Thumbnail Formula That Gets 3x More Clicks",
+        hook: "Your Roblox Short thumbnail is the first thing people see in the regular YouTube feed. Most creators are wasting it — here's the fix",
+        cta: "Show me your current thumbnail in the comments — I'll give you a quick review",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Income Proof Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "How moneyboymax Gets 189K Views With the 'Ranking Shorts' Format",
+        hook: "moneyboymax pioneered the ranking Shorts angle for Roblox. Nobody else is doing this — here's how to copy the format",
+        cta: "Save this format. Try it with your next Roblox Short",
+        bestTime: "4 PM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Challenge / Copy Hook (moneyboymax 189K model)"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Title That Gets 5x More Clicks (Real A/B Test)",
+        hook: "I A/B tested 10 different Roblox Shorts titles. The winning format gets 5x more clicks — and it's not what you'd expect",
+        cta: "Comment your current title — I'll give you the winning version",
+        bestTime: "7 PM", robloxGame: "Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Data Authority Hook"
+      }
+    ]
+  },
+  {
+    day: 13, dayOfWeek: "Sat", week: 2, theme: "Escape Tsunami Content Sprint",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "Escape Tsunami Shorts Are Still Blowing Up — Here's the Exact Format Going Viral",
+        hook: "Escape Tsunami was the #1 Roblox game in Feb 2026. The Shorts window is still open — here's the exact format that's going viral right now",
+        cta: "Make this Short today and tag me — I'll feature the best ones in my next video",
+        bestTime: "10 AM", robloxGame: "Escape Tsunami", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Challenge / Copy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "5 Escape Tsunami Short Ideas You Can Film Right Now",
+        hook: "Here are 5 Escape Tsunami Short ideas with hooks pre-written — pick one and film it today",
+        cta: "Which one are you filming? Comment below",
+        bestTime: "2 PM", robloxGame: "Escape Tsunami", audience: "New Creator", pillar: "Start",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Escape Tsunami Short That Got 500K Views — Breakdown",
+        hook: "I broke down the highest-performing Escape Tsunami Short I could find. Here's every decision the creator made right",
+        cta: "Subscribe for weekly Roblox game breakdowns",
+        bestTime: "6 PM", robloxGame: "Escape Tsunami", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Data Authority Hook"
+      }
+    ]
+  },
+  {
+    day: 14, dayOfWeek: "Sun", week: 2, theme: "Content System & Batch Recording",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Batch Record 30 Roblox Shorts in One Day",
+        hook: "I batch recorded 30 Roblox Shorts in a single Saturday. Here's the exact game rotation, script template, and upload schedule",
+        cta: "Screenshot this system. Watch the full batch recording tutorial — link in bio",
+        bestTime: "10 AM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Consistency & Systems Content", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts Content Calendar That Keeps You Posting for 90 Days",
+        hook: "I mapped 90 days of Roblox Shorts content in one afternoon. Here's the exact system — no more 'what do I post today'",
+        cta: "Download the free 90-day Roblox Shorts content calendar — link in bio",
+        bestTime: "2 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Grow",
+        gapExploited: "Consistency & Systems Content (Nobody Teaches This)", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Week 2 Roblox Shorts Challenge Update — Real Views, Real Mistakes",
+        hook: "Week 2 of the 30-day Roblox Shorts challenge. Here are the real numbers — and the one mistake I made that cost me 10K views",
+        cta: "Subscribe to follow the full challenge. Comment your Week 2 numbers",
+        bestTime: "6 PM", robloxGame: "Escape Tsunami, 99 Nights", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Income Proof Hook"
+      }
+    ]
+  },
+
+  // ─── WEEK 3: CONSISTENCY & ESTABLISHED CREATOR STRATEGY ──
+  {
+    day: 15, dayOfWeek: "Mon", week: 3, theme: "Consistency Systems",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The 3-Part System That Keeps Roblox Shorts Creators Posting When Motivation Dies",
+        hook: "90% of Roblox Shorts channels quit in month 2. The ones that survive all use this 3-part consistency system",
+        cta: "Watch my full Consistency System video — link in bio",
+        bestTime: "9 AM", audience: "Both", pillar: "Grow",
+        gapExploited: "Consistency & Systems Content (Nobody Teaches This)", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "How to Never Run Out of Roblox Shorts Ideas (The Competitor Gap Method)",
+        hook: "I mapped every content gap the top 9 Roblox Shorts educators are missing — and turned each gap into a repeatable content format",
+        cta: "Download the free Roblox Shorts Content System — 90 days of ideas pre-mapped. Link in bio",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Grow",
+        gapExploited: "Competitor Gap Analysis as Content", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Posting Schedule That Grew This Channel 10x in 90 Days",
+        hook: "This Roblox creator went from 500 to 50,000 subscribers in 90 days using this exact posting schedule — not daily posting",
+        cta: "Screenshot this schedule and start it this week",
+        bestTime: "7 PM", robloxGame: "Kick a Lucky Block, Troll Tower", audience: "Both", pillar: "Grow",
+        gapExploited: "Consistency & Systems Content", hookFormula: "Challenge / Copy Hook"
+      }
+    ]
+  },
+  {
+    day: 16, dayOfWeek: "Tue", week: 3, theme: "Troll Tower & Kick a Lucky Block",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "Troll Tower Is the Most Underrated Roblox Game for Shorts Right Now",
+        hook: "While everyone fights over Escape Tsunami content, Troll Tower is wide open. Here's the exact content angle going viral",
+        cta: "Subscribe for weekly Roblox game trend reports",
+        bestTime: "9 AM", robloxGame: "Troll Tower", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "5 Kick a Lucky Block Short Ideas That Are Going Viral Right Now",
+        hook: "Kick a Lucky Block has a specific reaction format that gets massive rewatch rates. Here are 5 ideas you can film today",
+        cta: "Which idea are you filming? Comment below",
+        bestTime: "4 PM", robloxGame: "Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Troll Tower Short Format Getting 200K+ Views Every Time",
+        hook: "I found a specific Troll Tower Short format that consistently hits 200K+ views. Here's the exact structure",
+        cta: "Save this format. Try it today and comment your results",
+        bestTime: "7 PM", robloxGame: "Troll Tower", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Data Authority Hook"
+      }
+    ]
+  },
+  {
+    day: 17, dayOfWeek: "Wed", week: 3, theme: "Analytics & Data",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The One Roblox Shorts Metric That Predicts Viral Videos Before They Happen",
+        hook: "Most Roblox creators look at views. The metric that actually predicts virality is this — and it's in your YouTube Studio right now",
+        cta: "Check this metric and comment what you find",
+        bestTime: "9 AM", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "How to Read Your Roblox Shorts Analytics to Double Your Views",
+        hook: "Most Roblox Shorts creators are looking at the wrong metrics. Here's what actually matters — and how to use it to grow faster",
+        cta: "Comment your swipe-away rate — I'll tell you if it's good or bad",
+        bestTime: "4 PM", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Why Your Best Roblox Short Flopped (The Analytics Explanation)",
+        hook: "If your best Roblox Short got fewer views than your worst one, here's the exact algorithmic reason — and how to fix it",
+        cta: "Drop your channel in the comments — I'll diagnose your analytics",
+        bestTime: "7 PM", audience: "Both", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Pain Point Escape Hook"
+      }
+    ]
+  },
+  {
+    day: 18, dayOfWeek: "Thu", week: 3, theme: "First 1K Subscribers",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Get Your First 1,000 Subscribers With Roblox Shorts (Real Timeline)",
+        hook: "Getting your first 1,000 subscribers on Roblox Shorts is easier than you think — but only if you do these 3 things in the right order",
+        cta: "Follow for daily Roblox Shorts tips — I'll help you hit 1K subs",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami, 99 Nights", audience: "New Creator", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Pain Point Escape Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Fastest Way to 1,000 Subscribers on Roblox Shorts in 2026",
+        hook: "I mapped the fastest path to 1K subscribers on Roblox Shorts — it's not posting every day. Here's what actually works",
+        cta: "Comment your current subscriber count — I'll tell you exactly what to do next",
+        bestTime: "4 PM", robloxGame: "Escape Tsunami", audience: "New Creator", pillar: "Grow",
+        gapExploited: "Shorts ABOUT Making Shorts", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "0 to 1,000 Subscribers on Roblox Shorts — Day 18 Update",
+        hook: "Day 18 of the 30-day Roblox Shorts challenge. Here's where I am on the path to 1K subs — and what's working",
+        cta: "Subscribe to follow the challenge. Drop your Day 18 numbers",
+        bestTime: "7 PM", robloxGame: "Escape Tsunami, Kick a Lucky Block", audience: "New Creator", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Income Proof Hook"
+      }
+    ]
+  },
+  {
+    day: 19, dayOfWeek: "Fri", week: 3, theme: "Repurposing & Content Efficiency",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Turn One Roblox Gameplay Session Into 10 Shorts",
+        hook: "One 30-minute Roblox gameplay session = 10 Shorts. Here's the exact clip-finding system that takes 10 minutes",
+        cta: "Try this today and comment how many clips you found",
+        bestTime: "9 AM", robloxGame: "99 Nights in Forest, Escape Tsunami", audience: "Established", pillar: "Grow",
+        gapExploited: "The Established YouTuber Angle", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts Repurposing System That Saves 5 Hours a Week",
+        hook: "I repurpose every piece of Roblox content into 5 different formats. Here's the exact system — it saves me 5 hours a week",
+        cta: "Screenshot this system. Watch the full tutorial — link in bio",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Established", pillar: "Grow",
+        gapExploited: "The Established YouTuber Angle", hookFormula: "Time Efficiency Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "How to Use Your Old Roblox Videos to Grow a New Shorts Channel",
+        hook: "If you have old Roblox YouTube videos collecting dust, you're sitting on a Shorts goldmine. Here's how to use them",
+        cta: "Comment how many old Roblox videos you have — I'll tell you how many Shorts you can make",
+        bestTime: "7 PM", robloxGame: "General Roblox", audience: "Established", pillar: "Grow",
+        gapExploited: "The Established YouTuber Angle (Zero Competition)", hookFormula: "Pain Point Escape Hook"
+      }
+    ]
+  },
+  {
+    day: 20, dayOfWeek: "Sat", week: 3, theme: "Community & Funnel Building",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How Romayroh Built a $46,800/Month Community From Roblox Shorts",
+        hook: "Romayroh has 1,300 members at $36/month = $46,800 MRR. Here's the exact funnel they built from Roblox Shorts content",
+        cta: "Comment 'COMMUNITY' if you want to build a community from your Roblox Shorts channel",
+        bestTime: "10 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community (Critical Gap)", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts Funnel That Makes Money Without Brand Deals",
+        hook: "Every Roblox Shorts competitor teaches AdSense. Here's the funnel that makes 10x more — and nobody is teaching it",
+        cta: "Watch my full monetization funnel breakdown — link in bio",
+        bestTime: "2 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Why James Rasp's MotionFarm Has 47 Members (And How to Build the One That Has 1,300)",
+        hook: "James Rasp launched MotionFarm for Roblox Shorts creators. It has 47 members. Romayroh's Skool has 1,300. Here's the difference",
+        cta: "Comment 'IN' if you want early access to the Roblox Shorts community I'm building",
+        bestTime: "6 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community", hookFormula: "Specific Dollar Amount Hook"
+      }
+    ]
+  },
+  {
+    day: 21, dayOfWeek: "Sun", week: 3, theme: "Week 3 Case Study Update",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "30-Day Roblox Shorts Challenge: Week 3 Update (Real Analytics)",
+        hook: "Week 3 of the 30-day Roblox Shorts challenge — real view counts, subscriber gains, and the one game that changed everything",
+        cta: "Subscribe to follow the challenge. Comment your Week 3 numbers",
+        bestTime: "10 AM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Income Proof Hook + Challenge / Copy"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Game I'm Switching to in Week 4 (And Why)",
+        hook: "After 3 weeks of Roblox Shorts data, I'm switching games in Week 4. Here's the data that made me change strategy",
+        cta: "Follow to see if the switch pays off — Week 4 starts tomorrow",
+        bestTime: "2 PM", robloxGame: "Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "What I Wish I Knew Before Starting a Roblox Shorts Channel (Week 3 Lessons)",
+        hook: "After 21 days of Roblox Shorts content, here are the 3 things I wish I knew before I started",
+        cta: "Save this — it'll save you months of trial and error",
+        bestTime: "6 PM", robloxGame: "General Roblox", audience: "New Creator", pillar: "Start",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Pain Point Escape Hook"
+      }
+    ]
+  },
+
+  // ─── WEEK 4: MONETIZATION BEYOND ADSENSE ─────────────────
+  {
+    day: 22, dayOfWeek: "Mon", week: 4, theme: "AdSense Reality Check",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "Roblox Shorts Paid Me $47 for 1 Million Views — Here's How I Made $3,000 From the Same Views",
+        hook: "Gaming Shorts RPM is $0.02-$0.08. Every competitor teaches AdSense. Here's the monetization stack they're all missing",
+        cta: "Watch the full 5-stream monetization breakdown — link in bio",
+        bestTime: "9 AM", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense (Nobody Teaches This)", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Real RPM for Roblox Shorts in 2026 (It's Lower Than You Think)",
+        hook: "Roblox Shorts RPM: $0.02-$0.08 per 1,000 views. Here's why that's actually fine — and the 5 income streams that make it irrelevant",
+        cta: "Comment your current RPM — I'll tell you if it's normal",
+        bestTime: "4 PM", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Why Every Roblox Shorts Educator Only Teaches AdSense (And What They're Hiding)",
+        hook: "Ventura, Ryvahn, moneyboymax — they all teach AdSense monetization. None of them teach the income streams that actually make real money",
+        cta: "Follow — I'm covering all 6 income streams this week",
+        bestTime: "7 PM", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense + Competitor Gap Analysis", hookFormula: "Anti-Hype / Controversy Hook"
+      }
+    ]
+  },
+  {
+    day: 23, dayOfWeek: "Tue", week: 4, theme: "Brand Deals & Sponsorships",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Land Your First Brand Deal as a Roblox Shorts Creator (With 5,000 Subscribers)",
+        hook: "You don't need 100K subscribers to get paid by brands for your Roblox Shorts. Here's how creators with 5K subs are landing $500-$2,000 deals",
+        cta: "Download my free brand deal pitch template — link in description",
+        bestTime: "9 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts Brand Deal Email That Gets Replies (Real Template)",
+        hook: "I sent 20 brand deal emails using this exact template. Here's the one that got a $1,500 deal from a Roblox-adjacent brand",
+        cta: "Comment 'DEAL' and I'll send you the full email template",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Income Proof Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Which Brands Are Paying Roblox Shorts Creators Right Now (2026 List)",
+        hook: "I researched every brand currently sponsoring Roblox Shorts creators. Here are the 10 most active ones — and how to reach them",
+        cta: "Save this list. Watch my full brand deal strategy video — link in bio",
+        bestTime: "7 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Data Authority Hook"
+      }
+    ]
+  },
+  {
+    day: 24, dayOfWeek: "Wed", week: 4, theme: "Shorts Driving Long-Form Revenue",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How Roblox Shorts Drove 10x More Views to My Long-Form Videos (Real Data)",
+        hook: "Adding Roblox Shorts to an existing channel doesn't just grow Shorts — it compounds your long-form revenue. Here's the exact mechanism",
+        cta: "Watch my full Established Creator Shorts Strategy — link in bio",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami, 99 Nights", audience: "Established", pillar: "Monetize",
+        gapExploited: "The Established YouTuber Angle", hookFormula: "Income Proof Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts to Long-Form Funnel That Makes $5K/Month",
+        hook: "Use Shorts as bait. Monetize with long-form. Here's the exact funnel structure that makes $5K/month from Roblox content",
+        cta: "Comment 'FUNNEL' and I'll send you the full funnel diagram",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Established", pillar: "Monetize",
+        gapExploited: "The Established YouTuber Angle + Monetization Beyond AdSense", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "How to Use Roblox Shorts to Grow Your Long-Form Channel 3x Faster",
+        hook: "Channels using Shorts + Long-Form grow 3x faster than single-format channels. Here's the exact hybrid strategy for Roblox",
+        cta: "Try this hybrid strategy and comment your results in 30 days",
+        bestTime: "7 PM", robloxGame: "Escape Tsunami, Troll Tower", audience: "Established", pillar: "Grow",
+        gapExploited: "The Established YouTuber Angle", hookFormula: "Data Authority Hook"
+      }
+    ]
+  },
+  {
+    day: 25, dayOfWeek: "Thu", week: 4, theme: "Community & Membership Revenue",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How to Build a Roblox Shorts Community That Makes $46,800/Month",
+        hook: "Romayroh: 1,300 members × $36/month = $46,800 MRR. James Rasp's MotionFarm: 47 members. There's NO dominant Roblox Shorts community — here's how to build the one that wins",
+        cta: "Comment 'COMMUNITY' — I'm building the dominant Roblox Shorts community right now",
+        bestTime: "9 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community (Critical Gap)", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "Skool vs. Whop vs. Discord — Which Platform Is Best for a Roblox Shorts Community?",
+        hook: "Romayroh uses Skool ($46,800/mo). Ventura uses Whop. Fabiojit uses Discord (free). Here's which platform wins for Roblox Shorts creators",
+        cta: "Comment which platform you'd join as a Roblox Shorts creator",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Community Pricing Model That Beats Every Competitor",
+        hook: "Chris Barrera charges high-ticket. Romayroh charges $36/month. James Rasp charges $47/month. Here's the pricing model that wins the Roblox Shorts market",
+        cta: "Comment what you'd pay for a Roblox Shorts community — I'm building it now",
+        bestTime: "7 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community", hookFormula: "Competitor Gap Analysis as Content"
+      }
+    ]
+  },
+  {
+    day: 26, dayOfWeek: "Fri", week: 4, theme: "Path to Monetization",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Fastest Path to YouTube Monetization With Roblox Shorts (Real Timeline)",
+        hook: "500 subs + 3K watch hours OR 3M Shorts views. Here's the fastest Roblox content path to YPP — and why Escape Tsunami is your best bet right now",
+        cta: "Comment your current subscriber count — I'll tell you exactly which game to focus on",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami, Kick a Lucky Block", audience: "New Creator", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Pain Point Escape Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "How Long Does It Take to Get Monetized on YouTube With Roblox Shorts? (Real Data)",
+        hook: "I tracked 50 Roblox Shorts channels from 0 to monetization. The average time was 4.2 months — here's what the fastest ones did differently",
+        cta: "Subscribe for the full monetization timeline breakdown",
+        bestTime: "4 PM", robloxGame: "Escape Tsunami, 99 Nights", audience: "New Creator", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Monetization Mistake That Delays YPP by 3 Months",
+        hook: "This one mistake delays YouTube Partner Program eligibility for Roblox Shorts creators by an average of 3 months — and almost everyone makes it",
+        cta: "Comment 'MISTAKE' and I'll send you the full checklist",
+        bestTime: "7 PM", robloxGame: "General Roblox", audience: "New Creator", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Pain Point Escape Hook"
+      }
+    ]
+  },
+  {
+    day: 27, dayOfWeek: "Sat", week: 4, theme: "Affiliate & Passive Income",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "How Wealthify AI Makes Passive Income From Roblox Shorts With Zero Community",
+        hook: "Wealthify AI built a passive income stream from Roblox Shorts using tool affiliates — no community, no brand deals, no high-ticket offers. Here's the model",
+        cta: "Save this — the full affiliate stack is in my bio link",
+        bestTime: "10 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Anti-Hype / Controversy Hook (Wealthify AI model)"
+      },
+      {
+        ideaNumber: 2,
+        title: "The Roblox Shorts Affiliate Stack That Makes $500/Month Without Brand Deals",
+        hook: "You can make $500/month from your Roblox Shorts channel without a single brand deal — here's the affiliate strategy most creators ignore",
+        cta: "Save this — and check out the affiliate resources in my bio link",
+        bestTime: "2 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Best Affiliate Programs for Roblox Shorts Creators in 2026",
+        hook: "I researched every affiliate program relevant to Roblox Shorts creators. Here are the 5 highest-paying ones with real commission rates",
+        cta: "Comment which program you're joining first",
+        bestTime: "6 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Data Authority Hook"
+      }
+    ]
+  },
+  {
+    day: 28, dayOfWeek: "Sun", week: 4, theme: "Full Monetization Stack Reveal",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Full Roblox Shorts Monetization Stack: 6 Income Streams in 60 Seconds",
+        hook: "AdSense, brand deals, affiliates, community, consulting, digital products — here's how to stack all 6 income streams from one Roblox Shorts channel",
+        cta: "Watch the full monetization masterclass — link in bio",
+        bestTime: "10 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense + Competitor Funnel Analysis", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "How I Made $3,000 From a Roblox Shorts Channel With Only 5,000 Subscribers",
+        hook: "5,000 subscribers. $3,000/month. Here's the exact income breakdown — and why subscriber count is the wrong metric to focus on",
+        cta: "Comment your subscriber count — I'll tell you your realistic monthly income potential",
+        bestTime: "2 PM", robloxGame: "Escape Tsunami, 99 Nights", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "Week 4 Monetization Update — How Much the 30-Day Roblox Shorts Challenge Made",
+        hook: "Week 4 of the 30-day Roblox Shorts challenge. Here's the total revenue from all 6 income streams — the number surprised me",
+        cta: "Subscribe for the full Week 4 breakdown video dropping tomorrow",
+        bestTime: "6 PM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series + Monetization Beyond AdSense", hookFormula: "Income Proof Hook"
+      }
+    ]
+  },
+
+  // ─── DAYS 29-30: FINALE & COMMUNITY LAUNCH ───────────────
+  {
+    day: 29, dayOfWeek: "Mon", week: 5, theme: "Challenge Finale",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "30-Day Roblox Shorts Challenge: Final Results (Real Numbers Revealed)",
+        hook: "Day 30. Here are the real numbers — subscribers, views, revenue — and the one thing I'd do differently if I started over",
+        cta: "Watch the full 30-day breakdown — link in bio. Drop YOUR 30-day numbers",
+        bestTime: "9 AM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Income Proof Hook + Challenge / Copy"
+      },
+      {
+        ideaNumber: 2,
+        title: "The #1 Lesson From 30 Days of Roblox Shorts (I Was Wrong About This)",
+        hook: "After 30 days of Roblox Shorts content, the lesson I learned was completely different from what I expected. Here it is",
+        cta: "Comment your biggest Roblox Shorts lesson this month",
+        bestTime: "4 PM", robloxGame: "General Roblox", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "What Happens to a Roblox Shorts Channel After 30 Days? (Month 2 Preview)",
+        hook: "The 30-day challenge is over. Here's what the data says will happen to this channel in Month 2 — and what I'm doing differently",
+        cta: "Follow to watch Month 2 unfold. Subscribe for the full strategy",
+        bestTime: "7 PM", robloxGame: "Escape Tsunami, 99 Nights", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Challenge / Copy Hook"
+      }
+    ]
+  },
+  {
+    day: 30, dayOfWeek: "Tue", week: 5, theme: "Community Launch & What's Next",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "I'm Building the Dominant Roblox Shorts Community — Here's What's Inside",
+        hook: "Romayroh proved the model works ($46,800/mo). Money Groot has 506K views and ZERO funnel. I'm building the Roblox Shorts community that captures that gap",
+        cta: "Comment 'IN' and I'll send you the early access details",
+        bestTime: "9 AM", robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community (Critical Gap)", hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "30 Days of Roblox Shorts: The 5 Things That Actually Moved the Needle",
+        hook: "After 30 days and 90 Roblox Shorts ideas, here are the 5 things that actually drove growth — and the 5 things that were a complete waste of time",
+        cta: "Save this — it's the most honest Roblox Shorts breakdown you'll find",
+        bestTime: "4 PM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series", hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Roblox Shorts Strategy for Month 2 — Here's the Full Plan",
+        hook: "Month 1 was about testing. Month 2 is about scaling. Here's the exact Roblox Shorts strategy I'm using to 10x the results from Month 1",
+        cta: "Follow for Month 2. And if you want to build alongside me — comment 'COMMUNITY'",
+        bestTime: "7 PM", robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series + No Dominant Community", hookFormula: "Challenge / Copy Hook + Specific Dollar Amount"
+      }
+    ]
+  }
+];
+
+// LONG-FORM IDEA BANK (3 ideas per week = 12 total)
+export const longFormWeeks: LongFormWeek[] = [
+  {
+    week: 1,
+    weekTheme: "Positioning, Differentiation & Game Trend Intelligence",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Roblox Shorts Channel That Made Me $131,397 — And What Every Competitor Got Wrong",
+        hook: "I studied every Roblox Shorts educator — Ventura, Ryvahn, moneyboymax, Chris Barrera, Fabiojit, Money Groot — and found 8 things NONE of them teach. Here's the full breakdown with real view counts",
+        cta: "Comment 'GAPS' and I'll send you the full competitor gap analysis PDF. Subscribe — new video every Mon & Thu",
+        bestTime: "Monday 9 AM", duration: "15-20 min",
+        robloxGame: "Escape Tsunami, 99 Nights in Forest", audience: "Both", pillar: "Start",
+        gapExploited: "Established YouTuber Angle + Competitor Gap Analysis as Content",
+        hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "Roblox Game Trend Report: The 4 Games Driving 60% of Viral Shorts Right Now (May 2026 Data)",
+        hook: "Nobody in the Roblox Shorts space breaks down WHY specific games go viral — or how long the window lasts. I analyzed 100 viral Roblox Shorts this month. Here's the full data on Escape Tsunami, 99 Nights, Troll Tower, and Kick a Lucky Block",
+        cta: "Subscribe for monthly Roblox game trend reports — I'll tell you which game to cover BEFORE it peaks",
+        bestTime: "Thursday 5 PM", duration: "18-25 min",
+        robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis (Nobody Does This)",
+        hookFormula: "Data Authority Hook + Income Proof"
+      },
+      {
+        ideaNumber: 3,
+        title: "I Went Pro on Roblox Shorts in 30 Days — Here's Every Step, Every Mistake, Every Number",
+        hook: "Fabiojit's 'I Went Pro in 10 Days' got 1.6M views on Fortnite. Money Groot's Roblox growth video got 506K views with ZERO funnel. I'm doing the Roblox Shorts version — and documenting everything",
+        cta: "Subscribe to follow the full 30-day challenge — I post every Mon & Thu. Drop your starting subscriber count below",
+        bestTime: "Sunday 10 AM", duration: "20-28 min",
+        robloxGame: "Escape Tsunami, Troll Tower, 99 Nights in Forest", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series (Fabiojit 1.6M model, Roblox version)",
+        hookFormula: "Challenge / Copy Hook"
+      }
+    ]
+  },
+  {
+    week: 2,
+    weekTheme: "Algorithm, Hook Formulas & Game-Specific Deep Dives",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The 6 Hook Formulas Behind Every Viral Roblox Shorts Video (With Real View Counts)",
+        hook: "I analyzed the top 9 Roblox Shorts educators — Ventura (124K), Ryvahn (141K), Syrax (255K), Fabiojit (1.6M) — and found 6 hook formulas responsible for every single outlier video. Here's every formula with examples you can copy today",
+        cta: "Download the free Hook Formula Swipe File — 6 templates with Roblox examples. Link in description",
+        bestTime: "Tuesday 9 AM", duration: "15-20 min",
+        robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Competitor Gap Analysis as Content + Shorts ABOUT Making Shorts",
+        hookFormula: "Income Proof Hook + Data Authority"
+      },
+      {
+        ideaNumber: 2,
+        title: "Why 99 Nights in the Forest Is the Best Roblox Game for Shorts Right Now (Full Data Breakdown)",
+        hook: "99 Nights in the Forest is generating 759K+ views per Short for some creators. I broke down exactly why this game works — the emotional mechanics, the content angles, and how long the trend window lasts",
+        cta: "Subscribe for weekly Roblox game trend reports — I'll tell you which game to pivot to before the next wave",
+        bestTime: "Thursday 5 PM", duration: "15-20 min",
+        robloxGame: "99 Nights in the Forest", audience: "Both", pillar: "Case Study",
+        gapExploited: "Game-Specific Trend Analysis (Nobody Does This)",
+        hookFormula: "Data Authority Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "The Complete Roblox Shorts Content System: How to Never Run Out of Ideas Using the Competitor Gap Method",
+        hook: "I mapped every content gap the top 9 Roblox Shorts educators are missing — and turned each gap into a repeatable content format you can use every week for 90 days without repeating yourself",
+        cta: "Download the free Roblox Shorts Content System template — 90 days of ideas pre-mapped. Link in description",
+        bestTime: "Sunday 10 AM", duration: "20-25 min",
+        robloxGame: "Escape Tsunami, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Consistency & Systems Content + Competitor Gap Analysis",
+        hookFormula: "Anti-Hype / Controversy Hook"
+      }
+    ]
+  },
+  {
+    week: 3,
+    weekTheme: "Consistency Systems, Established Creator Strategy & Troll Tower / Kick a Lucky Block",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Established Creator's Complete Guide to Adding Roblox Shorts Without Losing Your Existing Audience",
+        hook: "If you already have 10K-500K subscribers, adding Roblox Shorts is completely different from starting from scratch — and every Shorts educator is giving you the wrong advice. Here's the strategy built specifically for established creators",
+        cta: "Comment your current subscriber count — I'll tell you the exact Shorts strategy for your channel size",
+        bestTime: "Tuesday 9 AM", duration: "20-28 min",
+        robloxGame: "General Roblox", audience: "Established", pillar: "Grow",
+        gapExploited: "The Established YouTuber Angle (Zero Direct Competition)",
+        hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 2,
+        title: "Troll Tower & Kick a Lucky Block: The Underrated Roblox Shorts Goldmine (Full Strategy)",
+        hook: "While everyone is fighting over Escape Tsunami content, Troll Tower and Kick a Lucky Block are wide open. I analyzed the top 50 viral Shorts from both games — here are the exact content angles, hook formulas, and posting windows that are working right now",
+        cta: "Subscribe for weekly Roblox game trend reports — I'll tell you which game to pivot to before the next wave",
+        bestTime: "Thursday 5 PM", duration: "18-22 min",
+        robloxGame: "Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Grow",
+        gapExploited: "Game-Specific Trend Analysis",
+        hookFormula: "Anti-Hype / Controversy Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "30-Day Roblox Shorts Challenge: Week 3 Full Breakdown (Real Analytics, Real Revenue)",
+        hook: "Week 3 of the 30-day Roblox Shorts challenge — here are the real view counts, subscriber gains, revenue numbers, and the one game pivot that changed everything. Plus: the consistency system that kept me posting when I wanted to quit",
+        cta: "Subscribe to follow the full challenge. Comment your own Week 3 numbers — let's compare",
+        bestTime: "Sunday 10 AM", duration: "22-28 min",
+        robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series + Consistency & Systems Content",
+        hookFormula: "Income Proof Hook + Challenge / Copy"
+      }
+    ]
+  },
+  {
+    week: 4,
+    weekTheme: "Full Monetization Stack, Community Building & 30-Day Finale",
+    ideas: [
+      {
+        ideaNumber: 1,
+        title: "The Full Roblox Shorts Monetization Stack: 6 Income Streams Nobody Is Teaching (With Real Numbers)",
+        hook: "Romayroh makes $46,800/month from a Skool community. Ventura has a Whop program. Fabiojit has 800 Discord members. Chris Barrera does high-ticket coaching. None of them teach the FULL monetization stack — I'm doing it here with real numbers from each stream",
+        cta: "Comment which monetization stream you want a dedicated video on — I'll build the series around your answers",
+        bestTime: "Tuesday 9 AM", duration: "25-35 min",
+        robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "Monetization Beyond AdSense + Competitor Funnel Analysis",
+        hookFormula: "Specific Dollar Amount Hook + Anti-Hype"
+      },
+      {
+        ideaNumber: 2,
+        title: "How to Build a Roblox Shorts Community That Makes $46,800/Month (The Romayroh Model, Roblox Edition)",
+        hook: "Romayroh has 1,300 members at $36/month = $46,800 MRR from a gaming Shorts community. James Rasp's MotionFarm has 47 members. There is NO dominant Roblox Shorts community — here's the exact model to build the one that wins",
+        cta: "Comment 'COMMUNITY' to get early access to the Roblox Shorts community I'm building right now",
+        bestTime: "Thursday 5 PM", duration: "20-28 min",
+        robloxGame: "General Roblox", audience: "Both", pillar: "Monetize",
+        gapExploited: "No Dominant Roblox Shorts Community (Critical Gap)",
+        hookFormula: "Specific Dollar Amount Hook"
+      },
+      {
+        ideaNumber: 3,
+        title: "30 Days of Roblox Shorts: The Complete Case Study (Every Number, Every Mistake, What's Next)",
+        hook: "Fabiojit's 'I Went Pro in 10 Days' got 1.6M views. Money Groot's 'How to Grow Your Roblox Channel FAST' got 506K views with ZERO monetized funnel. I did the Roblox Shorts version of both — and I'm showing you everything: views, subscribers, revenue, mistakes, and the Month 2 plan",
+        cta: "If this 30-day series helped you, share it with one creator. And if you want to build your Roblox Shorts channel with a community behind you — comment 'IN' and I'll send you the details",
+        bestTime: "Sunday 10 AM", duration: "30-40 min",
+        robloxGame: "Escape Tsunami, 99 Nights, Troll Tower, Kick a Lucky Block", audience: "Both", pillar: "Case Study",
+        gapExploited: "Ongoing Case Study Series + No Dominant Community",
+        hookFormula: "Challenge / Copy Hook + Specific Dollar Amount"
+      }
+    ]
   }
 ];

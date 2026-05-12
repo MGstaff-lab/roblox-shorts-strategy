@@ -19,7 +19,8 @@ import {
   creators, hookData, robloxGames, monetizationStreams,
   calendarData, algorithmInsights, platformStats,
   competitors, competitiveGaps, hookFormulas,
-  type CalendarEntry
+  shortsDays, longFormWeeks,
+  type CalendarEntry, type ShortIdea, type ShortsDay, type LongFormIdea, type LongFormWeek
 } from "@/lib/data";
 import { ChevronDown, ChevronUp, Calendar, TrendingUp, DollarSign, Users, Gamepad2, Zap, BookOpen, Filter, Target, AlertTriangle, ExternalLink, BarChart2, Award } from "lucide-react";
 
@@ -146,6 +147,277 @@ function CalendarCard({ entry, index }: { entry: CalendarEntry; index: number })
             <div>
               <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Roblox Games Featured</p>
               <p className="text-sm text-slate-700">🎮 {entry.robloxGame}</p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============================================================
+// SHORT IDEA CARD
+// ============================================================
+function ShortIdeaCard({ idea, ideaIndex }: { idea: ShortIdea; ideaIndex: number }) {
+  const [expanded, setExpanded] = useState(false);
+  const ideaColors = ["border-l-red-500", "border-l-orange-500", "border-l-rose-500"];
+  const ideaBgs = ["bg-red-50", "bg-orange-50", "bg-rose-50"];
+  const ideaLabels = ["Idea A", "Idea B", "Idea C"];
+
+  return (
+    <div className={`border border-slate-200 border-l-4 ${ideaColors[ideaIndex - 1]} rounded-lg bg-white hover:shadow-md transition-all duration-200`}>
+      <div className="p-3.5 cursor-pointer" onClick={() => setExpanded(!expanded)}>
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-start gap-2.5 flex-1 min-w-0">
+            <span className={`flex-shrink-0 text-xs font-bold px-2 py-0.5 rounded ${ideaBgs[ideaIndex - 1]} text-slate-700`}>{ideaLabels[ideaIndex - 1]}</span>
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap gap-1 mb-1">
+                <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${pillarColors[idea.pillar]}`}>{idea.pillar}</span>
+                <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${audienceColors[idea.audience]}`}>{idea.audience}</span>
+              </div>
+              <p className="font-semibold text-slate-900 text-sm leading-snug line-clamp-2">{idea.title}</p>
+              <p className="text-xs text-slate-500 mt-0.5">🕐 {idea.bestTime}{idea.robloxGame ? ` · 🎮 ${idea.robloxGame}` : ''}</p>
+            </div>
+          </div>
+          <button className="flex-shrink-0 text-slate-400 hover:text-slate-600 transition-colors mt-0.5">
+            {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+        </div>
+      </div>
+      {expanded && (
+        <div className="px-3.5 pb-3.5 border-t border-slate-100 pt-3 space-y-2.5">
+          <div>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Hook</p>
+            <p className="text-sm text-slate-700 italic leading-relaxed">"{idea.hook}"</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">CTA</p>
+            <p className="text-sm text-slate-700 leading-relaxed">{idea.cta}</p>
+          </div>
+          {idea.gapExploited && (
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-2.5">
+              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-0.5">🔓 Competitor Gap Exploited</p>
+              <p className="text-xs text-amber-800 font-medium">{idea.gapExploited}</p>
+            </div>
+          )}
+          {idea.hookFormula && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-2.5">
+              <p className="text-xs font-semibold text-red-700 uppercase tracking-wide mb-0.5">🎯 Hook Formula</p>
+              <p className="text-xs text-red-800 font-medium">{idea.hookFormula}</p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============================================================
+// SHORTS IDEA BANK COMPONENT
+// ============================================================
+function ShortsIdeaBank() {
+  const [weekFilter, setWeekFilter] = useState(0);
+  const [audienceFilter, setAudienceFilter] = useState<'all' | 'Both' | 'Established' | 'New Creator'>('all');
+  const [pillarFilter, setPillarFilter] = useState<'all' | 'Start' | 'Grow' | 'Monetize' | 'Case Study'>('all');
+
+  const filteredDays = shortsDays.filter(day => {
+    if (weekFilter > 0 && day.week !== weekFilter) return false;
+    return true;
+  }).map(day => ({
+    ...day,
+    ideas: day.ideas.filter(idea => {
+      if (audienceFilter !== 'all' && idea.audience !== audienceFilter) return false;
+      if (pillarFilter !== 'all' && idea.pillar !== pillarFilter) return false;
+      return true;
+    })
+  })).filter(day => day.ideas.length > 0);
+
+  return (
+    <div>
+      {/* Filters */}
+      <div className="flex flex-wrap gap-3 mb-6 p-4 bg-white border border-slate-200 rounded-xl">
+        <div className="flex items-center gap-2">
+          <Filter size={14} className="text-slate-400" />
+          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Filter:</span>
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {[0, 1, 2, 3, 4, 5].map(w => (
+            <button key={w} onClick={() => setWeekFilter(w)}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                weekFilter === w ? 'bg-red-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}>
+              {w === 0 ? 'All Weeks' : `Week ${w}`}
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {(['all', 'Both', 'Established', 'New Creator'] as const).map(f => (
+            <button key={f} onClick={() => setAudienceFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                audienceFilter === f ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}>
+              {f === 'all' ? 'All Audiences' : f}
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {(['all', 'Start', 'Grow', 'Monetize', 'Case Study'] as const).map(f => (
+            <button key={f} onClick={() => setPillarFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                pillarFilter === f ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}>
+              {f === 'all' ? 'All Pillars' : f}
+            </button>
+          ))}
+        </div>
+      </div>
+      <p className="text-sm text-slate-500 mb-5">Showing <span className="font-semibold text-slate-900">{filteredDays.length}</span> days · <span className="font-semibold text-slate-900">{filteredDays.reduce((a, d) => a + d.ideas.length, 0)}</span> Short ideas</p>
+
+      {/* Days Grid */}
+      <div className="space-y-4">
+        {filteredDays.map(day => (
+          <div key={day.day} className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+            {/* Day Header */}
+            <div className="flex items-center gap-3 px-4 py-3 bg-slate-900 text-white">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-600 flex items-center justify-center">
+                <span className="font-display font-bold text-sm">{day.day}</span>
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-slate-400 font-mono">{day.dayOfWeek} · Week {day.week}</span>
+                  <span className="text-xs bg-white/10 px-2 py-0.5 rounded-full text-white font-medium">{day.theme}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-0.5">Pick the best idea — or use all 3 as a content sprint</p>
+              </div>
+            </div>
+            {/* Ideas */}
+            <div className="p-3 grid md:grid-cols-3 gap-3">
+              {day.ideas.map(idea => (
+                <ShortIdeaCard key={idea.ideaNumber} idea={idea} ideaIndex={idea.ideaNumber} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// LONG-FORM IDEA BANK COMPONENT
+// ============================================================
+function LongFormIdeaBank() {
+  const [audienceFilter, setAudienceFilter] = useState<'all' | 'Both' | 'Established' | 'New Creator'>('all');
+
+  const filteredWeeks = longFormWeeks.map(week => ({
+    ...week,
+    ideas: week.ideas.filter(idea => {
+      if (audienceFilter !== 'all' && idea.audience !== audienceFilter) return false;
+      return true;
+    })
+  })).filter(week => week.ideas.length > 0);
+
+  return (
+    <div>
+      {/* Filters */}
+      <div className="flex flex-wrap gap-3 mb-6 p-4 bg-white border border-slate-200 rounded-xl">
+        <div className="flex items-center gap-2">
+          <Filter size={14} className="text-slate-400" />
+          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Audience:</span>
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {(['all', 'Both', 'Established', 'New Creator'] as const).map(f => (
+            <button key={f} onClick={() => setAudienceFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                audienceFilter === f ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}>
+              {f === 'all' ? 'All Audiences' : f}
+            </button>
+          ))}
+        </div>
+      </div>
+      <p className="text-sm text-slate-500 mb-5">Showing <span className="font-semibold text-slate-900">{filteredWeeks.reduce((a, w) => a + w.ideas.length, 0)}</span> long-form ideas across <span className="font-semibold text-slate-900">{filteredWeeks.length}</span> weeks</p>
+
+      {/* Weeks */}
+      <div className="space-y-6">
+        {filteredWeeks.map(week => (
+          <div key={week.week} className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+            {/* Week Header */}
+            <div className="flex items-center gap-3 px-5 py-4 bg-slate-900 text-white">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
+                <span className="font-display font-bold text-lg">W{week.week}</span>
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 font-mono mb-0.5">Week {week.week} · Long-Form Ideas</p>
+                <p className="font-display font-bold text-white">{week.weekTheme}</p>
+                <p className="text-xs text-slate-400 mt-0.5">Post 1–3 of these per week — pick the one you can execute best</p>
+              </div>
+            </div>
+            {/* Ideas */}
+            <div className="p-4 grid md:grid-cols-3 gap-4">
+              {week.ideas.map(idea => (
+                <LongFormIdeaCard key={idea.ideaNumber} idea={idea} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// LONG-FORM IDEA CARD
+// ============================================================
+function LongFormIdeaCard({ idea }: { idea: LongFormIdea }) {
+  const [expanded, setExpanded] = useState(false);
+  const ideaColors = ["border-l-blue-500", "border-l-indigo-500", "border-l-violet-500"];
+  const ideaLabels = ["Option 1", "Option 2", "Option 3"];
+
+  return (
+    <div className={`border border-slate-200 border-l-4 ${ideaColors[idea.ideaNumber - 1]} rounded-lg bg-white hover:shadow-md transition-all duration-200`}>
+      <div className="p-4 cursor-pointer" onClick={() => setExpanded(!expanded)}>
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap gap-1 mb-1.5">
+              <span className="text-xs bg-slate-900 text-white px-2 py-0.5 rounded-full font-medium">{ideaLabels[idea.ideaNumber - 1]}</span>
+              <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${pillarColors[idea.pillar]}`}>{idea.pillar}</span>
+              <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${audienceColors[idea.audience]}`}>{idea.audience}</span>
+            </div>
+            <p className="font-semibold text-slate-900 text-sm leading-snug line-clamp-2">{idea.title}</p>
+            <p className="text-xs text-slate-500 mt-1">🕐 {idea.bestTime} · ⏱ {idea.duration}</p>
+          </div>
+          <button className="flex-shrink-0 text-slate-400 hover:text-slate-600 transition-colors mt-0.5">
+            {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+        </div>
+      </div>
+      {expanded && (
+        <div className="px-4 pb-4 border-t border-slate-100 pt-3 space-y-2.5">
+          <div>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Hook</p>
+            <p className="text-sm text-slate-700 italic leading-relaxed">"{idea.hook}"</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">CTA</p>
+            <p className="text-sm text-slate-700 leading-relaxed">{idea.cta}</p>
+          </div>
+          {idea.robloxGame && (
+            <div>
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">🎮 Roblox Games</p>
+              <p className="text-sm text-slate-700">{idea.robloxGame}</p>
+            </div>
+          )}
+          {idea.gapExploited && (
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-2.5">
+              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-0.5">🔓 Competitor Gap Exploited</p>
+              <p className="text-xs text-amber-800 font-medium">{idea.gapExploited}</p>
+            </div>
+          )}
+          {idea.hookFormula && (
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-2.5">
+              <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-0.5">🎯 Hook Formula</p>
+              <p className="text-xs text-blue-800 font-medium">{idea.hookFormula}</p>
             </div>
           )}
         </div>
@@ -782,137 +1054,60 @@ export default function Home() {
       <section id="calendar" className="py-16 bg-[#FAFAF8]">
         <div className="container">
           <SectionHeader
-            eyebrow="30-Day Content Calendar"
-            title="Your Complete Roblox Shorts Content Plan"
-            subtitle="Every video idea, hook, format, posting time, and CTA — for both established YouTubers and new creators."
+            eyebrow="Content Idea Banks"
+            title="Your Roblox Shorts & Long-Form Idea Banks"
+            subtitle="Not a rigid schedule — an idea bank. Pick the best idea each day. 90 Shorts ideas across 30 days (3 per day) and 12 long-form ideas across 4 weeks (3 per week)."
           />
 
-          {/* Calendar Summary Stats */}
+          {/* Summary Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {[
-              { icon: <Calendar size={18} />, label: "Total Videos", value: "30", color: "text-slate-900" },
-              { icon: <Zap size={18} />, label: "YouTube Shorts", value: shortsCount.toString(), color: "text-red-600" },
-              { icon: <BookOpen size={18} />, label: "Long-Form Videos", value: longFormCount.toString(), color: "text-blue-600" },
-              { icon: <Gamepad2 size={18} />, label: "Roblox Games Used", value: "6", color: "text-emerald-600" },
+              { icon: <Zap size={18} />, label: "Shorts Ideas", value: "90", sub: "3 per day × 30 days", color: "text-red-600", bg: "bg-red-50" },
+              { icon: <BookOpen size={18} />, label: "Long-Form Ideas", value: "12", sub: "3 per week × 4 weeks", color: "text-blue-600", bg: "bg-blue-50" },
+              { icon: <Target size={18} />, label: "Gaps Exploited", value: "8", sub: "Competitor gaps mapped", color: "text-amber-600", bg: "bg-amber-50" },
+              { icon: <Gamepad2 size={18} />, label: "Roblox Games", value: "4+", sub: "Trending games used", color: "text-emerald-600", bg: "bg-emerald-50" },
             ].map(stat => (
-              <div key={stat.label} className="bg-white border border-slate-200 rounded-xl p-4 text-center">
+              <div key={stat.label} className={`${stat.bg} border border-slate-200 rounded-xl p-4 text-center`}>
                 <div className={`flex justify-center mb-2 ${stat.color}`}>{stat.icon}</div>
                 <div className={`font-display font-black text-3xl ${stat.color} mb-0.5`}>{stat.value}</div>
-                <div className="text-xs text-slate-500">{stat.label}</div>
+                <div className="text-xs font-semibold text-slate-700">{stat.label}</div>
+                <div className="text-xs text-slate-500 mt-0.5">{stat.sub}</div>
               </div>
             ))}
           </div>
 
-          {/* Pillar Distribution Chart */}
-          <div className="bg-white border border-slate-200 rounded-xl p-6 mb-8">
-            <h3 className="font-display font-bold text-lg text-slate-900 mb-4">Content Pillar Distribution</h3>
-            <div className="grid md:grid-cols-2 gap-6 items-center">
-              <div className="h-48">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={pillarDistribution}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={50}
-                      outerRadius={80}
-                      paddingAngle={3}
-                      dataKey="value"
-                    >
-                      {pillarDistribution.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                    <Tooltip formatter={(value: number) => [`${value} videos`, '']} />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-              <div className="space-y-3">
-                {pillarDistribution.map(p => (
-                  <div key={p.name} className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
-                    <div className="flex-1">
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="font-medium text-slate-700">{p.name}</span>
-                        <span className="text-slate-500">{p.value} videos</span>
-                      </div>
-                      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full transition-all duration-700"
-                          style={{ width: `${(p.value / 30) * 100}%`, backgroundColor: p.color }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Two Calendar Tabs */}
+          <Tabs defaultValue="shorts" className="w-full">
+            <TabsList className="mb-6 bg-white border border-slate-200 p-1 rounded-xl h-auto">
+              <TabsTrigger value="shorts" className="flex-1 py-2.5 text-sm font-semibold data-[state=active]:bg-red-600 data-[state=active]:text-white rounded-lg">
+                ⚡ Shorts Idea Bank — 90 Ideas (30 Days × 3)
+              </TabsTrigger>
+              <TabsTrigger value="longform" className="flex-1 py-2.5 text-sm font-semibold data-[state=active]:bg-slate-900 data-[state=active]:text-white rounded-lg">
+                📹 Long-Form Idea Bank — 12 Ideas (4 Weeks × 3)
+              </TabsTrigger>
+            </TabsList>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-3 mb-6 p-4 bg-white border border-slate-200 rounded-xl">
-            <div className="flex items-center gap-2">
-              <Filter size={14} className="text-slate-400" />
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Filter:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {(['all', 'Long-Form', 'Short'] as const).map(f => (
-                <button
-                  key={f}
-                  onClick={() => setCalendarFilter(f)}
-                  className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
-                    calendarFilter === f
-                      ? 'bg-slate-900 text-white'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                >
-                  {f === 'all' ? 'All Formats' : f}
-                </button>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {(['all', 'Both', 'Established', 'New Creator'] as const).map(f => (
-                <button
-                  key={f}
-                  onClick={() => setAudienceFilter(f)}
-                  className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
-                    audienceFilter === f
-                      ? 'bg-red-600 text-white'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                >
-                  {f === 'all' ? 'All Audiences' : f}
-                </button>
-              ))}
-            </div>
+            {/* ── SHORTS TAB ── */}
+            <TabsContent value="shorts">
+              <ShortsIdeaBank />
+            </TabsContent>
+
+            {/* ── LONG-FORM TAB ── */}
+            <TabsContent value="longform">
+              <LongFormIdeaBank />
+            </TabsContent>
+          </Tabs>
+
+          {/* PLACEHOLDER for old filter block — replaced by inline filters in sub-components */}
+          <div className="hidden">
             <div className="flex flex-wrap gap-2">
               {[0, 1, 2, 3, 4].map(w => (
-                <button
-                  key={w}
-                  onClick={() => setWeekFilter(w)}
-                  className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
-                    weekFilter === w
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                >
-                  {w === 0 ? 'All Weeks' : `Week ${w}`}
+                <button key={w}>{w === 0 ? 'All Weeks' : `Week ${w}`}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Results count */}
-          <p className="text-sm text-slate-500 mb-4">
-            Showing <span className="font-semibold text-slate-900">{filteredCalendar.length}</span> of 30 content pieces
-          </p>
-
-          {/* Calendar Grid */}
-          <div className="grid md:grid-cols-2 gap-3">
-            {filteredCalendar.map((entry, index) => (
-              <CalendarCard key={entry.day} entry={entry} index={index} />
-            ))}
-          </div>
         </div>
       </section>
 
