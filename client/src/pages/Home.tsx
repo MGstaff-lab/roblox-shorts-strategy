@@ -18,9 +18,10 @@ import {
 import {
   creators, hookData, robloxGames, monetizationStreams,
   calendarData, algorithmInsights, platformStats,
+  competitors, competitiveGaps, hookFormulas,
   type CalendarEntry
 } from "@/lib/data";
-import { ChevronDown, ChevronUp, Calendar, TrendingUp, DollarSign, Users, Gamepad2, Zap, BookOpen, Filter } from "lucide-react";
+import { ChevronDown, ChevronUp, Calendar, TrendingUp, DollarSign, Users, Gamepad2, Zap, BookOpen, Filter, Target, AlertTriangle, ExternalLink, BarChart2, Award } from "lucide-react";
 
 // ============================================================
 // ANIMATED COUNTER
@@ -198,6 +199,7 @@ export default function Home() {
               {[
                 { href: "#research", label: "Research" },
                 { href: "#creators", label: "Top 20 Creators" },
+                { href: "#competitors", label: "Competitor Intel" },
                 { href: "#algorithm", label: "Algorithm" },
                 { href: "#calendar", label: "30-Day Calendar" },
                 { href: "#monetize", label: "Monetization" },
@@ -361,6 +363,249 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================
+          COMPETITOR INTELLIGENCE SECTION
+      ====================================================== */}
+      <section id="competitors" className="py-16 bg-[#FAFAF8]">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Competitive Intelligence"
+            title="The Roblox Shorts Education Landscape"
+            subtitle="9 direct and adjacent competitors analyzed — their outlier videos, hooks, funnels, and the gaps they're all missing."
+          />
+
+          {/* Competitor Outlier Views Chart */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 mb-8">
+            <div className="flex items-center gap-2 mb-1">
+              <BarChart2 size={16} className="text-red-600" />
+              <h3 className="font-display font-bold text-xl text-slate-900">Outlier Video Performance</h3>
+            </div>
+            <p className="text-sm text-slate-500 mb-6">Top-performing video views for each competitor — showing the massive gap between average and outlier content</p>
+            <div className="h-80">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={competitors.map(c => ({ name: c.name, outlier: c.topOutlierViews, avg: c.avgViews, multiplier: c.outlierMultiplier }))}
+                  margin={{ left: 0, right: 20, top: 10, bottom: 40 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                  <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#64748b' }} angle={-35} textAnchor="end" interval={0} />
+                  <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} tickFormatter={(v) => v >= 1000 ? `${(v/1000).toFixed(0)}K` : v} />
+                  <Tooltip
+                    formatter={(value: number, name: string) => [
+                      `${value >= 1000 ? (value/1000).toFixed(0) + 'K' : value} views`,
+                      name === 'outlier' ? 'Top Video' : 'Channel Average'
+                    ]}
+                    contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+                  />
+                  <Bar dataKey="outlier" fill="#EF4444" radius={[4, 4, 0, 0]} name="outlier" />
+                  <Bar dataKey="avg" fill="#CBD5E1" radius={[4, 4, 0, 0]} name="avg" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex items-center gap-6 mt-2 justify-center">
+              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-red-500" /><span className="text-xs text-slate-500">Top Outlier Video</span></div>
+              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-slate-300" /><span className="text-xs text-slate-500">Channel Average</span></div>
+            </div>
+          </div>
+
+          {/* Competitor Cards Grid */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
+            {competitors.map((c) => (
+              <div key={c.id} className="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-all duration-200">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: c.color }} />
+                      <h3 className="font-display font-bold text-slate-900">{c.name}</h3>
+                    </div>
+                    <p className="text-xs text-slate-400 font-mono-custom">{c.handle}</p>
+                  </div>
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium flex-shrink-0 ${
+                    c.tier === 'Direct' ? 'bg-red-100 text-red-700' :
+                    c.tier === 'Adjacent' ? 'bg-amber-100 text-amber-700' :
+                    'bg-slate-100 text-slate-600'
+                  }`}>{c.tier}</span>
+                </div>
+
+                {/* Key stats row */}
+                <div className="grid grid-cols-3 gap-2 mb-3">
+                  <div className="bg-slate-50 rounded-lg p-2 text-center">
+                    <div className="font-display font-black text-sm text-slate-900">{c.subscribers}</div>
+                    <div className="text-xs text-slate-400">Subs</div>
+                  </div>
+                  <div className="bg-red-50 rounded-lg p-2 text-center">
+                    <div className="font-display font-black text-sm text-red-600">{c.topOutlierViews >= 1000 ? (c.topOutlierViews/1000).toFixed(0) + 'K' : c.topOutlierViews}</div>
+                    <div className="text-xs text-slate-400">Top Video</div>
+                  </div>
+                  <div className="bg-emerald-50 rounded-lg p-2 text-center">
+                    <div className="font-display font-black text-sm text-emerald-600">{c.outlierMultiplier}x</div>
+                    <div className="text-xs text-slate-400">Multiplier</div>
+                  </div>
+                </div>
+
+                {/* Top outlier video */}
+                <div className="bg-slate-50 rounded-lg p-2.5 mb-2.5">
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Top Outlier Video</p>
+                  <p className="text-xs text-slate-700 font-medium leading-snug">"{c.topOutlierVideo}"</p>
+                </div>
+
+                {/* Hook formula */}
+                <div className="mb-2.5">
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Hook Formula</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">{c.hookFormula}</p>
+                </div>
+
+                {/* Funnel */}
+                <div className="border-t border-slate-100 pt-2.5">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Funnel</p>
+                      <p className="text-xs text-slate-700 font-medium">{c.funnelPlatform}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Price</p>
+                      <p className="text-xs font-mono-custom font-medium" style={{ color: c.color }}>{c.funnelPrice}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Members</p>
+                      <p className="text-xs font-mono-custom font-medium text-slate-700">{c.funnelMembers}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Hook Formulas Section */}
+          <div className="bg-slate-900 rounded-2xl p-8 mb-10 text-white">
+            <div className="flex items-center gap-2 mb-2">
+              <Zap size={18} className="text-red-400" />
+              <h3 className="font-display font-bold text-2xl text-white">The 6 Hook Formulas That Drive Outlier Views</h3>
+            </div>
+            <p className="text-slate-400 text-sm mb-8">Every competitor's top-performing video uses one of these six hook structures. Master these and you own the space.</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {hookFormulas.map((hf) => (
+                <div key={hf.name} className="bg-white/5 rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-2.5 h-2.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: hf.color }} />
+                    <h4 className="font-display font-bold text-white">{hf.name}</h4>
+                  </div>
+                  <div className="bg-black/20 rounded-lg p-3 mb-3">
+                    <p className="text-xs font-mono-custom text-slate-300 leading-relaxed">{hf.formula}</p>
+                  </div>
+                  <p className="text-xs text-slate-400 italic mb-2">e.g. "{hf.example}"</p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <Award size={11} className="text-yellow-400" />
+                      <span className="text-xs text-yellow-300">{hf.bestPerformer}</span>
+                    </div>
+                    <span className="text-xs font-mono-custom" style={{ color: hf.color }}>{hf.avgViews} views</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Competitive Gaps Section */}
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <Target size={18} className="text-emerald-600" />
+              <h3 className="font-display font-bold text-2xl text-slate-900">8 Gaps Nobody in This Space is Filling</h3>
+            </div>
+            <p className="text-slate-500 text-sm mb-6">These are the strategic white spaces your consulting business can own. Each gap represents a content or offer opportunity with zero direct competition.</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {competitiveGaps.map((gap) => (
+                <div key={gap.id} className="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-all duration-200">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-start gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: gap.color }} />
+                      <h4 className="font-display font-bold text-slate-900">{gap.title}</h4>
+                    </div>
+                    <div className="flex gap-1.5 flex-shrink-0">
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                        gap.priority === 'Critical' ? 'bg-red-100 text-red-700' :
+                        gap.priority === 'High' ? 'bg-amber-100 text-amber-700' :
+                        'bg-slate-100 text-slate-600'
+                      }`}>{gap.priority}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-slate-600 mb-3 leading-relaxed">{gap.description}</p>
+                  <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+                    <div className="flex items-start gap-2">
+                      <TrendingUp size={12} className="text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <p className="text-xs text-emerald-800 leading-relaxed">{gap.opportunity}</p>
+                    </div>
+                  </div>
+                  <div className="mt-2.5 flex items-center justify-between">
+                    <span className="text-xs text-slate-400">Implementation difficulty:</span>
+                    <span className={`text-xs font-medium ${
+                      gap.difficulty === 'Low' ? 'text-emerald-600' :
+                      gap.difficulty === 'Medium' ? 'text-amber-600' :
+                      'text-red-600'
+                    }`}>{gap.difficulty}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Funnel Comparison Table */}
+          <div className="mt-10 bg-white border border-slate-200 rounded-2xl overflow-hidden">
+            <div className="p-6 border-b border-slate-100">
+              <div className="flex items-center gap-2">
+                <DollarSign size={16} className="text-red-600" />
+                <h3 className="font-display font-bold text-xl text-slate-900">Funnel & Revenue Comparison</h3>
+              </div>
+              <p className="text-sm text-slate-500 mt-1">How every competitor monetizes their audience — and where the biggest opportunities lie</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-slate-50">
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Creator</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Platform</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Price</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Members</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Est. MRR</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Tier</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {competitors.map((c) => (
+                    <tr key={c.id} className="hover:bg-slate-50 transition-colors">
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: c.color }} />
+                          <span className="font-medium text-slate-900">{c.name}</span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-slate-600">{c.funnelPlatform}</td>
+                      <td className="px-4 py-3 font-mono-custom text-slate-700">{c.funnelPrice}</td>
+                      <td className="px-4 py-3 font-mono-custom text-slate-700">{c.funnelMembers}</td>
+                      <td className="px-4 py-3">
+                        <span className={`font-mono-custom font-medium ${
+                          c.funnelMRR.includes('$46') ? 'text-emerald-600' :
+                          c.funnelMRR === '$0 (massive gap!)' ? 'text-red-500' :
+                          c.funnelMRR === '$0' ? 'text-slate-400' :
+                          'text-slate-700'
+                        }`}>{c.funnelMRR}</span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                          c.tier === 'Direct' ? 'bg-red-100 text-red-700' :
+                          c.tier === 'Adjacent' ? 'bg-amber-100 text-amber-700' :
+                          'bg-slate-100 text-slate-600'
+                        }`}>{c.tier}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
@@ -792,6 +1037,7 @@ export default function Home() {
                 <div className="space-y-2 text-slate-400">
                   <a href="#research" className="block hover:text-white transition-colors">Platform Research</a>
                   <a href="#creators" className="block hover:text-white transition-colors">Top 20 Creators</a>
+                  <a href="#competitors" className="block hover:text-white transition-colors">Competitor Intel</a>
                   <a href="#algorithm" className="block hover:text-white transition-colors">Algorithm Insights</a>
                   <a href="#calendar" className="block hover:text-white transition-colors">30-Day Calendar</a>
                   <a href="#monetize" className="block hover:text-white transition-colors">Monetization</a>

@@ -623,3 +623,376 @@ export const platformStats = [
   { label: "YouTube Shorts Daily Views", value: "200B+", change: "Doubled from 70B", color: "#10B981" },
   { label: "YouTube Gaming Market Share", value: "24%", change: "New all-time high", color: "#F59E0B" },
 ];
+
+// ============================================================
+// COMPETITOR INTELLIGENCE DATA
+// ============================================================
+
+export interface Competitor {
+  id: string;
+  name: string;
+  handle: string;
+  tier: 'Direct' | 'Adjacent' | 'Upstream';
+  subscribers: string;
+  channelAge: string;
+  topOutlierVideo: string;
+  topOutlierViews: number;
+  avgViews: number;
+  outlierMultiplier: number;
+  hookFormula: string;
+  thumbnailStrategy: string;
+  contentFormula: string;
+  cta: string;
+  funnelPlatform: string;
+  funnelPrice: string;
+  funnelMembers: string;
+  funnelMRR: string;
+  color: string;
+  jamesRaspConnection: string;
+}
+
+export const competitors: Competitor[] = [
+  {
+    id: "ventura",
+    name: "Ventura",
+    handle: "@Ventura419",
+    tier: "Direct",
+    subscribers: "5.2K",
+    channelAge: "~5 months",
+    topOutlierVideo: "How I Make VIRAL Roblox Shorts ($10K/month)",
+    topOutlierViews: 124000,
+    avgViews: 8000,
+    outlierMultiplier: 15.5,
+    hookFormula: "Income screenshot thumbnail + 'How I Make VIRAL [GAME] Shorts ($XK/month)'",
+    thumbnailStrategy: "YouTube Studio revenue screenshot ($10,398/mo) + Roblox avatar",
+    contentFormula: "5-7 min tutorial showing exact record → edit → upload process with revenue proof",
+    cta: "Check out the Program → Whop link",
+    funnelPlatform: "Whop (Motion)",
+    funnelPrice: "Invite-only",
+    funnelMembers: "47",
+    funnelMRR: "Unknown",
+    color: "#EF4444",
+    jamesRaspConnection: "James Rasp's most direct template — same title formula, same thumbnail strategy"
+  },
+  {
+    id: "ryvahn",
+    name: "Ryvahn",
+    handle: "@Ryvahn",
+    tier: "Direct",
+    subscribers: "14K",
+    channelAge: "~1 year",
+    topOutlierVideo: "How to Make VIRAL Roblox Rant Videos (Free CapCut + AI Method)",
+    topOutlierViews: 141000,
+    avgViews: 15000,
+    outlierMultiplier: 9.4,
+    hookFormula: "'How to Escape [View Jail]' / 'The Easiest Way to...' / Step-by-step tutorial titles",
+    thumbnailStrategy: "Screen recording of analytics + bold text overlay ('141K Views', 'Escape View Jails')",
+    contentFormula: "Short (4-8 min) step-by-step tutorials with screen recordings, free tools only",
+    cta: "Join my Community → Skool + Apply to work with me 1-on-1",
+    funnelPlatform: "Skool (Shorts Lab)",
+    funnelPrice: "Unknown",
+    funnelMembers: "Unknown",
+    funnelMRR: "Unknown",
+    color: "#3B82F6",
+    jamesRaspConnection: "Ryvahn's 'Escape View Jail' format is the pain-point hook James Rasp hasn't used yet"
+  },
+  {
+    id: "moneyboymax",
+    name: "moneyboymax",
+    handle: "@moneyboymax",
+    tier: "Direct",
+    subscribers: "~5K",
+    channelAge: "~1 year",
+    topOutlierVideo: "how to grow a faceless youtube channel in 2025",
+    topOutlierViews: 189000,
+    avgViews: 12000,
+    outlierMultiplier: 15.8,
+    hookFormula: "Lowercase anti-hype titles + 'you MUST do this' + specific pain points",
+    thumbnailStrategy: "Revenue screenshot ($10,450) + face cam + bold 'IT'S EASY' text",
+    contentFormula: "Long-form deep dives (10-68 min), 'ranking shorts' niche, psychology of hooks",
+    cta: "Apply for 1:1 mentorship here → Typeform",
+    funnelPlatform: "1:1 Mentorship (Typeform)",
+    funnelPrice: "High-ticket",
+    funnelMembers: "Small cohort",
+    funnelMRR: "Unknown",
+    color: "#10B981",
+    jamesRaspConnection: "moneyboymax pioneered the 'ranking shorts' angle — a unique sub-niche James Rasp hasn't touched"
+  },
+  {
+    id: "chrisbarrera",
+    name: "Chris Barrera",
+    handle: "@BarreraChris",
+    tier: "Direct",
+    subscribers: "5.65K",
+    channelAge: "~8 months",
+    topOutlierVideo: "The Faceless Roblox Channel That Made Me $131,397 (Full Breakdown)",
+    topOutlierViews: 57000,
+    avgViews: 5000,
+    outlierMultiplier: 11.4,
+    hookFormula: "Specific dollar amounts ($131,397 / $25,367) + 'Full Breakdown' / 'Step-by-Step'",
+    thumbnailStrategy: "YouTube Analytics screenshot showing $131,762.49 revenue + face cam",
+    contentFormula: "Longer videos (9-43 min), detailed breakdowns, AI automation focus",
+    cta: "Work 1on1 with me to build a profitable YouTube Automation business in 180 days",
+    funnelPlatform: "YT Launchpad (1:1 coaching)",
+    funnelPrice: "High-ticket (180-day program)",
+    funnelMembers: "Small cohort",
+    funnelMRR: "Unknown",
+    color: "#F59E0B",
+    jamesRaspConnection: "Chris Barrera's '180-day guarantee' framing is the most premium positioning in the space"
+  },
+  {
+    id: "romayroh",
+    name: "Romayroh",
+    handle: "@romayroh",
+    tier: "Adjacent",
+    subscribers: "156K",
+    channelAge: "2+ years",
+    topOutlierVideo: "YouTube's Algorithm Update Just Changed The AI Rules",
+    topOutlierViews: 138000,
+    avgViews: 30000,
+    outlierMultiplier: 4.6,
+    hookFormula: "Specific income claims + 'BORING' (anti-hype) + controversy ('Gurus are LYING')",
+    thumbnailStrategy: "Income proof + 'BORING' text overlay + face cam showing surprise/excitement",
+    contentFormula: "9-17 min, faceless YouTube automation, algorithm updates, case studies",
+    cta: "Join my community → Skool $36/month",
+    funnelPlatform: "Skool (Faceless YouTube HQ)",
+    funnelPrice: "$36/month",
+    funnelMembers: "1,300",
+    funnelMRR: "~$46,800",
+    color: "#8B5CF6",
+    jamesRaspConnection: "Romayroh is the market leader — 1,300 members at $36/mo. James Rasp is modeling his community after this"
+  },
+  {
+    id: "wealthifyai",
+    name: "Wealthify AI",
+    handle: "@WealthifyAi",
+    tier: "Direct",
+    subscribers: "~3K",
+    channelAge: "~4 months",
+    topOutlierVideo: "How I Make Viral Roblox Shorts Under 5 min ($10K/month)",
+    topOutlierViews: 63000,
+    avgViews: 4000,
+    outlierMultiplier: 15.75,
+    hookFormula: "Income screenshot + time efficiency angle ('Under 5 min') + AI tools focus",
+    thumbnailStrategy: "Revenue screenshot ($10,398.90) + Roblox avatar + '$3,690.90 more than usual' callout",
+    contentFormula: "Faceless AI workflow (scripting + voiceover) + mobile editing on CapCut",
+    cta: "Check out Nexlev here → affiliate tool link",
+    funnelPlatform: "Nexlev (tool affiliate)",
+    funnelPrice: "Affiliate commission",
+    funnelMembers: "N/A",
+    funnelMRR: "Passive affiliate",
+    color: "#EC4899",
+    jamesRaspConnection: "Wealthify AI's 'Under 5 min' angle is the time-efficiency hook James Rasp hasn't used"
+  },
+  {
+    id: "syrax",
+    name: "Syrax",
+    handle: "@Syrax",
+    tier: "Adjacent",
+    subscribers: "~8K",
+    channelAge: "~8 months",
+    topOutlierVideo: "How I Actually Make Viral Roblox AI Shorts In 5 Minutes",
+    topOutlierViews: 255000,
+    avgViews: 8000,
+    outlierMultiplier: 31.9,
+    hookFormula: "'In 5 Minutes' time efficiency + AI tools + 'Actually' (authenticity signal)",
+    thumbnailStrategy: "Multiple revenue screenshots side-by-side ($5,260 / $21,680 / $19,365) + face cam",
+    contentFormula: "5 min tutorial, AI avatar generation, Filmora workflow, 4K quality",
+    cta: "Join VSUB here → tool affiliate + Filmora affiliate",
+    funnelPlatform: "Tool affiliates (Filmora + VSUB)",
+    funnelPrice: "Affiliate commission",
+    funnelMembers: "N/A",
+    funnelMRR: "Passive affiliate",
+    color: "#06B6D4",
+    jamesRaspConnection: "Syrax's 255K-view outlier is the highest in the Roblox Shorts education space — pure AI workflow focus"
+  },
+  {
+    id: "moneygroot",
+    name: "Money Groot",
+    handle: "@MoneyGroott",
+    tier: "Adjacent",
+    subscribers: "42.1K",
+    channelAge: "~1 year",
+    topOutlierVideo: "How to Grow your Roblox Channel, FAST",
+    topOutlierViews: 506000,
+    avgViews: 25000,
+    outlierMultiplier: 20.2,
+    hookFormula: "Simple, direct ('FAST', 'Quick tips') — NO income claims, organic growth focus",
+    thumbnailStrategy: "Simple text overlay + Roblox gameplay screenshot — no revenue proof",
+    contentFormula: "Short (7 min) practical tips, no AI tools, organic growth focus",
+    cta: "Subscribe and comment — NO paid funnel",
+    funnelPlatform: "NONE",
+    funnelPrice: "Free",
+    funnelMembers: "N/A",
+    funnelMRR: "$0 (massive gap!)",
+    color: "#84CC16",
+    jamesRaspConnection: "Money Groot has the BIGGEST video in the space (506K views) with ZERO monetized funnel — the biggest missed opportunity"
+  },
+  {
+    id: "fabiojit",
+    name: "Fabiojit",
+    handle: "@fabiojit",
+    tier: "Upstream",
+    subscribers: "76K",
+    channelAge: "2+ years",
+    topOutlierVideo: "I Went Pro in 10 Days...",
+    topOutlierViews: 1600000,
+    avgViews: 80000,
+    outlierMultiplier: 20.0,
+    hookFormula: "'I Went Pro in X Days' / 'I [did extreme thing] and here's what happened'",
+    thumbnailStrategy: "Personal face cam + dramatic expression + bold challenge text",
+    contentFormula: "Personal story + challenge format, Fortnite-focused, 17-31 min",
+    cta: "Join free Discord community (800+ members)",
+    funnelPlatform: "Discord (free)",
+    funnelPrice: "Free",
+    funnelMembers: "800+",
+    funnelMRR: "$0",
+    color: "#F97316",
+    jamesRaspConnection: "Fabiojit's 'I Went Pro in X Days' format is THE template James Rasp and Ventura adapted for Roblox"
+  }
+];
+
+export interface CompetitiveGap {
+  id: string;
+  title: string;
+  description: string;
+  opportunity: string;
+  difficulty: 'Low' | 'Medium' | 'High';
+  priority: 'Critical' | 'High' | 'Medium';
+  color: string;
+}
+
+export const competitiveGaps: CompetitiveGap[] = [
+  {
+    id: "shorts-about-shorts",
+    title: "Shorts ABOUT Making Shorts",
+    description: "Every competitor teaches Roblox Shorts strategy through long-form videos. Nobody is making Shorts about how to make Roblox Shorts.",
+    opportunity: "The content format matches the audience behavior. A Short showing '3 hooks that go viral on Roblox Shorts' gets seen by the exact people who want to learn it.",
+    difficulty: "Low",
+    priority: "Critical",
+    color: "#EF4444"
+  },
+  {
+    id: "established-youtubers",
+    title: "The Established YouTuber Angle",
+    description: "Every competitor targets new creators starting from scratch. Nobody addresses established YouTubers (10K-500K subs) who want to ADD Shorts to their existing channel.",
+    opportunity: "This is a premium audience with existing infrastructure, higher willingness to pay, and a completely different set of problems. Zero direct competition.",
+    difficulty: "Low",
+    priority: "Critical",
+    color: "#3B82F6"
+  },
+  {
+    id: "game-trend-analysis",
+    title: "Game-Specific Trend Analysis",
+    description: "Everyone says 'pick a trending game' but nobody breaks down WHY specific games (Escape Tsunami, 99 Nights, Troll Tower) are viral right now.",
+    opportunity: "Weekly or monthly 'Roblox game trend reports' — which games to make Shorts about THIS week — would be unique, highly shareable, and drive repeat visits.",
+    difficulty: "Medium",
+    priority: "High",
+    color: "#10B981"
+  },
+  {
+    id: "monetization-beyond-adsense",
+    title: "Monetization Beyond AdSense",
+    description: "Every competitor focuses on RPM/CPM and AdSense. Nobody teaches affiliate marketing, brand deals, Roblox UGC partnerships, merch, or community monetization specific to Roblox Shorts.",
+    opportunity: "Gaming Shorts RPM is $0.02-$0.08. Creators who only focus on AdSense will quit. Teaching the full monetization stack is a major differentiator.",
+    difficulty: "Medium",
+    priority: "High",
+    color: "#F59E0B"
+  },
+  {
+    id: "consistency-systems",
+    title: "Consistency & Systems Content",
+    description: "Everyone teaches 'how to start' — nobody teaches 'how to stay consistent for 90+ days'. No content calendar templates, batch recording guides, or burnout prevention content.",
+    opportunity: "The #1 reason creators fail is inconsistency, not lack of knowledge. A '30-day Roblox Shorts challenge' series or consistency system would fill a massive gap.",
+    difficulty: "Low",
+    priority: "High",
+    color: "#8B5CF6"
+  },
+  {
+    id: "case-study-series",
+    title: "Ongoing Case Study Series",
+    description: "Nobody is doing an ongoing 'I grew this channel from 0 to X in 30 days' series with Roblox Shorts specifically. Fabiojit's 'I Went Pro in 10 Days' (1.6M views) is the closest but it's Fortnite.",
+    opportunity: "A documented Roblox Shorts growth challenge series — with real analytics shown — would be the highest-performing content format in this space.",
+    difficulty: "High",
+    priority: "High",
+    color: "#EC4899"
+  },
+  {
+    id: "dominant-community",
+    title: "No Dominant Roblox Shorts Community",
+    description: "Romayroh's community ($36/mo, 1,300 members) is broad faceless YouTube. James Rasp's MotionFarm is Roblox-specific but tiny (~47 members). There's NO dominant Roblox Shorts-specific community.",
+    opportunity: "The first well-positioned Roblox Shorts community with strong content marketing behind it could capture this entire market. Romayroh proves the model works at $46,800/month MRR.",
+    difficulty: "High",
+    priority: "Critical",
+    color: "#06B6D4"
+  },
+  {
+    id: "premium-established-community",
+    title: "Premium Community for Established Creators",
+    description: "All communities target beginners. A premium community ($97-197/mo) specifically for established creators adding Shorts would have zero direct competition.",
+    opportunity: "Established YouTubers have more money, more motivation, and more to gain. A premium offer for this segment could generate more revenue with fewer members than a mass-market beginner community.",
+    difficulty: "Medium",
+    priority: "High",
+    color: "#84CC16"
+  }
+];
+
+export interface HookFormula {
+  name: string;
+  formula: string;
+  example: string;
+  bestPerformer: string;
+  avgViews: string;
+  color: string;
+}
+
+export const hookFormulas: HookFormula[] = [
+  {
+    name: "Income Proof Hook",
+    formula: "How I Make VIRAL [GAME] [FORMAT] ($XK/month)",
+    example: "How I Make VIRAL Roblox Shorts ($10K/month)",
+    bestPerformer: "Ventura — 124K views",
+    avgViews: "63K–124K",
+    color: "#EF4444"
+  },
+  {
+    name: "Specific Dollar Amount Hook",
+    formula: "The [ADJECTIVE] [NICHE] Channel That Made Me $[EXACT AMOUNT] (Full Breakdown)",
+    example: "The Faceless Roblox Channel That Made Me $131,397 (Full Breakdown)",
+    bestPerformer: "Chris Barrera — 57K views",
+    avgViews: "30K–57K",
+    color: "#F59E0B"
+  },
+  {
+    name: "Time Efficiency Hook",
+    formula: "How I [ACHIEVE RESULT] in [SHORT TIME] (AI Method)",
+    example: "How I Actually Make Viral Roblox AI Shorts In 5 Minutes",
+    bestPerformer: "Syrax — 255K views",
+    avgViews: "63K–255K",
+    color: "#10B981"
+  },
+  {
+    name: "Anti-Hype / Controversy Hook",
+    formula: "The BORING [NICHE] Channels That Made Me $[AMOUNT] in [TIME]",
+    example: "The BORING Faceless Channels that made me $31,364 in 90 Days",
+    bestPerformer: "Romayroh — 42K views",
+    avgViews: "22K–42K",
+    color: "#8B5CF6"
+  },
+  {
+    name: "Pain Point Escape Hook",
+    formula: "How to Escape [VIEW COUNT] View Jail on YouTube Shorts (Full Guide)",
+    example: "How to Escape 0, 10k & 30k View Jail on YouTube Shorts",
+    bestPerformer: "Ryvahn — 120K views",
+    avgViews: "110K–141K",
+    color: "#3B82F6"
+  },
+  {
+    name: "Challenge / Copy Hook",
+    formula: "I [COPIED/TRIED] [STRATEGY] for [X] Days — [REALISTIC/HONEST] Results",
+    example: "I Went Viral With YouTube Shorts In 30 Days and Here's How I Did It",
+    bestPerformer: "janisjanis01 — 499K views",
+    avgViews: "75K–499K",
+    color: "#EC4899"
+  }
+];
