@@ -130,6 +130,18 @@ function CalendarCard({ entry, index }: { entry: CalendarEntry; index: number })
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">CTA</p>
             <p className="text-sm text-slate-700 leading-relaxed">{entry.cta}</p>
           </div>
+          {entry.gapExploited && (
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">🔓 Competitor Gap Exploited</p>
+              <p className="text-sm text-amber-800 font-medium">{entry.gapExploited}</p>
+            </div>
+          )}
+          {entry.hookFormula && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+              <p className="text-xs font-semibold text-red-700 uppercase tracking-wide mb-1">🎯 Hook Formula Used</p>
+              <p className="text-sm text-red-800 font-medium">{entry.hookFormula}</p>
+            </div>
+          )}
           {entry.robloxGame && (
             <div>
               <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Roblox Games Featured</p>
