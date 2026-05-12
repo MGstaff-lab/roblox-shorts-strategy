@@ -19,10 +19,10 @@ import {
   creators, hookData, robloxGames, monetizationStreams,
   calendarData, algorithmInsights, platformStats,
   competitors, competitiveGaps, hookFormulas,
-  shortsDays, longFormWeeks,
-  type CalendarEntry, type ShortIdea, type ShortsDay, type LongFormIdea, type LongFormWeek
+  shortsDays, longFormWeeks, week1Scripts,
+  type CalendarEntry, type ShortIdea, type ShortsDay, type LongFormIdea, type LongFormWeek, type ScriptBrief, type ScriptOutlinePoint
 } from "@/lib/data";
-import { ChevronDown, ChevronUp, Calendar, TrendingUp, DollarSign, Users, Gamepad2, Zap, BookOpen, Filter, Target, AlertTriangle, ExternalLink, BarChart2, Award } from "lucide-react";
+import { ChevronDown, ChevronUp, Calendar, TrendingUp, DollarSign, Users, Gamepad2, Zap, BookOpen, Filter, Target, AlertTriangle, ExternalLink, BarChart2, Award, FileText, X, Copy, Check, Lightbulb, Mic } from "lucide-react";
 
 // ============================================================
 // ANIMATED COUNTER
@@ -158,8 +158,143 @@ function CalendarCard({ entry, index }: { entry: CalendarEntry; index: number })
 // ============================================================
 // SHORT IDEA CARD
 // ============================================================
-function ShortIdeaCard({ idea, ideaIndex }: { idea: ShortIdea; ideaIndex: number }) {
+// ============================================================
+// SCRIPT BRIEF MODAL
+// ============================================================
+function ScriptBriefModal({ brief, onClose }: { brief: ScriptBrief; onClose: () => void }) {
+  const [copiedHook, setCopiedHook] = useState<number | null>(null);
+  const hookColors = [
+    { bg: "bg-red-50", border: "border-red-200", badge: "bg-red-600", text: "text-red-800", label: "text-red-700" },
+    { bg: "bg-blue-50", border: "border-blue-200", badge: "bg-blue-600", text: "text-blue-800", label: "text-blue-700" },
+    { bg: "bg-emerald-50", border: "border-emerald-200", badge: "bg-emerald-600", text: "text-emerald-800", label: "text-emerald-700" },
+  ];
+  const copyHook = (text: string, idx: number) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedHook(idx);
+      setTimeout(() => setCopiedHook(null), 2000);
+    });
+  };
+  return (
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        className="relative bg-white w-full sm:max-w-2xl max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl shadow-2xl"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="sticky top-0 bg-slate-900 text-white px-5 py-4 flex items-start gap-3 rounded-t-2xl sm:rounded-t-2xl z-10">
+          <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-red-600 flex items-center justify-center mt-0.5">
+            <FileText size={16} className="text-white" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-0.5">
+              <span className="text-xs font-mono text-slate-400">{brief.id}</span>
+              <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
+                brief.format === 'Short' ? 'bg-red-600 text-white' : 'bg-blue-600 text-white'
+              }`}>{brief.format === 'Short' ? '⚡ Short' : '📹 Long-Form'}</span>
+            </div>
+            <p className="font-display font-bold text-white text-sm leading-snug">{brief.title}</p>
+          </div>
+          <button onClick={onClose} className="flex-shrink-0 text-slate-400 hover:text-white transition-colors p-1">
+            <X size={18} />
+          </button>
+        </div>
+        <div className="p-5 space-y-6">
+          {/* HOOKS SECTION */}
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <Mic size={15} className="text-red-600" />
+              <h3 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wide">3 Proven Hook Variations</h3>
+              <span className="text-xs text-slate-500">— pick one or A/B test</span>
+            </div>
+            <div className="space-y-3">
+              {brief.hooks.map((hook, idx) => (
+                <div key={idx} className={`${hookColors[idx].bg} ${hookColors[idx].border} border rounded-xl p-3.5`}>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className={`text-xs font-bold text-white ${hookColors[idx].badge} px-2 py-0.5 rounded-full`}>{hook.label}</span>
+                      <span className={`text-xs font-medium ${hookColors[idx].label}`}>{hook.formula}</span>
+                    </div>
+                    <button
+                      onClick={() => copyHook(hook.text, idx)}
+                      className={`flex-shrink-0 flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-lg transition-all ${
+                        copiedHook === idx
+                          ? 'bg-emerald-600 text-white'
+                          : `${hookColors[idx].label} hover:bg-white/60`
+                      }`}
+                    >
+                      {copiedHook === idx ? <><Check size={11} /> Copied</> : <><Copy size={11} /> Copy</>}
+                    </button>
+                  </div>
+                  <p className={`text-sm font-medium ${hookColors[idx].text} leading-relaxed italic`}>"{hook.text}"</p>
+                  {hook.inspiredBy && (
+                    <p className="text-xs text-slate-500 mt-1.5">💡 Inspired by: {hook.inspiredBy}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* OUTLINE SECTION */}
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <FileText size={15} className="text-blue-600" />
+              <h3 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wide">Video Outline</h3>
+              {brief.format === 'Short' && <span className="text-xs text-slate-500">— with timestamps</span>}
+            </div>
+            <div className="space-y-2">
+              {brief.outline.map((point, idx) => (
+                <div key={idx} className="flex gap-3 bg-slate-50 border border-slate-200 rounded-lg p-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold">{idx + 1}</div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap mb-0.5">
+                      <span className="font-semibold text-slate-900 text-sm">{point.beat}</span>
+                      {point.timestamp && (
+                        <span className="text-xs font-mono bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">{point.timestamp}</span>
+                      )}
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">{point.notes}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* CTA SECTION */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <Target size={15} className="text-amber-600" />
+              <h3 className="font-display font-bold text-amber-800 text-sm uppercase tracking-wide">Call to Action</h3>
+              <span className="text-xs bg-amber-200 text-amber-700 px-2 py-0.5 rounded-full font-medium">{brief.cta.type}</span>
+            </div>
+            <p className="text-sm font-semibold text-amber-900 italic mb-2">"{brief.cta.text}"</p>
+            <p className="text-xs text-amber-700 leading-relaxed">{brief.cta.notes}</p>
+          </div>
+          {/* PRO TIP */}
+          {brief.proTip && (
+            <div className="bg-slate-900 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Lightbulb size={14} className="text-yellow-400" />
+                <span className="text-xs font-bold text-yellow-400 uppercase tracking-wide">Pro Tip</span>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">{brief.proTip}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// SHORT IDEA CARD
+// ============================================================
+function ShortIdeaCard({ idea, ideaIndex, day }: { idea: ShortIdea; ideaIndex: number; day: number }) {
   const [expanded, setExpanded] = useState(false);
+  const [showScript, setShowScript] = useState(false);
+  // Build script ID: S-{day}-{ideaIndex} for Week 1 ideas (days 1-7)
+  const scriptId = `S-${day}-${ideaIndex}`;
+  const scriptBrief = week1Scripts.find(s => s.id === scriptId);
   const ideaColors = ["border-l-red-500", "border-l-orange-500", "border-l-rose-500"];
   const ideaBgs = ["bg-red-50", "bg-orange-50", "bg-rose-50"];
   const ideaLabels = ["Idea A", "Idea B", "Idea C"];
@@ -184,6 +319,7 @@ function ShortIdeaCard({ idea, ideaIndex }: { idea: ShortIdea; ideaIndex: number
           </button>
         </div>
       </div>
+      {showScript && scriptBrief && <ScriptBriefModal brief={scriptBrief} onClose={() => setShowScript(false)} />}
       {expanded && (
         <div className="px-3.5 pb-3.5 border-t border-slate-100 pt-3 space-y-2.5">
           <div>
@@ -204,6 +340,20 @@ function ShortIdeaCard({ idea, ideaIndex }: { idea: ShortIdea; ideaIndex: number
             <div className="bg-red-50 border border-red-200 rounded-lg p-2.5">
               <p className="text-xs font-semibold text-red-700 uppercase tracking-wide mb-0.5">🎯 Hook Formula</p>
               <p className="text-xs text-red-800 font-medium">{idea.hookFormula}</p>
+            </div>
+          )}
+          {scriptBrief ? (
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowScript(true); }}
+              className="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-red-600 text-white text-xs font-semibold py-2 px-3 rounded-lg transition-all duration-200 mt-1"
+            >
+              <FileText size={12} />
+              View Script Brief — 3 Hooks + Outline + CTA
+            </button>
+          ) : (
+            <div className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-400 text-xs font-medium py-2 px-3 rounded-lg mt-1">
+              <FileText size={12} />
+              Script Brief — Coming in Week 2+
             </div>
           )}
         </div>
@@ -293,7 +443,7 @@ function ShortsIdeaBank() {
             {/* Ideas */}
             <div className="p-3 grid md:grid-cols-3 gap-3">
               {day.ideas.map(idea => (
-                <ShortIdeaCard key={idea.ideaNumber} idea={idea} ideaIndex={idea.ideaNumber} />
+                <ShortIdeaCard key={idea.ideaNumber} idea={idea} ideaIndex={idea.ideaNumber} day={day.day} />
               ))}
             </div>
           </div>
