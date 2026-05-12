@@ -11,6 +11,7 @@ export interface Creator {
   focus: string;
   keyInsight: string;
   outperformingPattern: string;
+  channelUrl: string;
 }
 
 export interface HookType {
@@ -27,6 +28,8 @@ export interface RobloxGame {
   youtubeEngagement: string;
   contentAngle: string;
   color: string;
+  gameUrl?: string;
+  youtubeSearchUrl?: string;
 }
 
 export interface CalendarEntry {
@@ -64,7 +67,8 @@ export const creators: Creator[] = [
     subscribers: "2.8M+",
     focus: "YouTube Growth & Shorts Strategy",
     keyInsight: "Hybrid content strategy drives 3x faster subscriber growth",
-    outperformingPattern: "Step-by-step tutorials with numbered frameworks outperform opinion pieces by 4x"
+    outperformingPattern: "Step-by-step tutorials with numbered frameworks outperform opinion pieces by 4x",
+    channelUrl: "https://www.youtube.com/@ThinkMediaTV"
   },
   {
     rank: 2,
@@ -73,7 +77,8 @@ export const creators: Creator[] = [
     subscribers: "1.5M+",
     focus: "Data-Driven Algorithm Analysis",
     keyInsight: "Channels with 200+ Shorts see consistent view increases over time",
-    outperformingPattern: "Data-backed claims with visual proof get 5.9x average views vs. baseline"
+    outperformingPattern: "Data-backed claims with visual proof get 5.9x average views vs. baseline",
+    channelUrl: "https://www.youtube.com/@vidiq"
   },
   {
     rank: 3,
@@ -82,7 +87,8 @@ export const creators: Creator[] = [
     subscribers: "600K+",
     focus: "Viral Hook Writing & Title Optimization",
     keyInsight: "\"Use Shorts as bait. Monetize with long-form.\" One 45-min video can make 10x more than 100 Shorts combined",
-    outperformingPattern: "Outlier analysis videos (studying 3x+ average performers) consistently outperform"
+    outperformingPattern: "Outlier analysis videos (studying 3x+ average performers) consistently outperform",
+    channelUrl: "https://www.youtube.com/@PaddyGallowayYT"
   },
   {
     rank: 4,
@@ -91,7 +97,8 @@ export const creators: Creator[] = [
     subscribers: "1M+",
     focus: "Practical YouTube Tips for Small Channels",
     keyInsight: "Consistency beats frequency — 3-5 Shorts/week outperforms daily posting",
-    outperformingPattern: "\"Mistake\" and \"fix\" format videos get 4.2x more engagement than general tips"
+    outperformingPattern: "\"Mistake\" and \"fix\" format videos get 4.2x more engagement than general tips",
+    channelUrl: "https://www.youtube.com/@nicknimmin"
   },
   {
     rank: 5,
@@ -100,7 +107,8 @@ export const creators: Creator[] = [
     subscribers: "500K+",
     focus: "YouTube Strategy & Creator Business",
     keyInsight: "Creators posting both Shorts and long-form earn 40-60% more than single-format creators",
-    outperformingPattern: "Income transparency videos and \"how much I made\" content outperform by 6x"
+    outperformingPattern: "Income transparency videos and \"how much I made\" content outperform by 6x",
+    channelUrl: "https://www.youtube.com/@RobertoBlake"
   },
   {
     rank: 6,
@@ -109,7 +117,8 @@ export const creators: Creator[] = [
     subscribers: "200K+",
     focus: "Shorts Algorithm Research",
     keyInsight: "Studied 35 billion Shorts views: 13s and 60s lengths perform best; first 3 seconds are critical",
-    outperformingPattern: "Original showcases and sensory experiences (ASMR) consistently attract more views"
+    outperformingPattern: "Original showcases and sensory experiences (ASMR) consistently attract more views",
+    channelUrl: "https://www.youtube.com/@NateBlackYT"
   },
   {
     rank: 7,
@@ -118,7 +127,8 @@ export const creators: Creator[] = [
     subscribers: "300K+",
     focus: "Editing & Retention Optimization",
     keyInsight: "80.2% of viral Shorts use captions — it's non-negotiable",
-    outperformingPattern: "Before/after editing transformations outperform standard tutorials by 3.5x"
+    outperformingPattern: "Before/after editing transformations outperform standard tutorials by 3.5x",
+    channelUrl: "https://www.youtube.com/@HaydenHillierSmith"
   },
   {
     rank: 8,
@@ -127,7 +137,8 @@ export const creators: Creator[] = [
     subscribers: "400K+",
     focus: "YouTube Growth Systems",
     keyInsight: "The 3-pillar content system (Education + Entertainment + Inspiration) prevents burnout",
-    outperformingPattern: "Content system reveals and \"never run out of ideas\" formats drive highest saves"
+    outperformingPattern: "Content system reveals and \"never run out of ideas\" formats drive highest saves",
+    channelUrl: "https://www.youtube.com/@ChannelMakers"
   },
   {
     rank: 9,
@@ -136,7 +147,8 @@ export const creators: Creator[] = [
     subscribers: "350K+",
     focus: "YouTube Growth for Creators",
     keyInsight: "Thumbnail strategy applies even to Shorts — they appear in regular YouTube feed",
-    outperformingPattern: "Personal journey + data combination outperforms pure tutorial content"
+    outperformingPattern: "Personal journey + data combination outperforms pure tutorial content",
+    channelUrl: "https://www.youtube.com/@CathrinManning"
   },
   {
     rank: 10,
@@ -145,7 +157,8 @@ export const creators: Creator[] = [
     subscribers: "150K+",
     focus: "Hook Writing & Title Formulas",
     keyInsight: "Expertise/Authority hooks get 5.9x more views than average — highest performing hook type",
-    outperformingPattern: "Hook teardown videos and \"why this went viral\" analysis consistently outperform"
+    outperformingPattern: "Hook teardown videos and \"why this went viral\" analysis consistently outperform",
+    channelUrl: "https://www.youtube.com/@CreatorHooks"
   },
   {
     rank: 11,
@@ -154,7 +167,8 @@ export const creators: Creator[] = [
     subscribers: "1.2M+",
     focus: "Creator Economy Analysis",
     keyInsight: "Hybrid creators (Shorts + long-form) grow subscriber base 3x faster",
-    outperformingPattern: "Creator interview/case study format outperforms solo commentary by 2.8x"
+    outperformingPattern: "Creator interview/case study format outperforms solo commentary by 2.8x",
+    channelUrl: "https://www.youtube.com/@ColinandSamir"
   },
   {
     rank: 12,
@@ -163,7 +177,8 @@ export const creators: Creator[] = [
     subscribers: "600K+",
     focus: "YouTube Monetization Transparency",
     keyInsight: "Gaming Shorts RPM is $0.02-$0.08 — real money comes from brand deals and long-form traffic",
-    outperformingPattern: "Exact income reveal videos get 8x average views — transparency drives massive engagement"
+    outperformingPattern: "Exact income reveal videos get 8x average views — transparency drives massive engagement",
+    channelUrl: "https://www.youtube.com/@ShelbyChurch"
   },
   {
     rank: 13,
@@ -172,7 +187,8 @@ export const creators: Creator[] = [
     subscribers: "300K+",
     focus: "YouTube Monetization Strategies",
     keyInsight: "76% of top Shorts creators earn more from brand deals than ad revenue",
-    outperformingPattern: "Step-by-step monetization roadmaps with specific numbers outperform vague advice"
+    outperformingPattern: "Step-by-step monetization roadmaps with specific numbers outperform vague advice",
+    channelUrl: "https://www.youtube.com/@RyanHildreth"
   },
   {
     rank: 14,
@@ -181,7 +197,8 @@ export const creators: Creator[] = [
     subscribers: "250K+",
     focus: "YouTube Growth Tactics",
     keyInsight: "The explore/exploit algorithm: seed audience engagement in first 1,000 views determines fate",
-    outperformingPattern: "Algorithm explanation videos with visual diagrams outperform text-heavy content"
+    outperformingPattern: "Algorithm explanation videos with visual diagrams outperform text-heavy content",
+    channelUrl: "https://www.youtube.com/@RobertBenjaminYT"
   },
   {
     rank: 15,
@@ -190,7 +207,8 @@ export const creators: Creator[] = [
     subscribers: "800K+",
     focus: "YouTube Strategy & Algorithm Expert",
     keyInsight: "Engaged views (not just views) are the only metric that matters for YPP and revenue",
-    outperformingPattern: "\"The YouTube Formula\" framework videos drive highest long-term watch time"
+    outperformingPattern: "\"The YouTube Formula\" framework videos drive highest long-term watch time",
+    channelUrl: "https://www.youtube.com/@DerralEves"
   },
   {
     rank: 16,
@@ -199,7 +217,8 @@ export const creators: Creator[] = [
     subscribers: "10M+",
     focus: "Roblox Content Creation",
     keyInsight: "Gained 14M new followers in 2025 by combining Shorts with live streaming on Roblox content",
-    outperformingPattern: "Reaction to unexpected Roblox moments gets 5x more engagement than planned content"
+    outperformingPattern: "Reaction to unexpected Roblox moments gets 5x more engagement than planned content",
+    channelUrl: "https://www.youtube.com/@CaylusBlox"
   },
   {
     rank: 17,
@@ -208,7 +227,8 @@ export const creators: Creator[] = [
     subscribers: "8M+",
     focus: "Roblox Gaming Content",
     keyInsight: "Trending game ranking videos drive massive search traffic — evergreen + trending combination",
-    outperformingPattern: "\"Ranking every Roblox game\" format consistently outperforms single-game content"
+    outperformingPattern: "\"Ranking every Roblox game\" format consistently outperforms single-game content",
+    channelUrl: "https://www.youtube.com/@KreekCraft"
   },
   {
     rank: 18,
@@ -217,7 +237,8 @@ export const creators: Creator[] = [
     subscribers: "500K+",
     focus: "Roblox Gameplay & Shorts",
     keyInsight: "99 Nights in the Forest content drives 759K+ views — survival horror is peak Shorts content",
-    outperformingPattern: "Survival challenge format with countdown creates natural replay loop"
+    outperformingPattern: "Survival challenge format with countdown creates natural replay loop",
+    channelUrl: "https://www.youtube.com/@RirushaRoblox"
   },
   {
     rank: 19,
@@ -226,7 +247,8 @@ export const creators: Creator[] = [
     subscribers: "400K+",
     focus: "YouTube Optimization Education",
     keyInsight: "Metadata optimization (title, description, hashtags) still matters for Shorts categorization",
-    outperformingPattern: "Tool tutorial + strategy combination outperforms pure strategy content"
+    outperformingPattern: "Tool tutorial + strategy combination outperforms pure strategy content",
+    channelUrl: "https://www.youtube.com/@TubeBuddy"
   },
   {
     rank: 20,
@@ -235,7 +257,8 @@ export const creators: Creator[] = [
     subscribers: "100K-1M",
     focus: "AI-Powered Roblox Shorts",
     keyInsight: "Faceless Roblox rant/story channels are the fastest-growing format in 2026",
-    outperformingPattern: "AI-generated Roblox commentary with gameplay overlay drives 10x more views than face-cam"
+    outperformingPattern: "AI-generated Roblox commentary with gameplay overlay drives 10x more views than face-cam",
+    channelUrl: "https://www.youtube.com/results?search_query=faceless+roblox+shorts+channel"
   }
 ];
 
@@ -261,7 +284,9 @@ export const robloxGames: RobloxGame[] = [
     trend: "#1 Roblox Game Feb 2026",
     youtubeEngagement: "Extremely High",
     contentAngle: "Speed runs, fail compilations, \"I survived\" challenges",
-    color: "#3B82F6"
+    color: "#3B82F6",
+    gameUrl: "https://www.roblox.com/games/16832052682/Escape-Tsunami-for-Brainrots",
+    youtubeSearchUrl: "https://www.youtube.com/results?search_query=escape+tsunami+roblox+shorts"
   },
   {
     name: "99 Nights in the Forest",
@@ -269,7 +294,9 @@ export const robloxGames: RobloxGame[] = [
     trend: "Consistently Trending",
     youtubeEngagement: "Very High",
     contentAngle: "Night-by-night survival, horror reaction, strategy guides",
-    color: "#10B981"
+    color: "#10B981",
+    gameUrl: "https://www.roblox.com/games/17017769292/99-Nights-in-the-Forest",
+    youtubeSearchUrl: "https://www.youtube.com/results?search_query=99+nights+in+the+forest+roblox+shorts"
   },
   {
     name: "Troll Tower",
@@ -277,7 +304,9 @@ export const robloxGames: RobloxGame[] = [
     trend: "Viral Shorts Content",
     youtubeEngagement: "High",
     contentAngle: "Troll reactions, clutch moments, \"destroying trolls\" format",
-    color: "#F59E0B"
+    color: "#F59E0B",
+    gameUrl: "https://www.roblox.com/games/8562822414/Troll-Tower",
+    youtubeSearchUrl: "https://www.youtube.com/results?search_query=troll+tower+roblox+shorts"
   },
   {
     name: "Kick a Lucky Block",
@@ -285,7 +314,9 @@ export const robloxGames: RobloxGame[] = [
     trend: "Surging May 2026",
     youtubeEngagement: "Very High",
     contentAngle: "Unboxing reveals, rare item reactions, challenge format",
-    color: "#EF4444"
+    color: "#EF4444",
+    gameUrl: "https://www.roblox.com/games/6253846/Kick-a-Lucky-Block",
+    youtubeSearchUrl: "https://www.youtube.com/results?search_query=kick+a+lucky+block+roblox+shorts"
   },
   {
     name: "Steal a Brainrot",
@@ -293,7 +324,9 @@ export const robloxGames: RobloxGame[] = [
     trend: "#2 Roblox Game Feb 2026",
     youtubeEngagement: "High",
     contentAngle: "Meme content, PvP highlights, funny moments",
-    color: "#8B5CF6"
+    color: "#8B5CF6",
+    gameUrl: "https://www.roblox.com/games/17017769292/Steal-a-Brainrot",
+    youtubeSearchUrl: "https://www.youtube.com/results?search_query=steal+a+brainrot+roblox+shorts"
   },
   {
     name: "Blox Fruits",
@@ -301,7 +334,9 @@ export const robloxGames: RobloxGame[] = [
     trend: "Long-Running Giant",
     youtubeEngagement: "Consistent",
     contentAngle: "Fruit tier lists, progression guides, PvP highlights",
-    color: "#EC4899"
+    color: "#EC4899",
+    gameUrl: "https://www.roblox.com/games/2753915549/Blox-Fruits",
+    youtubeSearchUrl: "https://www.youtube.com/results?search_query=blox+fruits+roblox+shorts"
   }
 ];
 
@@ -636,6 +671,7 @@ export interface Competitor {
   subscribers: string;
   channelAge: string;
   topOutlierVideo: string;
+  topOutlierVideoUrl?: string;
   topOutlierViews: number;
   avgViews: number;
   outlierMultiplier: number;
@@ -643,7 +679,9 @@ export interface Competitor {
   thumbnailStrategy: string;
   contentFormula: string;
   cta: string;
+  channelUrl: string;
   funnelPlatform: string;
+  funnelUrl?: string;
   funnelPrice: string;
   funnelMembers: string;
   funnelMRR: string;
@@ -660,6 +698,7 @@ export const competitors: Competitor[] = [
     subscribers: "5.2K",
     channelAge: "~5 months",
     topOutlierVideo: "How I Make VIRAL Roblox Shorts ($10K/month)",
+    topOutlierVideoUrl: "https://www.youtube.com/@Ventura419",
     topOutlierViews: 124000,
     avgViews: 8000,
     outlierMultiplier: 15.5,
@@ -667,7 +706,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "YouTube Studio revenue screenshot ($10,398/mo) + Roblox avatar",
     contentFormula: "5-7 min tutorial showing exact record → edit → upload process with revenue proof",
     cta: "Check out the Program → Whop link",
+    channelUrl: "https://www.youtube.com/@Ventura419",
     funnelPlatform: "Whop (Motion)",
+    funnelUrl: "https://whop.com/m0tion",
     funnelPrice: "Invite-only",
     funnelMembers: "47",
     funnelMRR: "Unknown",
@@ -682,6 +723,7 @@ export const competitors: Competitor[] = [
     subscribers: "14K",
     channelAge: "~1 year",
     topOutlierVideo: "How to Make VIRAL Roblox Rant Videos (Free CapCut + AI Method)",
+    topOutlierVideoUrl: "https://www.youtube.com/@Ryvahn",
     topOutlierViews: 141000,
     avgViews: 15000,
     outlierMultiplier: 9.4,
@@ -689,7 +731,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Screen recording of analytics + bold text overlay ('141K Views', 'Escape View Jails')",
     contentFormula: "Short (4-8 min) step-by-step tutorials with screen recordings, free tools only",
     cta: "Join my Community → Skool + Apply to work with me 1-on-1",
+    channelUrl: "https://www.youtube.com/@Ryvahn",
     funnelPlatform: "Skool (Shorts Lab)",
+    funnelUrl: "https://www.skool.com/shorts-lab-1742",
     funnelPrice: "Unknown",
     funnelMembers: "Unknown",
     funnelMRR: "Unknown",
@@ -704,6 +748,7 @@ export const competitors: Competitor[] = [
     subscribers: "~5K",
     channelAge: "~1 year",
     topOutlierVideo: "how to grow a faceless youtube channel in 2025",
+    topOutlierVideoUrl: "https://www.youtube.com/@moneyboymax",
     topOutlierViews: 189000,
     avgViews: 12000,
     outlierMultiplier: 15.8,
@@ -711,7 +756,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Revenue screenshot ($10,450) + face cam + bold 'IT'S EASY' text",
     contentFormula: "Long-form deep dives (10-68 min), 'ranking shorts' niche, psychology of hooks",
     cta: "Apply for 1:1 mentorship here → Typeform",
+    channelUrl: "https://www.youtube.com/@moneyboymax",
     funnelPlatform: "1:1 Mentorship (Typeform)",
+    funnelUrl: "https://www.youtube.com/@moneyboymax",
     funnelPrice: "High-ticket",
     funnelMembers: "Small cohort",
     funnelMRR: "Unknown",
@@ -726,6 +773,7 @@ export const competitors: Competitor[] = [
     subscribers: "5.65K",
     channelAge: "~8 months",
     topOutlierVideo: "The Faceless Roblox Channel That Made Me $131,397 (Full Breakdown)",
+    topOutlierVideoUrl: "https://www.youtube.com/@BarreraChris",
     topOutlierViews: 57000,
     avgViews: 5000,
     outlierMultiplier: 11.4,
@@ -733,7 +781,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "YouTube Analytics screenshot showing $131,762.49 revenue + face cam",
     contentFormula: "Longer videos (9-43 min), detailed breakdowns, AI automation focus",
     cta: "Work 1on1 with me to build a profitable YouTube Automation business in 180 days",
+    channelUrl: "https://www.youtube.com/@BarreraChris",
     funnelPlatform: "YT Launchpad (1:1 coaching)",
+    funnelUrl: "https://www.youtube.com/@BarreraChris",
     funnelPrice: "High-ticket (180-day program)",
     funnelMembers: "Small cohort",
     funnelMRR: "Unknown",
@@ -748,6 +798,7 @@ export const competitors: Competitor[] = [
     subscribers: "156K",
     channelAge: "2+ years",
     topOutlierVideo: "YouTube's Algorithm Update Just Changed The AI Rules",
+    topOutlierVideoUrl: "https://www.youtube.com/@romayroh",
     topOutlierViews: 138000,
     avgViews: 30000,
     outlierMultiplier: 4.6,
@@ -755,7 +806,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Income proof + 'BORING' text overlay + face cam showing surprise/excitement",
     contentFormula: "9-17 min, faceless YouTube automation, algorithm updates, case studies",
     cta: "Join my community → Skool $36/month",
+    channelUrl: "https://www.youtube.com/@romayroh",
     funnelPlatform: "Skool (Faceless YouTube HQ)",
+    funnelUrl: "https://www.skool.com/views-for-income/about",
     funnelPrice: "$36/month",
     funnelMembers: "1,300",
     funnelMRR: "~$46,800",
@@ -770,6 +823,7 @@ export const competitors: Competitor[] = [
     subscribers: "~3K",
     channelAge: "~4 months",
     topOutlierVideo: "How I Make Viral Roblox Shorts Under 5 min ($10K/month)",
+    topOutlierVideoUrl: "https://www.youtube.com/@WealthifyAi",
     topOutlierViews: 63000,
     avgViews: 4000,
     outlierMultiplier: 15.75,
@@ -777,7 +831,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Revenue screenshot ($10,398.90) + Roblox avatar + '$3,690.90 more than usual' callout",
     contentFormula: "Faceless AI workflow (scripting + voiceover) + mobile editing on CapCut",
     cta: "Check out Nexlev here → affiliate tool link",
+    channelUrl: "https://www.youtube.com/@WealthifyAi",
     funnelPlatform: "Nexlev (tool affiliate)",
+    funnelUrl: "https://nexlev.io",
     funnelPrice: "Affiliate commission",
     funnelMembers: "N/A",
     funnelMRR: "Passive affiliate",
@@ -792,6 +848,7 @@ export const competitors: Competitor[] = [
     subscribers: "~8K",
     channelAge: "~8 months",
     topOutlierVideo: "How I Actually Make Viral Roblox AI Shorts In 5 Minutes",
+    topOutlierVideoUrl: "https://www.youtube.com/@Syrax",
     topOutlierViews: 255000,
     avgViews: 8000,
     outlierMultiplier: 31.9,
@@ -799,7 +856,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Multiple revenue screenshots side-by-side ($5,260 / $21,680 / $19,365) + face cam",
     contentFormula: "5 min tutorial, AI avatar generation, Filmora workflow, 4K quality",
     cta: "Join VSUB here → tool affiliate + Filmora affiliate",
+    channelUrl: "https://www.youtube.com/@Syrax",
     funnelPlatform: "Tool affiliates (Filmora + VSUB)",
+    funnelUrl: "https://filmora.wondershare.com",
     funnelPrice: "Affiliate commission",
     funnelMembers: "N/A",
     funnelMRR: "Passive affiliate",
@@ -814,6 +873,7 @@ export const competitors: Competitor[] = [
     subscribers: "42.1K",
     channelAge: "~1 year",
     topOutlierVideo: "How to Grow your Roblox Channel, FAST",
+    topOutlierVideoUrl: "https://www.youtube.com/@MoneyGroott",
     topOutlierViews: 506000,
     avgViews: 25000,
     outlierMultiplier: 20.2,
@@ -821,6 +881,7 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Simple text overlay + Roblox gameplay screenshot — no revenue proof",
     contentFormula: "Short (7 min) practical tips, no AI tools, organic growth focus",
     cta: "Subscribe and comment — NO paid funnel",
+    channelUrl: "https://www.youtube.com/@MoneyGroott",
     funnelPlatform: "NONE",
     funnelPrice: "Free",
     funnelMembers: "N/A",
@@ -836,6 +897,7 @@ export const competitors: Competitor[] = [
     subscribers: "76K",
     channelAge: "2+ years",
     topOutlierVideo: "I Went Pro in 10 Days...",
+    topOutlierVideoUrl: "https://www.youtube.com/@fabiojit",
     topOutlierViews: 1600000,
     avgViews: 80000,
     outlierMultiplier: 20.0,
@@ -843,7 +905,9 @@ export const competitors: Competitor[] = [
     thumbnailStrategy: "Personal face cam + dramatic expression + bold challenge text",
     contentFormula: "Personal story + challenge format, Fortnite-focused, 17-31 min",
     cta: "Join free Discord community (800+ members)",
+    channelUrl: "https://www.youtube.com/@fabiojit",
     funnelPlatform: "Discord (free)",
+    funnelUrl: "https://discord.gg/ZUwYCWz3a5",
     funnelPrice: "Free",
     funnelMembers: "800+",
     funnelMRR: "$0",

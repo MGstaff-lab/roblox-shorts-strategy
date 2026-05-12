@@ -303,9 +303,25 @@ export default function Home() {
                   <TrendingUp size={12} className="text-red-500" />
                   <span className="text-xs font-medium text-red-600">{game.trend}</span>
                 </div>
-                <div className="bg-slate-50 rounded-lg p-3">
+                <div className="bg-slate-50 rounded-lg p-3 mb-3">
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Content Angle</p>
                   <p className="text-sm text-slate-700">{game.contentAngle}</p>
+                </div>
+                <div className="flex gap-2">
+                  {game.gameUrl && (
+                    <a href={game.gameUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-slate-500 hover:text-red-600 transition-colors">
+                      <ExternalLink size={10} />
+                      <span>Play Game</span>
+                    </a>
+                  )}
+                  {game.youtubeSearchUrl && (
+                    <a href={game.youtubeSearchUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-slate-500 hover:text-red-600 transition-colors">
+                      <ExternalLink size={10} />
+                      <span>YouTube Shorts</span>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -344,7 +360,11 @@ export default function Home() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="font-display font-bold text-slate-900">{creator.name}</h3>
+                      <a href={creator.channelUrl} target="_blank" rel="noopener noreferrer"
+                        className="font-display font-bold text-slate-900 hover:text-red-600 transition-colors flex items-center gap-1 group">
+                        {creator.name}
+                        <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
                       <span className="text-xs px-2 py-0.5 bg-slate-100 text-slate-600 rounded-full">{creator.tier}</span>
                       <span className="text-xs font-mono-custom text-slate-500">{creator.subscribers}</span>
                     </div>
@@ -420,9 +440,16 @@ export default function Home() {
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
                       <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: c.color }} />
-                      <h3 className="font-display font-bold text-slate-900">{c.name}</h3>
+                      <a href={c.channelUrl} target="_blank" rel="noopener noreferrer"
+                        className="font-display font-bold text-slate-900 hover:text-red-600 transition-colors flex items-center gap-1 group">
+                        {c.name}
+                        <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
                     </div>
-                    <p className="text-xs text-slate-400 font-mono-custom">{c.handle}</p>
+                    <a href={c.channelUrl} target="_blank" rel="noopener noreferrer"
+                      className="text-xs text-slate-400 font-mono-custom hover:text-red-500 transition-colors">
+                      {c.handle}
+                    </a>
                   </div>
                   <span className={`text-xs px-2 py-0.5 rounded-full font-medium flex-shrink-0 ${
                     c.tier === 'Direct' ? 'bg-red-100 text-red-700' :
@@ -450,7 +477,15 @@ export default function Home() {
                 {/* Top outlier video */}
                 <div className="bg-slate-50 rounded-lg p-2.5 mb-2.5">
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Top Outlier Video</p>
-                  <p className="text-xs text-slate-700 font-medium leading-snug">"{c.topOutlierVideo}"</p>
+                  {c.topOutlierVideoUrl ? (
+                    <a href={c.topOutlierVideoUrl} target="_blank" rel="noopener noreferrer"
+                      className="text-xs text-slate-700 font-medium leading-snug hover:text-red-600 transition-colors flex items-start gap-1 group">
+                      <span>"{c.topOutlierVideo}"</span>
+                      <ExternalLink size={10} className="flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  ) : (
+                    <p className="text-xs text-slate-700 font-medium leading-snug">"{c.topOutlierVideo}"</p>
+                  )}
                 </div>
 
                 {/* Hook formula */}
@@ -464,7 +499,15 @@ export default function Home() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Funnel</p>
-                      <p className="text-xs text-slate-700 font-medium">{c.funnelPlatform}</p>
+                      {c.funnelUrl ? (
+                        <a href={c.funnelUrl} target="_blank" rel="noopener noreferrer"
+                          className="text-xs text-slate-700 font-medium hover:text-red-600 transition-colors flex items-center gap-1 group">
+                          {c.funnelPlatform}
+                          <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                      ) : (
+                        <p className="text-xs text-slate-700 font-medium">{c.funnelPlatform}</p>
+                      )}
                     </div>
                     <div className="text-right">
                       <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-0.5">Price</p>
@@ -580,10 +623,24 @@ export default function Home() {
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full" style={{ backgroundColor: c.color }} />
-                          <span className="font-medium text-slate-900">{c.name}</span>
+                          <a href={c.channelUrl} target="_blank" rel="noopener noreferrer"
+                            className="font-medium text-slate-900 hover:text-red-600 transition-colors flex items-center gap-1 group">
+                            {c.name}
+                            <ExternalLink size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </a>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-slate-600">{c.funnelPlatform}</td>
+                      <td className="px-4 py-3">
+                        {c.funnelUrl ? (
+                          <a href={c.funnelUrl} target="_blank" rel="noopener noreferrer"
+                            className="text-slate-600 hover:text-red-600 transition-colors flex items-center gap-1 group">
+                            {c.funnelPlatform}
+                            <ExternalLink size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </a>
+                        ) : (
+                          <span className="text-slate-600">{c.funnelPlatform}</span>
+                        )}
+                      </td>
                       <td className="px-4 py-3 font-mono-custom text-slate-700">{c.funnelPrice}</td>
                       <td className="px-4 py-3 font-mono-custom text-slate-700">{c.funnelMembers}</td>
                       <td className="px-4 py-3">
