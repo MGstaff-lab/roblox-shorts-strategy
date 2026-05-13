@@ -19,7 +19,7 @@ import {
   creators, hookData, robloxGames, monetizationStreams,
   calendarData, algorithmInsights, platformStats,
   competitors, competitiveGaps, hookFormulas,
-  shortsDays, longFormWeeks, week1Scripts,
+  shortsDays, longFormWeeks, week1Scripts, longFormScripts,
   type CalendarEntry, type ShortIdea, type ShortsDay, type LongFormIdea, type LongFormWeek, type ScriptBrief, type ScriptOutlinePoint
 } from "@/lib/data";
 import { ChevronDown, ChevronUp, Calendar, TrendingUp, DollarSign, Users, Gamepad2, Zap, BookOpen, Filter, Target, AlertTriangle, ExternalLink, BarChart2, Award, FileText, X, Copy, Check, Lightbulb, Mic } from "lucide-react";
@@ -506,7 +506,7 @@ function LongFormIdeaBank() {
             {/* Ideas */}
             <div className="p-4 grid md:grid-cols-3 gap-4">
               {week.ideas.map(idea => (
-                <LongFormIdeaCard key={idea.ideaNumber} idea={idea} />
+                <LongFormIdeaCard key={idea.ideaNumber} idea={idea} week={week.week} />
               ))}
             </div>
           </div>
@@ -519,13 +519,17 @@ function LongFormIdeaBank() {
 // ============================================================
 // LONG-FORM IDEA CARD
 // ============================================================
-function LongFormIdeaCard({ idea }: { idea: LongFormIdea }) {
+function LongFormIdeaCard({ idea, week }: { idea: LongFormIdea; week: number }) {
   const [expanded, setExpanded] = useState(false);
+  const [showScript, setShowScript] = useState(false);
+  const scriptId = `LF-${week}-${idea.ideaNumber}`;
+  const scriptBrief = longFormScripts.find((s: ScriptBrief) => s.id === scriptId);
   const ideaColors = ["border-l-blue-500", "border-l-indigo-500", "border-l-violet-500"];
   const ideaLabels = ["Option 1", "Option 2", "Option 3"];
 
   return (
     <div className={`border border-slate-200 border-l-4 ${ideaColors[idea.ideaNumber - 1]} rounded-lg bg-white hover:shadow-md transition-all duration-200`}>
+      {showScript && scriptBrief && <ScriptBriefModal brief={scriptBrief} onClose={() => setShowScript(false)} />}
       <div className="p-4 cursor-pointer" onClick={() => setExpanded(!expanded)}>
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
@@ -568,6 +572,19 @@ function LongFormIdeaCard({ idea }: { idea: LongFormIdea }) {
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-2.5">
               <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-0.5">🎯 Hook Formula</p>
               <p className="text-xs text-blue-800 font-medium">{idea.hookFormula}</p>
+            </div>
+          )}
+          {scriptBrief ? (
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowScript(true); }}
+              className="w-full mt-1 py-2.5 px-4 bg-slate-900 hover:bg-slate-700 text-white text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
+            >
+              <FileText size={13} />
+              View Script Brief — 3 Hooks + Talking Points + CTA
+            </button>
+          ) : (
+            <div className="w-full mt-1 py-2 px-4 bg-slate-100 text-slate-400 text-xs font-medium rounded-lg text-center">
+              Script brief coming soon
             </div>
           )}
         </div>

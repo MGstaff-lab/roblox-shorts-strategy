@@ -3247,3 +3247,937 @@ export const week1Scripts: ScriptBrief[] = [
     proTip: "Film the 'intro' of this video AFTER the 30 days are complete — so you can reference the real end result in the first 30 seconds. The 'cold open' with the final numbers is the most powerful hook for this format."
   }
 ];
+// Long-Form Script Briefs — All 4 Weeks (12 ideas total)
+// Key: "LF-{week}-{ideaNumber}"
+// Each has 3 hooks, 8-10 outline beats with talking points, CTA, proTip
+
+export const longFormScripts = [
+
+  // ═══════════════════════════════════════════════════════════════
+  // WEEK 1 — "Positioning, Differentiation & Game Trend Intelligence"
+  // ═══════════════════════════════════════════════════════════════
+
+  // LF-1-1: "The Roblox Shorts Channel That Made Me $131,397 — And What Every Competitor Got Wrong"
+  {
+    id: "LF-1-1",
+    title: "The Roblox Shorts Channel That Made Me $131,397 — And What Every Competitor Got Wrong",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Dollar Amount Open",
+        text: "Chris Barrera built a faceless Roblox channel that made $131,397. I studied every Roblox Shorts educator to find out exactly how — and discovered 8 things NONE of them teach. This is the full breakdown.",
+        formula: "Specific Dollar Amount Hook",
+        inspiredBy: "Chris Barrera 57K-view model + Fabiojit 1.6M model"
+      },
+      {
+        label: "Hook B — The Competitor Reveal",
+        text: "I watched every video from Ventura, Ryvahn, moneyboymax, Chris Barrera, Fabiojit, and Money Groot. They collectively have millions of views. And they're all missing the same 8 things. Here's what they won't tell you.",
+        formula: "Authority Reveal Hook",
+        inspiredBy: "Jake Thomas (Creator Hooks) — 5.9x avg view multiplier"
+      },
+      {
+        label: "Hook C — The Anti-Hype Open",
+        text: "Everyone teaching Roblox Shorts strategy is teaching the same 3 things. Nobody is talking about the 8 gaps that are wide open right now. This video is about those gaps — and how to build a channel in them.",
+        formula: "Anti-Hype / Controversy Hook",
+        inspiredBy: "Ryvahn 141K-view model"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Dollar Proof",
+        notes: "Open with the $131,397 number on screen. No intro music, no 'hey guys.' Say: 'This is what a faceless Roblox Shorts channel can make. I'm going to show you exactly how — and then show you the 8 things every competitor teaching this is getting wrong.' Establish stakes in the first 10 seconds."
+      },
+      {
+        beat: "Who This Is For (30 seconds)",
+        notes: "Explicitly address both audiences: 'If you already have a YouTube channel and want to add Shorts — this is for you. If you're starting from zero — this is also for you. The strategy is different for each, and I'll break down both.' This is the gap nobody else addresses."
+      },
+      {
+        beat: "The Competitive Landscape — 9 Competitors, 1 Map",
+        notes: "Show a simple on-screen graphic: 9 competitor names, their top video view count, and their funnel. Say: 'These are the people teaching Roblox Shorts right now. Ventura: 124K views, Whop program. Ryvahn: 141K views, Skool community. Fabiojit: 1.6M views, free Discord. Money Groot: 506K views — no funnel at all.' Walk through each one in 60–90 seconds."
+      },
+      {
+        beat: "Gap #1 — Nobody Makes Shorts ABOUT Making Shorts",
+        notes: "Talking point: 'Every competitor teaches Roblox Shorts strategy in long-form videos. Nobody is making Shorts that teach Shorts strategy. That's a massive distribution gap — your content can live in the same feed as your audience.' Give a 30-second example of what that Short would look like."
+      },
+      {
+        beat: "Gap #2 — Zero Content for Established YouTubers",
+        notes: "Talking point: 'If you already have 10K, 50K, or 100K subscribers, you have an unfair advantage nobody is talking about. Your existing audience is a warm traffic source for Shorts. Your watch history signals to the algorithm that you make quality content. None of the 9 competitors address this.' Spend 2–3 minutes here — this is a key differentiator."
+      },
+      {
+        beat: "Gap #3 — No Game-Specific Trend Analysis",
+        notes: "Talking point: 'Every competitor says 'make Roblox content' — but which game? When? For how long? Escape Tsunami was the #1 game in February 2026. 99 Nights in the Forest is generating 759K views per Short for some creators. Nobody is teaching how to read these trend windows and time your content.' Show a simple trend chart."
+      },
+      {
+        beat: "Gaps #4–8 — Rapid Fire",
+        notes: "Cover the remaining 5 gaps in 2–3 minutes total: Gap 4 — No consistency systems (everyone burns out at month 2). Gap 5 — No monetization beyond AdSense taught. Gap 6 — No community-building strategy (Romayroh makes $46,800/month from a Skool community — nobody else is teaching this model). Gap 7 — No two-audience strategy. Gap 8 — No ongoing case study with real numbers. Show each as a text card on screen."
+      },
+      {
+        beat: "The Channel Blueprint",
+        notes: "Talking point: 'Here's the channel I'm building to fill every single one of these gaps.' Show a simple content pillar map: Pillar 1 — Start (for new creators). Pillar 2 — Grow (for established creators). Pillar 3 — Monetize (beyond AdSense). Pillar 4 — Case Studies (real numbers, real games). This is your positioning statement."
+      },
+      {
+        beat: "The 30-Day Preview",
+        notes: "Give a 60-second preview of what's coming: 'Over the next 30 days, I'm posting 3 Shorts per day and 2 long-form videos per week. Every piece of content fills one of these 8 gaps. I'm documenting every view count, subscriber gain, and revenue number in real time.' This drives subscriptions."
+      },
+      {
+        beat: "CTA — Comment + Subscribe",
+        notes: "Say: 'Comment GAPS below and I'll send you the full competitor gap analysis. And subscribe — because the next video drops Thursday and it covers the 4 Roblox games driving 60% of viral Shorts right now.' End with a direct subscribe prompt, not a vague 'if you liked this.'"
+      }
+    ],
+    cta: {
+      text: "Comment 'GAPS' and I'll send you the full competitor gap analysis PDF. Subscribe — new video every Mon & Thu",
+      type: "Comment Trigger + Subscribe",
+      notes: "The comment trigger 'GAPS' creates engagement signals that boost the video in the algorithm. Pair with a pinned comment reply to everyone who comments."
+    },
+    proTip: "This is your channel launch video — it should feel like a manifesto. The goal is not just views, it's subscriptions. End every section with a reason to stay subscribed. Consider adding chapters so viewers can jump to the gap most relevant to them."
+  },
+
+  // LF-1-2: "Roblox Game Trend Report: The 4 Games Driving 60% of Viral Shorts Right Now (May 2026 Data)"
+  {
+    id: "LF-1-2",
+    title: "Roblox Game Trend Report: The 4 Games Driving 60% of Viral Shorts Right Now (May 2026 Data)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Data Authority Open",
+        text: "I analyzed 100 viral Roblox Shorts from May 2026. Four games are responsible for 60% of all viral content. Here's the full data breakdown — including how long each trend window lasts and which game you should be making content on right now.",
+        formula: "Data Authority Hook",
+        inspiredBy: "VidIQ data-backed content — 5.9x avg view multiplier"
+      },
+      {
+        label: "Hook B — The Specific Number",
+        text: "99 Nights in the Forest is generating 759,000 views per Short for some creators. Escape Tsunami was the #1 Roblox game in February 2026. Troll Tower and Kick a Lucky Block are wide open. Here's the full trend analysis.",
+        formula: "Specific Number Hook",
+        inspiredBy: "Ventura 124K-view model"
+      },
+      {
+        label: "Hook C — The Urgency Open",
+        text: "Every Roblox trend has a window. Miss it and you're competing against 10,000 videos instead of 100. Here's which 4 games are in their peak window right now — and how long you have left.",
+        formula: "Pain Point / Urgency Hook",
+        inspiredBy: "moneyboymax model"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Trend Window Concept",
+        notes: "Open with: 'Every Roblox game has a trend window — a period where the algorithm is actively pushing content from that game. Miss the window and you're fighting 10,000 other videos. Catch it early and you can get 10x the views with half the effort.' This frames the entire video."
+      },
+      {
+        beat: "How to Read a Roblox Trend (The Framework)",
+        notes: "Talking point: Explain the 3-phase trend cycle: Phase 1 — Early (low competition, high algorithm push). Phase 2 — Peak (maximum views, maximum competition). Phase 3 — Decline (still searchable, but algorithm has moved on). Show this as a simple curve graphic. This is the framework nobody else teaches."
+      },
+      {
+        beat: "Game #1 — Escape Tsunami",
+        notes: "Talking points: '#1 Roblox game in February 2026. Endless runner format — perfect for Shorts because each run is 30–60 seconds. Best content angles: speed runs, fail compilations, 'I survived X waves' challenges. Current trend phase: transitioning from Peak to Decline — still worth making content but pivot timing is important. Best hook formula for this game: Challenge/Copy hook.'"
+      },
+      {
+        beat: "Game #2 — 99 Nights in the Forest",
+        notes: "Talking points: 'Survival horror format — the emotional arc (fear → relief) is perfect for Shorts retention. Rirusha Roblox got 759K+ views on a single Short from this game. Current trend phase: Peak — this is the highest-opportunity game right now. Best content angles: night-by-night survival, horror reaction, strategy guides. Best hook formula: Specific Number hook (Night 47, Night 99).'"
+      },
+      {
+        beat: "Game #3 — Troll Tower",
+        notes: "Talking points: 'Obby/troll mechanics — the frustration-to-victory emotional arc drives massive replays. Current trend phase: Early-to-Peak — wide open, low competition. Best content angles: troll reactions, clutch moments, destroying trollers. This game is underreported by every competitor — it's the biggest opportunity right now for new creators. Best hook formula: Anti-Hype/Controversy hook.'"
+      },
+      {
+        beat: "Game #4 — Kick a Lucky Block",
+        notes: "Talking points: 'Casual viral trend format — unboxing-style reveals drive curiosity loops. Surging in May 2026. Current trend phase: Early — get in now. Best content angles: rare item reveals, challenge format, reaction content. Best hook formula: Specific Number hook (I kicked 1,000 lucky blocks — here's what happened).'"
+      },
+      {
+        beat: "The Trend Timing Matrix",
+        notes: "Show a simple 2x2 matrix: X-axis = Trend Phase (Early vs. Peak/Decline). Y-axis = Competition Level (Low vs. High). Plot all 4 games. The insight: Troll Tower and Kick a Lucky Block are in the low-competition/early phase — the highest-ROI quadrant. This is the visual takeaway of the entire video."
+      },
+      {
+        beat: "How to Pivot Between Games",
+        notes: "Talking point: 'When a game moves from Peak to Decline, you have 2–3 weeks to pivot. Here's the signal: when your views-per-Short drop 40% below your channel average on that game, it's time to pivot. Don't wait until the game is dead — move early.' Give a practical 3-step pivot process."
+      },
+      {
+        beat: "The Content Angle Playbook",
+        notes: "For each game, give 3 specific Short ideas they can film today. Example for 99 Nights: '1. I survived all 99 nights — here's what happened on Night 99. 2. The one mistake that kills everyone on Night 47. 3. The fastest route to Night 99 — nobody talks about this.' Make it immediately actionable."
+      },
+      {
+        beat: "CTA — Subscribe for Monthly Reports",
+        notes: "Say: 'I'm publishing a Roblox game trend report every month — which games are rising, which are declining, and which content angles are working. Subscribe so you never miss a trend window. And comment below: which of these 4 games are you making content on right now?'"
+      }
+    ],
+    cta: {
+      text: "Subscribe for monthly Roblox game trend reports — I'll tell you which game to cover BEFORE it peaks",
+      type: "Subscribe + Recurring Value Promise",
+      notes: "Position this as a monthly series — it gives people a reason to subscribe AND come back. The comment question drives engagement signals."
+    },
+    proTip: "Add YouTube chapters for each game so viewers can jump directly to their game of interest. This increases average view duration significantly. Also pin a comment with a link to the previous month's trend report to build series authority."
+  },
+
+  // LF-1-3: "I Went Pro on Roblox Shorts in 30 Days — Here's Every Step, Every Mistake, Every Number"
+  {
+    id: "LF-1-3",
+    title: "I Went Pro on Roblox Shorts in 30 Days — Here's Every Step, Every Mistake, Every Number",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Challenge Open",
+        text: "Fabiojit's 'I Went Pro in 10 Days' got 1.6 million views. Money Groot's Roblox growth video got 506,000 views with zero monetized funnel. I'm doing the Roblox Shorts version — and I'm showing you every number, every mistake, and every strategy that worked.",
+        formula: "Challenge / Copy Hook",
+        inspiredBy: "Fabiojit 1.6M model + Money Groot 506K model"
+      },
+      {
+        label: "Hook B — The Transparency Open",
+        text: "Day 1: 0 subscribers, 0 views, 0 revenue. Day 30: here are the real numbers. No fake screenshots, no cherry-picked stats. This is what 30 days of Roblox Shorts actually looks like.",
+        formula: "Income Proof / Transparency Hook",
+        inspiredBy: "Roberto Blake — income transparency content 6x avg views"
+      },
+      {
+        label: "Hook C — The Mistake Reveal",
+        text: "I made 7 mistakes in my first 30 days of Roblox Shorts. Each one cost me views, subscribers, or revenue. Here's every mistake, what I learned, and what I'd do differently starting today.",
+        formula: "Pain Point / Mistake Hook",
+        inspiredBy: "Nick Nimmin — 'mistake and fix' format 4.2x engagement"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Challenge Setup",
+        notes: "Open with a split screen: Fabiojit's 1.6M view thumbnail on one side, your Day 1 YouTube Studio screenshot on the other. Say: 'This is the challenge that got 1.6 million views. This is my starting point. Here's what happened over 30 days.' Establish the stakes immediately."
+      },
+      {
+        beat: "The Strategy Going In (Week 1 Plan)",
+        notes: "Talking points: 'Before Day 1, I mapped out the 8 competitor gaps, identified the 4 trending games, and built a content system: 3 Shorts per day, 2 long-form per week. Here's the exact plan I started with — and where it immediately fell apart.' Show your content calendar on screen."
+      },
+      {
+        beat: "Week 1 Results — The Reality Check",
+        notes: "Talking points: Show real YouTube Studio analytics. Cover: total views, subscriber gain, best-performing Short, worst-performing Short, and the one thing that surprised you. Be specific with numbers. Say: 'Week 1 taught me that [specific insight]. Here's what I changed going into Week 2.'"
+      },
+      {
+        beat: "Mistake #1 — The Hook Problem",
+        notes: "Talking point: 'My first 7 Shorts used the wrong hook formula for the game I was covering. Escape Tsunami content needs a Challenge hook, not an Authority hook. Once I switched, views went up X%. Here's the exact formula I switched to.' Make this immediately actionable."
+      },
+      {
+        beat: "Week 2 Results — The Pivot",
+        notes: "Talking points: Show Week 2 analytics. Cover: what changed after fixing the hook formula, which game drove the most views, and the one Short that outperformed everything else. Say: 'Week 2 was when I figured out that [specific insight about game trend timing or content angle].'"
+      },
+      {
+        beat: "Mistake #2 — The Consistency Trap",
+        notes: "Talking point: '3 Shorts per day sounds manageable until Day 12. Here's the batch filming system I built to stay consistent without burning out: film 21 Shorts in one 3-hour session, schedule them out, and never film the day of posting. This is the system nobody teaches.' Walk through the exact workflow."
+      },
+      {
+        beat: "Week 3 Results — The Breakthrough",
+        notes: "Talking points: Show Week 3 analytics. Cover: the first Short that broke 10K views, what was different about it, and how you replicated the formula. Say: 'Week 3 is when the algorithm started pushing my content to new audiences. Here's what changed — and it wasn't what I expected.'"
+      },
+      {
+        beat: "Mistake #3 — The Monetization Delay",
+        notes: "Talking point: 'I waited until Week 3 to think about monetization. That was a mistake. Here's what I should have set up on Day 1: the community comment trigger, the lead magnet, and the long-form funnel. Setting these up early means every view is building toward revenue, not just views.'"
+      },
+      {
+        beat: "Week 4 Results — The Full Picture",
+        notes: "Talking points: Show the complete 30-day analytics dashboard. Cover: total views, total subscribers, YPP eligibility progress, revenue (if any), and the one metric that surprised you most. Be fully transparent — including the numbers that didn't go as planned. This is what makes the video trustworthy."
+      },
+      {
+        beat: "The 7 Mistakes Summary + What I'd Do Differently",
+        notes: "Rapid-fire list of all 7 mistakes with the fix for each. Show as text cards on screen. This is the most shareable section of the video — make it visually clean and easy to screenshot."
+      },
+      {
+        beat: "Month 2 Plan + CTA",
+        notes: "Say: 'Month 2 is where the real growth happens — and I'm documenting everything. Subscribe to follow the full journey. Drop your Day 1 subscriber count in the comments — I'll reply to every single one with a personalized strategy for your channel size.'"
+      }
+    ],
+    cta: {
+      text: "Subscribe to follow the full 30-day challenge — I post every Mon & Thu. Drop your starting subscriber count below",
+      type: "Subscribe + Personalized Engagement",
+      notes: "Replying to every comment with personalized advice is time-intensive but drives massive loyalty and algorithm signals. Do it for at least the first 48 hours after posting."
+    },
+    proTip: "Film a short 'Day 1' clip at the very start of the challenge — even just 30 seconds of you looking at your YouTube Studio with 0 subscribers. This becomes your cold open and makes the transformation feel real and earned."
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // WEEK 2 — "Algorithm, Hook Formulas & Game-Specific Deep Dives"
+  // ═══════════════════════════════════════════════════════════════
+
+  // LF-2-1: "The 6 Hook Formulas Behind Every Viral Roblox Shorts Video (With Real View Counts)"
+  {
+    id: "LF-2-1",
+    title: "The 6 Hook Formulas Behind Every Viral Roblox Shorts Video (With Real View Counts)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Research Authority",
+        text: "I analyzed the top 9 Roblox Shorts educators — Ventura (124K views), Ryvahn (141K), Syrax (255K), Fabiojit (1.6M) — and found 6 hook formulas responsible for every single outlier video. Here's every formula with Roblox examples you can copy today.",
+        formula: "Data Authority Hook",
+        inspiredBy: "VidIQ data-backed content model"
+      },
+      {
+        label: "Hook B — The Multiplier Reveal",
+        text: "One hook formula gets 5.9x more views than average on Roblox Shorts. Another gets 4.2x. And most creators are using the weakest formula by default. Here's the full ranking — with real view counts.",
+        formula: "Specific Number Hook",
+        inspiredBy: "Jake Thomas (Creator Hooks) — 5.9x multiplier data"
+      },
+      {
+        label: "Hook C — The Mistake Reveal",
+        text: "Your Roblox Shorts are getting low views because of your hook — not your content, not your editing, not your posting time. Here are the 6 hook formulas that actually work, and the one formula every beginner uses that kills their reach.",
+        formula: "Pain Point Hook",
+        inspiredBy: "Nick Nimmin — mistake/fix format 4.2x engagement"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Hook Proof",
+        notes: "Open with two side-by-side Roblox Shorts thumbnails: one with 50 views, one with 255K views. Say: 'Same game. Same editing. Same posting time. The only difference is the hook. Here are the 6 formulas that separate viral from invisible.' No intro, no music — straight into the content."
+      },
+      {
+        beat: "Why Hooks Matter More Than Content Quality",
+        notes: "Talking point: 'The YouTube Shorts algorithm decides in the first 3 seconds whether to push your video or bury it. It's measuring one thing: did the viewer keep watching? That decision is made entirely by your hook. Here's the data: Shorts with a strong hook in the first 3 seconds get 4–6x more views than identical content with a weak hook.'"
+      },
+      {
+        beat: "Hook Formula #1 — The Specific Dollar Amount",
+        notes: "Talking points: 'This is the #1 formula used by Ventura, Ryvahn, moneyboymax, and Chris Barrera. Formula: [Dollar amount] + [Timeframe] + [Method]. Example: How I Make $10K/Month From Roblox Shorts in Under 5 Minutes. Why it works: money is the most universal curiosity trigger. View multiplier: 4–6x average. Best games to pair with: General Roblox strategy content.'"
+      },
+      {
+        beat: "Hook Formula #2 — The Expertise/Authority Reveal",
+        notes: "Talking points: 'Formula: I [studied/analyzed/tested] [specific thing] — here's what I found. Example: I Studied 100 Viral Roblox Shorts — Here Are the 8 Things Nobody Teaches. Why it works: positions you as the person who did the work so the viewer doesn't have to. View multiplier: 5.9x average (highest of all 6 formulas). Best games: works for any game when combined with data.'"
+      },
+      {
+        beat: "Hook Formula #3 — The Anti-Hype/Controversy",
+        notes: "Talking points: 'Formula: Everyone says [common belief] — here's why they're wrong. Example: Every Roblox Shorts tutorial is teaching you the wrong strategy. Why it works: triggers pattern interruption — the viewer has to watch to find out if their current approach is wrong. View multiplier: 3–4x average. Best games: works best for strategy/educational content, not gameplay.'"
+      },
+      {
+        beat: "Hook Formula #4 — The Challenge/Copy",
+        notes: "Talking points: 'Formula: [Famous creator] did [impressive thing] — I tried to copy it. Example: Fabiojit went pro in 10 days. I tried the Roblox version. Here's what happened. Why it works: borrowed authority + personal stakes + curiosity about the outcome. View multiplier: 3–5x average. Best games: Escape Tsunami, Troll Tower (challenge-friendly formats).'"
+      },
+      {
+        beat: "Hook Formula #5 — The Specific Number",
+        notes: "Talking points: 'Formula: [Specific number] + [surprising result]. Example: I Played 99 Nights in the Forest — Here's What Happened on Night 99. Why it works: specific numbers are more credible than vague claims, and the number creates a curiosity gap. View multiplier: 3–4x average. Best games: 99 Nights in the Forest (built-in number hook), Kick a Lucky Block (I kicked 1,000 blocks).'"
+      },
+      {
+        beat: "Hook Formula #6 — The Pain Point Escape",
+        notes: "Talking points: 'Formula: The #1 reason [audience] fails at [thing] — and the fix. Example: The #1 Reason Roblox Shorts Channels Die in Month 2 (It's Not What You Think). Why it works: directly addresses a fear the viewer already has. View multiplier: 2–3x average, but highest comment rate of all 6 formulas. Best for: building community engagement.'"
+      },
+      {
+        beat: "The Hook Formula Decision Matrix",
+        notes: "Show a simple table: 6 formulas × 3 columns (View Multiplier, Best Content Type, Best Roblox Game). This is the most shareable visual in the video. Walk through how to choose the right formula for each piece of content you're planning."
+      },
+      {
+        beat: "Live Hook Rewrites — 3 Examples",
+        notes: "Take 3 real weak hooks from Roblox Shorts (you can use generic examples) and rewrite them using the 6 formulas. Show the before/after on screen. This is the most practical section and drives the highest save rate."
+      },
+      {
+        beat: "CTA — Download the Swipe File",
+        notes: "Say: 'I put all 6 formulas with 5 Roblox examples each into a free swipe file. Link is in the description. And subscribe — because next Thursday I'm breaking down exactly why 99 Nights in the Forest is the highest-opportunity Roblox game right now.'"
+      }
+    ],
+    cta: {
+      text: "Download the free Hook Formula Swipe File — 6 templates with Roblox examples. Link in description",
+      type: "Lead Magnet + Subscribe",
+      notes: "The swipe file is your first lead magnet — collect emails here. Even a simple Google Doc works. The goal is to start building an email list from Week 2 onwards."
+    },
+    proTip: "Add a pinned comment with the hook formula decision matrix as a text list — viewers will screenshot it and share it, which drives organic reach. Also consider making a Short version of this video using just the formula names and view multipliers."
+  },
+
+  // LF-2-2: "Why 99 Nights in the Forest Is the Best Roblox Game for Shorts Right Now (Full Data Breakdown)"
+  {
+    id: "LF-2-2",
+    title: "Why 99 Nights in the Forest Is the Best Roblox Game for Shorts Right Now (Full Data Breakdown)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The View Count Proof",
+        text: "One Roblox game is generating 759,000 views per Short for some creators right now. It's not Escape Tsunami. It's not Blox Fruits. Here's the full data breakdown on why 99 Nights in the Forest is the highest-opportunity Roblox game in May 2026.",
+        formula: "Specific Number + Data Authority Hook",
+        inspiredBy: "Rirusha Roblox 759K+ views data"
+      },
+      {
+        label: "Hook B — The Emotional Mechanics Angle",
+        text: "The reason 99 Nights in the Forest goes viral on Shorts has nothing to do with the game itself. It's about emotional mechanics — and once you understand them, you can apply the same formula to any Roblox game. Here's the breakdown.",
+        formula: "Anti-Hype / Reframe Hook",
+        inspiredBy: "Paddy Galloway viral hook writing model"
+      },
+      {
+        label: "Hook C — The Urgency Open",
+        text: "99 Nights in the Forest is in its peak trend window right now. In 4–6 weeks, the competition will be 10x higher and the algorithm will have moved on. Here's the full content strategy to maximize this window before it closes.",
+        formula: "Urgency / FOMO Hook",
+        inspiredBy: "moneyboymax model"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The View Count Proof",
+        notes: "Open with a screenshot of a 99 Nights Short with 759K+ views. Say: 'This Short got 759,000 views. Same game, same format, same length as hundreds of other Roblox Shorts that got 500 views. Here's exactly why this one went viral — and how to replicate it.' No intro."
+      },
+      {
+        beat: "The Emotional Mechanics Framework",
+        notes: "Talking point: 'Every viral Roblox Short works because of emotional mechanics — the sequence of emotions the viewer feels while watching. 99 Nights has the perfect emotional arc for Shorts: Setup fear (will they survive?) → Rising tension (each night gets harder) → Payoff relief (they made it / they didn't). This arc creates natural replay loops.' Show this as a simple emotion curve graphic."
+      },
+      {
+        beat: "Why Survival Horror Works for Shorts",
+        notes: "Talking points: 'Shorts thrive on emotional compression — big emotions in under 60 seconds. Survival horror delivers: fear, tension, relief, and surprise in a single clip. 99 Nights gives you a natural countdown structure (Night 47, Night 72, Night 99) that creates built-in curiosity gaps. Compare this to Escape Tsunami — which is pure action with no emotional arc — and you see why 99 Nights has higher retention.'"
+      },
+      {
+        beat: "The 5 Content Angles That Are Working Right Now",
+        notes: "Walk through each angle with a specific example: Angle 1 — The Milestone Night (Night 99 reveal). Angle 2 — The Mistake Night (the one mistake that kills everyone on Night 47). Angle 3 — The Strategy Guide (the fastest route to Night 99). Angle 4 — The Horror Reaction (face-cam reaction to the scariest moment). Angle 5 — The Challenge (I played 99 Nights with [handicap] — here's what happened). For each angle, give the exact hook formula that works best."
+      },
+      {
+        beat: "The Hook Formula for 99 Nights",
+        notes: "Talking point: 'The Specific Number hook is the highest-performing formula for this game. Why? Because the game has a built-in number (99 nights) that creates an automatic curiosity gap. The formula: I [did/survived/failed] [Night X] — here's what happened. The closer to Night 99, the higher the curiosity. Pair this with a face-cam reaction for maximum emotional impact.'"
+      },
+      {
+        beat: "Trend Window Analysis — How Long Does This Last?",
+        notes: "Talking point: 'Based on the trend cycle of similar Roblox games, 99 Nights is currently in its Peak phase. Peak phases typically last 6–10 weeks before the algorithm starts deprioritizing the game. You have approximately 4–6 weeks of high-opportunity content window left. Here's how to maximize it: post 3 Shorts per week minimum, focus on the Milestone Night and Strategy Guide angles, and start building a playlist now.'"
+      },
+      {
+        beat: "The Editing Formula for Maximum Retention",
+        notes: "Talking points: 'The top-performing 99 Nights Shorts use a specific editing pattern: 1. Cold open on the most dramatic moment (not the beginning of the night). 2. Cut back to the start of that night. 3. Build tension with fast cuts and minimal music. 4. Payoff at the 45-second mark. 5. CTA in the final 5 seconds. This structure keeps the viewer watching because they already know something dramatic is coming — they just don't know how you got there.'"
+      },
+      {
+        beat: "Applying the Framework to Other Games",
+        notes: "Talking point: 'The emotional mechanics framework works for any Roblox game. Here's how to apply it to Troll Tower (frustration → victory arc), Kick a Lucky Block (anticipation → reveal arc), and Escape Tsunami (speed → survival arc). The game changes, the emotional arc stays the same.'"
+      },
+      {
+        beat: "The 30-Day 99 Nights Content Plan",
+        notes: "Give a specific 30-day content plan for this game: Week 1 — Establish the channel with 3 milestone night Shorts. Week 2 — Strategy guide Shorts. Week 3 — Challenge format. Week 4 — Pivot signal check and game trend update. Make this immediately actionable."
+      },
+      {
+        beat: "CTA — Subscribe for Weekly Game Reports",
+        notes: "Say: 'I'm publishing a Roblox game trend report every month — which games are rising, which are declining, and which content angles are working. Subscribe so you never miss a trend window. And comment below: what night are you on in 99 Nights right now?'"
+      }
+    ],
+    cta: {
+      text: "Subscribe for weekly Roblox game trend reports — I'll tell you which game to pivot to before the next wave",
+      type: "Subscribe + Series Promise",
+      notes: "The comment question 'what night are you on' drives engagement from actual players of the game — which are exactly your target viewers. This creates a community feel in the comments."
+    },
+    proTip: "Film a 99 Nights Short specifically for this video's promotion — use the exact hook formula you teach in the video. When viewers see it working in real time, it builds massive credibility for the strategy."
+  },
+
+  // LF-2-3: "The Complete Roblox Shorts Content System: How to Never Run Out of Ideas Using the Competitor Gap Method"
+  {
+    id: "LF-2-3",
+    title: "The Complete Roblox Shorts Content System: How to Never Run Out of Ideas Using the Competitor Gap Method",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The System Reveal",
+        text: "I mapped every content gap the top 9 Roblox Shorts educators are missing — and turned each gap into a repeatable content format you can use every week for 90 days without repeating yourself. Here's the full system.",
+        formula: "Anti-Hype / System Reveal Hook",
+        inspiredBy: "Channel Makers — content system reveals drive highest saves"
+      },
+      {
+        label: "Hook B — The Burnout Prevention",
+        text: "Most Roblox Shorts channels die in Month 2. Not because of the algorithm. Not because of the competition. Because the creator ran out of ideas and burned out. Here's the content system that prevents that — built from 8 competitor gaps and 4 trending games.",
+        formula: "Pain Point / Burnout Hook",
+        inspiredBy: "Nick Nimmin — consistency beats frequency research"
+      },
+      {
+        label: "Hook C — The Specific Number",
+        text: "90 Shorts ideas. 12 long-form video ideas. 8 competitor gaps. 4 trending games. One system. Here's how to build a Roblox Shorts content calendar that runs itself for 30 days.",
+        formula: "Specific Number Hook",
+        inspiredBy: "Ventura 124K-view model"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Month 2 Problem",
+        notes: "Open with: 'Most Roblox Shorts channels post consistently for 3–4 weeks, then go silent. Not because of the algorithm. Because they ran out of ideas. I built a system that generates 90 Shorts ideas and 12 long-form ideas from a single research session. Here's the full system.' Establish the problem before the solution."
+      },
+      {
+        beat: "The 4 Content Pillars",
+        notes: "Talking point: 'Every piece of content you make should serve one of 4 pillars: Start (for new creators), Grow (for established creators), Monetize (beyond AdSense), and Case Study (real numbers, real games). This is the framework that prevents you from making random content — every video has a purpose and a target audience.' Show this as a simple 4-pillar graphic."
+      },
+      {
+        beat: "The Competitor Gap Method — 8 Gaps, 8 Content Series",
+        notes: "Talking points: 'Each of the 8 competitor gaps I identified is a content series, not just a single video. Gap #1 (Shorts about making Shorts) = a 30-video Short series. Gap #2 (established YouTuber angle) = a 10-video long-form series. Gap #3 (game-specific trend analysis) = a monthly report series. Walk through how each gap becomes a series with a clear content structure.'"
+      },
+      {
+        beat: "The Game Rotation System",
+        notes: "Talking point: 'Instead of going all-in on one game, rotate between 4 games on a weekly schedule: Monday/Tuesday — Escape Tsunami. Wednesday/Thursday — 99 Nights in the Forest. Friday — Troll Tower or Kick a Lucky Block. This rotation keeps your content fresh, protects you from a single game declining, and signals to the algorithm that you cover the full Roblox niche.'"
+      },
+      {
+        beat: "The Batch Filming Workflow",
+        notes: "Talking points: 'The system only works if you can execute it consistently. Here's the batch filming workflow: Step 1 — Spend 30 minutes on Sunday planning 21 Shorts for the week (3 per day). Step 2 — Film all 21 in one 2–3 hour session. Step 3 — Edit in batches of 7. Step 4 — Schedule all 21 on Monday morning. This means you never film the day you post — which eliminates the biggest consistency killer.' Walk through the exact workflow step by step."
+      },
+      {
+        beat: "The Hook Bank",
+        notes: "Talking point: 'Before you film anything, build a hook bank — a running document of 50+ hook variations across all 6 formulas. When you sit down to film, you never start from scratch. You pick a hook from the bank, match it to the game you're covering, and film. Here's how to build your hook bank in 20 minutes using the 6 formulas from last week's video.' Make this practical and fast."
+      },
+      {
+        beat: "The Idea Generation Loop",
+        notes: "Talking point: 'The Competitor Gap Method generates ideas automatically: Step 1 — Check which competitor gap is least covered this week. Step 2 — Match it to the highest-opportunity game from the trend report. Step 3 — Apply the highest-performing hook formula for that game. Step 4 — Film. This loop generates a new idea every time you complete it.' Show this as a simple flowchart."
+      },
+      {
+        beat: "The 30-Day Calendar Template",
+        notes: "Walk through a complete 30-day calendar: Week 1 themes, Week 2 themes, Week 3 themes, Week 4 themes. Show how each week builds on the previous one — Week 1 establishes positioning, Week 2 goes deep on strategy, Week 3 addresses established creators, Week 4 covers monetization. This is the structure of the content calendar you've already built."
+      },
+      {
+        beat: "The Consistency Accountability System",
+        notes: "Talking point: 'The system is only as good as your execution. Here's the accountability structure: post your weekly plan in the comments every Sunday. I'll reply with feedback. This creates public commitment — which is the strongest consistency driver. Plus, it builds community engagement signals for both our channels.'"
+      },
+      {
+        beat: "CTA — Download the Template",
+        notes: "Say: 'I turned this entire system into a free 30-day content calendar template — 90 Shorts ideas, 12 long-form ideas, all pre-mapped with hook formulas and game assignments. Link is in the description. And subscribe — because next week I'm covering the established YouTuber angle in detail.'"
+      }
+    ],
+    cta: {
+      text: "Download the free Roblox Shorts Content System template — 90 days of ideas pre-mapped. Link in description",
+      type: "Lead Magnet + Subscribe",
+      notes: "This is your second lead magnet. Pair it with an email sequence that delivers one gap analysis per week. The goal is to move viewers from YouTube audience to email list subscribers."
+    },
+    proTip: "This video is your 'pillar content' — the one video you reference in every other video. Make sure it has strong chapters, a clean thumbnail, and a pinned comment with the template link. It should be the first video you link to in your channel description."
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // WEEK 3 — "Established YouTuber Strategy & Monetization Foundations"
+  // ═══════════════════════════════════════════════════════════════
+
+  // LF-3-1: "You Already Have Subscribers — Here's Why That's Your Unfair Advantage in Roblox Shorts"
+  {
+    id: "LF-3-1",
+    title: "You Already Have Subscribers — Here's Why That's Your Unfair Advantage in Roblox Shorts",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Unfair Advantage Open",
+        text: "If you already have YouTube subscribers — even 1,000 — you have an unfair advantage in Roblox Shorts that new creators can't replicate. None of the 9 competitors teaching Roblox Shorts strategy talk about this. Here's exactly what it is and how to use it.",
+        formula: "Anti-Hype / Exclusive Knowledge Hook",
+        inspiredBy: "Paddy Galloway — established creator strategy"
+      },
+      {
+        label: "Hook B — The Algorithm Insider",
+        text: "YouTube's algorithm treats established channels differently than new ones. Your watch history, your subscriber engagement rate, and your existing content all give Shorts from your channel a head start. Here's the data — and how to maximize it.",
+        formula: "Data Authority Hook",
+        inspiredBy: "Robert Benjamin — algorithm explanation content"
+      },
+      {
+        label: "Hook C — The Missed Opportunity",
+        text: "Most established YouTubers adding Shorts to their channel make the same 3 mistakes. They treat Shorts like a separate channel, they don't cross-promote correctly, and they pick the wrong games. Here's the right way to add Roblox Shorts to an existing channel.",
+        formula: "Pain Point / Mistake Hook",
+        inspiredBy: "Nick Nimmin — mistake/fix format"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Advantage Statement",
+        notes: "Open with: 'If you have 1,000 subscribers on YouTube, you are not starting from zero on Roblox Shorts. You are starting from an advantage that new creators will spend 6 months trying to build. Here's exactly what that advantage is — and why none of the people teaching Roblox Shorts strategy are talking about it.' Direct, confident, no fluff."
+      },
+      {
+        beat: "Advantage #1 — The Algorithm Trust Signal",
+        notes: "Talking point: 'YouTube's algorithm uses your channel's historical engagement rate as a trust signal when deciding how widely to distribute new content. An established channel with consistent engagement gets pushed to a wider initial audience than a brand new channel. For Roblox Shorts, this means your first Short gets more initial views than a new creator's first Short — even if the content quality is identical.' Show this with a simple diagram."
+      },
+      {
+        beat: "Advantage #2 — The Warm Audience Cross-Promotion",
+        notes: "Talking point: 'Your existing subscribers are a warm audience for your Shorts. When you post a Short, it appears in their Shorts feed — but it also appears in their regular subscription feed. New creators have zero of this. Here's how to activate your existing audience for Shorts: pin a community post announcing your Shorts launch, add a Shorts playlist to your channel homepage, and mention Shorts in your next long-form video.' Give the exact steps."
+      },
+      {
+        beat: "Advantage #3 — The Content Repurposing Machine",
+        notes: "Talking point: 'If you have existing long-form videos, you already have a Shorts library waiting to be created. One long-form video can generate 10–15 Shorts clips. Here's the clip-finding system: watch your existing videos at 2x speed, mark every moment where you say something surprising, counterintuitive, or emotionally resonant, and those are your Shorts. A 20-minute video has at least 5 viral Short moments.' Walk through a live example."
+      },
+      {
+        beat: "Mistake #1 — Treating Shorts as a Separate Channel",
+        notes: "Talking point: 'The biggest mistake established YouTubers make is treating Shorts like a completely separate content strategy. Shorts should funnel viewers to your long-form content. Every Short should have a CTA that drives to a specific long-form video. Here's the funnel structure: Short hook → Short payoff → CTA to long-form → long-form drives subscriptions and revenue.'"
+      },
+      {
+        beat: "Mistake #2 — Wrong Game Selection",
+        notes: "Talking point: 'Established YouTubers often pick games based on personal preference, not trend data. If your existing audience is into Roblox, start with the game that has the highest trend momentum right now — not the game you personally enjoy most. The game trend report (link in description) shows you exactly which games to prioritize based on current algorithm push.'"
+      },
+      {
+        beat: "Mistake #3 — Ignoring the Subscriber Announcement",
+        notes: "Talking point: 'Most established YouTubers quietly add Shorts to their channel without telling their existing audience. This is a massive missed opportunity. Make a dedicated video announcing your Shorts launch — explain why you're doing it, what game you're covering, and what viewers can expect. This single video can drive 500–1,000 new Shorts subscribers from your existing audience in 24 hours.'"
+      },
+      {
+        beat: "The Established Creator Shorts Strategy (Step by Step)",
+        notes: "Walk through the complete strategy: Step 1 — Audit your existing long-form content for Shorts clips (Week 1). Step 2 — Post 3 repurposed Shorts per day while filming original Shorts (Week 1–2). Step 3 — Make the Shorts announcement video to your existing audience (Week 1). Step 4 — Build the cross-promotion funnel (Short → Long-form → Subscribe). Step 5 — Add original game-specific Shorts once the repurposed content is live."
+      },
+      {
+        beat: "The Channel Size Breakdown",
+        notes: "Talking point: 'The strategy is slightly different depending on your current subscriber count. Under 1K: focus on original Shorts, no repurposing yet. 1K–10K: 50% repurposed, 50% original. 10K–100K: 30% repurposed, 70% original, heavy cross-promotion. 100K+: mostly original Shorts, use your existing audience as a launch pad for every new Short.' Show this as a simple table."
+      },
+      {
+        beat: "CTA — Comment Your Subscriber Count",
+        notes: "Say: 'Comment your current subscriber count below — I'll reply with the exact Shorts strategy for your channel size. And subscribe — because next Thursday I'm covering how to add Roblox Shorts to your existing channel without confusing your current audience.'"
+      }
+    ],
+    cta: {
+      text: "Comment your current subscriber count — I'll tell you the exact Shorts strategy for your channel size",
+      type: "Personalized Comment Engagement",
+      notes: "This CTA drives massive comment engagement because it promises personalized value. Reply to every comment in the first 48 hours — this is what builds the consulting relationship that leads to paid clients."
+    },
+    proTip: "This video is your primary lead generation tool for established YouTuber consulting clients. End with a soft pitch: 'If you want a personalized channel audit and Shorts strategy, the link to work with me 1:1 is in the description.' This is where consulting clients come from."
+  },
+
+  // LF-3-2: "Troll Tower & Kick a Lucky Block: The Underrated Roblox Shorts Goldmine (Full Strategy)"
+  {
+    id: "LF-3-2",
+    title: "Troll Tower & Kick a Lucky Block: The Underrated Roblox Shorts Goldmine (Full Strategy)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Underrated Angle",
+        text: "While everyone is fighting over Escape Tsunami content, Troll Tower and Kick a Lucky Block are wide open. I analyzed the top 50 viral Shorts from both games — here are the exact content angles, hook formulas, and posting windows that are working right now.",
+        formula: "Anti-Hype / Underdog Hook",
+        inspiredBy: "Paddy Galloway anti-hype model"
+      },
+      {
+        label: "Hook B — The Competition Gap",
+        text: "Escape Tsunami has 10,000 Shorts competing for the same views. Troll Tower has 800. Kick a Lucky Block has 400. Here's the full strategy for dominating the low-competition games before everyone else figures it out.",
+        formula: "Specific Number + Urgency Hook",
+        inspiredBy: "Ventura 124K-view model"
+      },
+      {
+        label: "Hook C — The Emotional Mechanics",
+        text: "Troll Tower has the highest replay rate of any Roblox game right now. Here's why — and how to film it to maximize the algorithm push.",
+        formula: "Data Authority Hook",
+        inspiredBy: "VidIQ data-backed content model"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The Competition Math",
+        notes: "Open with: 'Escape Tsunami has 10,000 Shorts competing for the same views. Troll Tower has 800. Kick a Lucky Block has 400. Same algorithm push, 12x less competition. Here's the full strategy for both games.' Show the numbers on screen — this is the entire argument in 10 seconds."
+      },
+      {
+        beat: "Why Low-Competition Games Win",
+        notes: "Talking point: 'The YouTube Shorts algorithm pushes content based on engagement rate, not absolute view count. A Short with 5,000 views and 80% retention beats a Short with 50,000 views and 40% retention. In a low-competition game, your content reaches a higher percentage of the available audience — which means higher engagement rates — which means more algorithm push. This is the compounding advantage of being early.'"
+      },
+      {
+        beat: "Troll Tower — The Emotional Mechanics",
+        notes: "Talking points: 'Troll Tower works because of the frustration-to-victory emotional arc. The viewer feels the creator's frustration (relatable) and then experiences vicarious victory (satisfying). This arc creates: high rewatch rate (viewers want to see the victory again), high share rate (people tag friends who also play), and high comment rate (people share their own troll stories). This is the highest-engagement emotional arc in Roblox Shorts.'"
+      },
+      {
+        beat: "Troll Tower — The 5 Content Angles",
+        notes: "Walk through each angle: Angle 1 — The Troll Reaction (face-cam reaction to getting trolled). Angle 2 — The Revenge (I trolled the troller). Angle 3 — The Clutch Moment (I almost failed but...). Angle 4 — The Tutorial (how to beat the hardest troll). Angle 5 — The Challenge (I played Troll Tower with [handicap]). For each, give the exact hook formula and expected view range."
+      },
+      {
+        beat: "Troll Tower — The Hook Formula",
+        notes: "Talking point: 'The Anti-Hype/Controversy hook works best for Troll Tower because the game is inherently about subverting expectations. Formula: Everyone says [common belief about the troll] — here's why they're wrong. Example: Everyone says the final troll is impossible — here's the 3-second trick that beats it every time. This hook formula generated 3–4x average views in the games I analyzed.'"
+      },
+      {
+        beat: "Kick a Lucky Block — The Emotional Mechanics",
+        notes: "Talking points: 'Kick a Lucky Block works because of the anticipation-to-reveal emotional arc — the same mechanic that makes unboxing videos addictive. The viewer doesn't know what's in the block, which creates a curiosity loop that keeps them watching. The key is to delay the reveal as long as possible while building anticipation. The longer the buildup, the higher the retention.'"
+      },
+      {
+        beat: "Kick a Lucky Block — The 5 Content Angles",
+        notes: "Walk through each angle: Angle 1 — The Rare Item Reveal (I found the rarest item). Angle 2 — The Challenge (I kicked 1,000 lucky blocks). Angle 3 — The Comparison (lucky block vs. lucky block — which is better?). Angle 4 — The Reaction (face-cam reaction to getting the worst/best item). Angle 5 — The Strategy (the trick to getting rare items every time). For each, give the hook formula."
+      },
+      {
+        beat: "Kick a Lucky Block — The Hook Formula",
+        notes: "Talking point: 'The Specific Number hook is the highest-performing formula for this game. Formula: I kicked [X] lucky blocks — here's what happened. The higher the number, the more impressive the commitment signal. 1,000 blocks is the sweet spot — big enough to be impressive, small enough to be believable. Pair with a face-cam reaction for maximum emotional impact.'"
+      },
+      {
+        beat: "The Two-Game Rotation Strategy",
+        notes: "Talking point: 'Here's how to use both games together: Post Troll Tower content on Monday/Wednesday (frustration arc audience). Post Kick a Lucky Block content on Tuesday/Thursday (curiosity arc audience). This rotation gives you two distinct audience segments that don't overlap — which means double the algorithm reach with the same posting frequency.'"
+      },
+      {
+        beat: "CTA — Subscribe for Weekly Game Reports",
+        notes: "Say: 'Subscribe for weekly Roblox game trend reports — I'll tell you which game to pivot to before the next wave. And comment below: which game are you making content on right now — Troll Tower, Kick a Lucky Block, or something else?'"
+      }
+    ],
+    cta: {
+      text: "Subscribe for weekly Roblox game trend reports — I'll tell you which game to pivot to before the next wave",
+      type: "Subscribe + Series Promise",
+      notes: "Position this as part of the ongoing game trend series. Reference the Week 1 game trend report to build series continuity."
+    },
+    proTip: "Film a Troll Tower Short and a Kick a Lucky Block Short specifically to promote this video. Use the exact hook formulas you teach. When viewers see the formulas working in real time, it validates the strategy and drives subscriptions."
+  },
+
+  // LF-3-3: "30-Day Roblox Shorts Challenge: Week 3 Full Breakdown (Real Analytics, Real Revenue)"
+  {
+    id: "LF-3-3",
+    title: "30-Day Roblox Shorts Challenge: Week 3 Full Breakdown (Real Analytics, Real Revenue)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Progress Reveal",
+        text: "Week 3 of the 30-day Roblox Shorts challenge — here are the real view counts, subscriber gains, revenue numbers, and the one game pivot that changed everything. Plus: the consistency system that kept me posting when I wanted to quit.",
+        formula: "Income Proof + Challenge Hook",
+        inspiredBy: "Roberto Blake income transparency model — 6x avg views"
+      },
+      {
+        label: "Hook B — The Turning Point",
+        text: "Week 3 is when most Roblox Shorts channels either break through or give up. Here's what happened in my Week 3 — the breakthrough, the mistake, and the one change that doubled my views overnight.",
+        formula: "Narrative / Story Hook",
+        inspiredBy: "Fabiojit 1.6M narrative model"
+      },
+      {
+        label: "Hook C — The Real Numbers",
+        text: "Nobody shows real Roblox Shorts analytics. Here are mine from Week 3: [X] views, [X] subscribers, [X] revenue. The good, the bad, and the one number that surprised me most.",
+        formula: "Transparency / Income Proof Hook",
+        inspiredBy: "Shelby Church — exact income reveal 8x avg views"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — Week 3 Dashboard Screenshot",
+        notes: "Open with your actual YouTube Studio analytics for Week 3 on screen. Say: 'This is Week 3 of the 30-day Roblox Shorts challenge. Here are the real numbers — no cherry-picking, no fake screenshots. Let's break down what happened.' The transparency of showing real analytics is the entire hook."
+      },
+      {
+        beat: "Week 3 Overview — The Numbers",
+        notes: "Walk through: Total views (Week 3 vs. Week 2 comparison). New subscribers. Best-performing Short (title, views, hook formula used). Worst-performing Short (title, views, what went wrong). Revenue (if YPP eligible) or estimated RPM trajectory. Impressions and CTR. Average view duration. Be completely transparent — including the numbers that underperformed."
+      },
+      {
+        beat: "The Game Pivot — What Changed",
+        notes: "Talking point: 'In Week 3, I pivoted from [Game A] to [Game B] based on the trend data. Here's what the analytics showed before the pivot, what triggered the decision, and what happened to my views after. The pivot signal was: my views-per-Short on [Game A] dropped 40% below my channel average over 5 consecutive Shorts. That's the exact threshold I mentioned in the Week 1 game trend report.'"
+      },
+      {
+        beat: "The Consistency System — What Kept Me Going",
+        notes: "Talking point: 'Week 3 is when most creators quit. The content feels repetitive, the growth feels slow, and the algorithm feels random. Here's the system that kept me consistent: the batch filming workflow (3 hours on Sunday = 21 Shorts for the week), the hook bank (never starting from scratch), and the public accountability comment (posting my weekly plan every Sunday). Walk through each element with specific examples from Week 3.'"
+      },
+      {
+        beat: "The Breakthrough Short — What Made It Work",
+        notes: "Deep dive into the best-performing Short of Week 3: Show the hook, the content structure, the editing choices, and the CTA. Analyze why it outperformed: was it the hook formula? The game? The posting time? The thumbnail? Give a specific, replicable breakdown that viewers can apply to their own content."
+      },
+      {
+        beat: "The Mistake — What I'd Do Differently",
+        notes: "Be honest about one specific mistake from Week 3. Examples: posted at the wrong time and lost 40% of potential views, used the wrong hook formula for the game, or filmed too many Shorts in one style and the algorithm stopped pushing them. The mistake section is often the most-watched part of case study videos — don't skip it."
+      },
+      {
+        beat: "The Monetization Progress",
+        notes: "Talking point: 'Here's where I am on the path to YouTube Partner Program: [X] subscribers of 500 needed, [X] watch hours of 3,000 needed (or [X] Shorts views of 3M needed). At the current growth rate, I'll hit YPP eligibility in [X] weeks. But more importantly, here's the pre-YPP revenue I'm already generating: [community engagement, lead magnet signups, consulting inquiries].'"
+      },
+      {
+        beat: "Week 4 Preview — The Monetization Focus",
+        notes: "Talking point: 'Week 4 is the monetization week — I'm building out the full income stack: community, brand deals, consulting, and affiliate revenue. Here's the plan going into Week 4 and what I expect the numbers to look like.' This creates anticipation for the Week 4 video."
+      },
+      {
+        beat: "Audience Q&A — Answering Top Comments",
+        notes: "Pick 3–5 top comments from the Week 1 and Week 2 videos and answer them on camera. This shows community engagement, rewards loyal viewers, and creates a recurring segment that drives comments on future videos."
+      },
+      {
+        beat: "CTA — Subscribe + Comment",
+        notes: "Say: 'Subscribe to follow the full challenge — Week 4 drops next Thursday and it's the monetization breakdown. And comment below: what week are you on in your own Roblox Shorts journey? I read every single comment.'"
+      }
+    ],
+    cta: {
+      text: "Subscribe to follow the full challenge. Comment your own Week 3 numbers — let's compare",
+      type: "Subscribe + Community Engagement",
+      notes: "The 'let's compare' CTA creates a community dynamic where viewers share their own numbers. This is extremely powerful for building a consulting audience — people who share their numbers are actively looking for guidance."
+    },
+    proTip: "Add a 'Week 3 Summary Card' as a pinned comment — a simple text breakdown of the key metrics. Viewers who don't watch the full video will still see the numbers and engage. This also makes the video easier to reference in future videos."
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // WEEK 4 — "Full Monetization Stack, Community Building & 30-Day Finale"
+  // ═══════════════════════════════════════════════════════════════
+
+  // LF-4-1: "The Full Roblox Shorts Monetization Stack: 6 Income Streams Nobody Is Teaching (With Real Numbers)"
+  {
+    id: "LF-4-1",
+    title: "The Full Roblox Shorts Monetization Stack: 6 Income Streams Nobody Is Teaching (With Real Numbers)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Competitor Comparison",
+        text: "Romayroh makes $46,800/month from a Skool community. Ventura has a Whop program. Fabiojit has 800 Discord members. Chris Barrera does high-ticket coaching. None of them teach the FULL monetization stack — I'm doing it here with real numbers from each stream.",
+        formula: "Specific Dollar Amount + Anti-Hype Hook",
+        inspiredBy: "Romayroh $46,800 MRR model + Roberto Blake income transparency"
+      },
+      {
+        label: "Hook B — The AdSense Reality Check",
+        text: "YouTube Shorts AdSense pays $0.02 to $0.08 per 1,000 views. At 100,000 views per month, that's $2 to $8. Here are the 6 income streams that actually make money from a Roblox Shorts channel — with real numbers.",
+        formula: "Specific Number + Pain Point Hook",
+        inspiredBy: "Shelby Church — exact income reveal 8x avg views"
+      },
+      {
+        label: "Hook C — The Stack Reveal",
+        text: "One Roblox Shorts creator makes $46,800/month. Another makes $131,397 per year. A third has zero monetization despite 506K views. The difference isn't the views — it's the monetization stack. Here are all 6 streams.",
+        formula: "Contrast / Comparison Hook",
+        inspiredBy: "Money Groot 506K views + zero funnel gap"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The AdSense Math",
+        notes: "Open with: '$0.03 per 1,000 views. That's what YouTube Shorts AdSense pays on average. At 100,000 views per month — which is a solid Roblox Shorts channel — that's $3. Three dollars. Here are the 6 income streams that actually build a real business from a Roblox Shorts channel.' Show the math on screen. The contrast is the hook."
+      },
+      {
+        beat: "The Monetization Stack Overview",
+        notes: "Show a simple pyramid graphic: AdSense at the bottom (lowest revenue, highest volume), then affiliate revenue, brand deals, lead magnets/digital products, community membership, and high-ticket consulting at the top. Say: 'Most creators only have the bottom layer. The creators making real money have all 6. Here's how to build each one.'"
+      },
+      {
+        beat: "Stream #1 — YouTube Partner Program (AdSense)",
+        notes: "Talking points: 'The YPP threshold for Shorts: 500 subscribers + 3M Shorts views in 90 days (or 3,000 watch hours). RPM for gaming Shorts: $0.02–$0.08. At 1M views/month: $20–$80. This is not a business — it's a signal that your channel is growing. Treat AdSense as a milestone, not a revenue stream. The real value of YPP is the credibility signal it sends to brand deal partners.'"
+      },
+      {
+        beat: "Stream #2 — Affiliate Revenue",
+        notes: "Talking points: 'The highest-converting affiliate products for Roblox Shorts creators: editing software (CapCut Pro, Filmora), YouTube growth tools (VidIQ, TubeBuddy, Nexlev), and gaming peripherals. Wealthify AI uses Nexlev affiliate links as their primary monetization — no community, no course, just tool affiliates. Realistic monthly revenue at 50K views/month: $200–$800. How to implement: add affiliate links to every video description, mention the tool naturally in the content, create dedicated tutorial Shorts for each tool.'"
+      },
+      {
+        beat: "Stream #3 — Brand Deals",
+        notes: "Talking points: 'Gaming Shorts brand deals typically pay $500–$5,000 per integration depending on channel size. The key insight: brand deals pay based on CPM, not views — which means a highly engaged 10K-subscriber Roblox channel can command the same rate as a 50K-subscriber channel with low engagement. How to get brand deals: create a media kit after hitting 1,000 subscribers, reach out to Roblox-adjacent brands (gaming chairs, headsets, Robux resellers), and use the Creator Marketplace once you hit YPP.'"
+      },
+      {
+        beat: "Stream #4 — Lead Magnets & Digital Products",
+        notes: "Talking points: 'The lowest-barrier monetization stream: a free lead magnet (hook formula swipe file, content calendar template) that captures emails, followed by a paid digital product ($27–$97 one-time). Romayroh uses this model as the entry point to their Skool community. Realistic monthly revenue at 50K views/month with a 2% conversion rate: $500–$2,000. How to implement: create the free lead magnet first (you already have the content calendar), then build a simple $47 PDF guide as the paid upgrade.'"
+      },
+      {
+        beat: "Stream #5 — Community Membership",
+        notes: "Talking points: 'This is the highest-leverage monetization stream for Roblox Shorts educators. Romayroh: 1,300 members × $36/month = $46,800 MRR. James Rasp: 47 members × $25/month = $1,175 MRR. The gap between these two is not quality — it's positioning and audience size. The key insight: there is NO dominant Roblox Shorts community. The creator who builds it first wins. Platform options: Skool ($99/month, best for courses + community), Whop (revenue share, best for early stage), Discord (free, best for community-first approach).'"
+      },
+      {
+        beat: "Stream #6 — High-Ticket Consulting",
+        notes: "Talking points: 'Chris Barrera charges for 1:1 YT Launchpad coaching. moneyboymax charges for 1:1 mentorship. The price range: $500–$5,000 per client depending on deliverables. This is the highest-revenue stream per client — one consulting client can equal 10 million Shorts views in revenue. How to position: every video you make is a free sample of your consulting expertise. The comment engagement strategy (replying to every comment with personalized advice) is your consulting funnel.'"
+      },
+      {
+        beat: "The Monetization Timeline",
+        notes: "Show a simple timeline: Month 1 — Affiliate links + lead magnet. Month 2 — First brand deal outreach + community launch. Month 3 — First consulting client. Month 6 — Full stack operational. This makes the monetization journey feel achievable and sequential rather than overwhelming."
+      },
+      {
+        beat: "The Money Groot Problem",
+        notes: "Talking point: 'Money Groot has 506,000 views on a single Roblox growth video. Zero monetized funnel. That's 506,000 people who wanted to learn Roblox YouTube strategy — and there was nothing to buy, no community to join, no email to collect. This is the single biggest missed opportunity in the entire Roblox Shorts space. Don't be Money Groot.'"
+      },
+      {
+        beat: "CTA — Comment Which Stream",
+        notes: "Say: 'Comment which monetization stream you want a dedicated video on — I'll build the next series around your answers. And subscribe — because next Thursday is the 30-day finale: every number, every mistake, and the Month 2 plan.'"
+      }
+    ],
+    cta: {
+      text: "Comment which monetization stream you want a dedicated video on — I'll build the series around your answers",
+      type: "Community Input + Subscribe",
+      notes: "This CTA turns your audience into your content planning team — which drives massive engagement and loyalty. The comments also tell you which monetization stream to build first."
+    },
+    proTip: "This video is your primary consulting sales tool. End with a soft pitch: 'If you want a personalized monetization audit for your specific channel, the link to work with me 1:1 is in the description.' This is where your highest-value clients come from."
+  },
+
+  // LF-4-2: "How to Build a Roblox Shorts Community That Makes $46,800/Month (The Romayroh Model, Roblox Edition)"
+  {
+    id: "LF-4-2",
+    title: "How to Build a Roblox Shorts Community That Makes $46,800/Month (The Romayroh Model, Roblox Edition)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Revenue Model",
+        text: "Romayroh has 1,300 members at $36/month = $46,800 MRR from a gaming Shorts community. James Rasp's MotionFarm has 47 members. There is NO dominant Roblox Shorts community — here's the exact model to build the one that wins.",
+        formula: "Specific Dollar Amount + Opportunity Hook",
+        inspiredBy: "Romayroh Skool community model"
+      },
+      {
+        label: "Hook B — The First Mover Advantage",
+        text: "The first dominant Roblox Shorts community doesn't exist yet. Romayroh owns gaming Shorts. James Rasp is trying to own Roblox Shorts. Here's why neither of them will win — and how to build the community that does.",
+        formula: "Anti-Hype / Competitive Analysis Hook",
+        inspiredBy: "Paddy Galloway competitive analysis model"
+      },
+      {
+        label: "Hook C — The Community vs. Course Debate",
+        text: "A course sells once. A community pays every month. Here's why every Roblox Shorts educator should be building a community instead of a course — and the exact model to do it with 100 members or 10,000.",
+        formula: "Contrast / Reframe Hook",
+        inspiredBy: "MotionFarm FAQ — 'how is this different from a course'"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The $46,800 Math",
+        notes: "Open with: '1,300 members. $36 per month. $46,800 MRR. That's Romayroh's Skool community — built around gaming Shorts strategy. James Rasp's MotionFarm has 47 members at $25/month. There is no dominant Roblox Shorts community. Here's how to build the one that wins.' Show the math on screen."
+      },
+      {
+        beat: "Why Community Beats Course",
+        notes: "Talking points: 'A course is a one-time transaction. A community is a recurring revenue stream. A course becomes outdated. A community evolves with the platform. A course creates customers. A community creates advocates. The Roblox Shorts space is changing every month — algorithm updates, new trending games, new monetization options. A community is the only model that can keep up with that pace.'"
+      },
+      {
+        beat: "The Romayroh Model — Full Breakdown",
+        notes: "Talking points: 'Romayroh's Skool community (Faceless YouTube HQ) has 1,300 members at $36/month. The community offers: weekly live calls, a content system course, and peer accountability. The key insight: Romayroh's community is about faceless YouTube broadly — not Roblox specifically. That means there is zero competition for a Roblox Shorts-specific community at this price point.'"
+      },
+      {
+        beat: "The James Rasp Model — What's Missing",
+        notes: "Talking points: 'MotionFarm has 47 members at $25/month. The community is Discord-based with no structured curriculum. The positioning is broad (Roblox YouTube strategy) rather than specific (Roblox Shorts). The gap: no live calls, no accountability structure, no game trend reports, no established creator track. These are the 4 things that would double their membership in 30 days.'"
+      },
+      {
+        beat: "The Winning Community Model — 5 Core Elements",
+        notes: "Walk through each element: 1. Specific positioning (Roblox Shorts only — not all of YouTube). 2. Two-track structure (New Creator track + Established Creator track). 3. Weekly live game trend report (the content nobody else provides). 4. Accountability pods (groups of 5 creators posting together). 5. Monthly challenge with real prizes (drives engagement and retention). Show how each element addresses a specific gap in the existing communities."
+      },
+      {
+        beat: "Platform Comparison — Skool vs. Whop vs. Discord",
+        notes: "Talking points: 'Skool ($99/month): best for structured learning + community. Includes built-in course hosting, leaderboard gamification, and email list integration. Best for: 100+ members. Whop (revenue share): best for early stage, zero upfront cost. Best for: 0–50 members while you validate the concept. Discord (free): best for community-first approach, but lacks monetization infrastructure. Best for: free community that feeds into a paid tier.'"
+      },
+      {
+        beat: "The Launch Strategy — 0 to 100 Members",
+        notes: "Talking point: 'Here's the exact launch sequence: Week 1 — Announce the community in a dedicated video (use the comment trigger strategy). Week 2 — Offer founding member pricing ($15/month for the first 50 members). Week 3 — Host the first live call and post the recording as a YouTube Short teaser. Week 4 — Open to general membership at full price. The founding member offer creates urgency and rewards early adopters.'"
+      },
+      {
+        beat: "The Content-to-Community Funnel",
+        notes: "Talking point: 'Every piece of content you make is a free sample of what's inside the community. The funnel: Short hook → Short payoff → CTA to long-form → Long-form drives community signups. The comment engagement strategy (replying to every comment with personalized advice) is your community preview — it shows people what they get when they join.'"
+      },
+      {
+        beat: "The Retention System",
+        notes: "Talking point: 'The biggest community killer is churn — members who join for one month and leave. Here's the retention system: monthly game trend reports (fresh value every month), accountability pods (social commitment), and a monthly challenge with a leaderboard (gamification). These 3 elements keep members engaged beyond the initial honeymoon period.'"
+      },
+      {
+        beat: "CTA — Comment COMMUNITY",
+        notes: "Say: 'Comment COMMUNITY below to get early access to the Roblox Shorts community I'm building right now — founding member pricing, live calls, and the full game trend report library. And subscribe — because the 30-day finale drops next Sunday with every number from the challenge.'"
+      }
+    ],
+    cta: {
+      text: "Comment 'COMMUNITY' to get early access to the Roblox Shorts community I'm building right now",
+      type: "Comment Trigger + Early Access",
+      notes: "The 'COMMUNITY' comment trigger is your community waitlist. Everyone who comments gets a DM with the founding member offer. This is how you get your first 50 members before the community even launches."
+    },
+    proTip: "Film a 60-second Short version of this video using just the $46,800 math and the 5 core elements. Post it the same day as this long-form video to drive traffic from both formats simultaneously."
+  },
+
+  // LF-4-3: "30 Days of Roblox Shorts: The Complete Case Study (Every Number, Every Mistake, What's Next)"
+  {
+    id: "LF-4-3",
+    title: "30 Days of Roblox Shorts: The Complete Case Study (Every Number, Every Mistake, What's Next)",
+    format: "Long-Form" as const,
+    hooks: [
+      {
+        label: "Hook A — The Finale Open",
+        text: "Fabiojit's 'I Went Pro in 10 Days' got 1.6 million views. Money Groot's 'How to Grow Your Roblox Channel FAST' got 506K views with ZERO monetized funnel. I did the Roblox Shorts version of both — and I'm showing you everything: views, subscribers, revenue, mistakes, and the Month 2 plan.",
+        formula: "Challenge / Copy + Income Proof Hook",
+        inspiredBy: "Fabiojit 1.6M + Money Groot 506K models"
+      },
+      {
+        label: "Hook B — The Full Transparency",
+        text: "Day 1: 0 subscribers. Day 30: here are the real numbers. Every Short I posted. Every game I covered. Every hook formula I used. Every mistake I made. This is the most complete Roblox Shorts case study on YouTube.",
+        formula: "Transparency / Income Proof Hook",
+        inspiredBy: "Roberto Blake + Shelby Church income transparency models"
+      },
+      {
+        label: "Hook C — The Contrast",
+        text: "30 days. 90 Shorts. 8 long-form videos. Here's what actually happened — the views that surprised me, the mistakes that cost me, and the one strategy that changed everything in Week 4.",
+        formula: "Specific Number + Narrative Hook",
+        inspiredBy: "Paddy Galloway narrative hook writing"
+      }
+    ],
+    outline: [
+      {
+        beat: "Cold Open — The 30-Day Dashboard",
+        notes: "Open with your complete YouTube Studio analytics for the full 30 days on screen. Show: total views, total subscribers, total watch time, best Short, worst Short, and revenue (if any). Say: 'This is everything. 30 days, real numbers, no editing. Let's break it all down.' The transparency is the entire hook."
+      },
+      {
+        beat: "The Starting Point — Why I Did This",
+        notes: "Talking point: 'I started this challenge because I saw a gap: Fabiojit's 1.6M-view challenge video was about Fortnite. Money Groot's 506K-view video had zero monetized funnel. Nobody had done the Roblox Shorts version with a full monetization stack. Here's what I set out to prove — and whether I proved it.' Reference the Week 1 video to create series continuity."
+      },
+      {
+        beat: "Week 1 Recap — The Foundation",
+        notes: "Quick summary of Week 1: key metrics, best Short, biggest lesson. Reference the Week 1 case study video. Say: 'If you want the full Week 1 breakdown, it's linked in the description. The key takeaway from Week 1 was [specific insight].'"
+      },
+      {
+        beat: "Week 2 Recap — The Algorithm Unlock",
+        notes: "Quick summary of Week 2: key metrics, the hook formula breakthrough, the game pivot decision. Reference the Week 2 case study video. Say: 'Week 2 was when I figured out that [specific algorithm insight]. Here's the one change that unlocked the algorithm push.'"
+      },
+      {
+        beat: "Week 3 Recap — The Consistency Test",
+        notes: "Quick summary of Week 3: key metrics, the consistency system that kept you going, the breakthrough Short. Reference the Week 3 case study video. Say: 'Week 3 is when most creators quit. Here's what kept me going — and the one Short that changed the trajectory of the entire challenge.'"
+      },
+      {
+        beat: "Week 4 — The Monetization Build",
+        notes: "Full breakdown of Week 4: the community launch, the first consulting inquiry, the affiliate revenue, the brand deal outreach. Show real numbers for each stream. Say: 'Week 4 was about building the monetization stack — not waiting until I had 100K subscribers to think about revenue. Here's every stream I activated and the results.'"
+      },
+      {
+        beat: "The 7 Biggest Mistakes — Full List",
+        notes: "Show all 7 mistakes as text cards: Mistake 1 — Wrong hook formula for the game. Mistake 2 — Not batch filming from Day 1. Mistake 3 — Delaying monetization setup. Mistake 4 — Ignoring the established creator audience. Mistake 5 — Not building the email list early. Mistake 6 — Posting at inconsistent times. Mistake 7 — Not creating a series structure from Day 1. For each mistake, give the fix in one sentence."
+      },
+      {
+        beat: "The 3 Things That Worked Better Than Expected",
+        notes: "Talking point: 'Here are the 3 things that outperformed my expectations: 1. The comment engagement strategy — replying to every comment drove 3x more return viewers than any other tactic. 2. The game trend report format — it became the most-saved content on the channel. 3. The established creator angle — it drove the highest-quality consulting inquiries of any content pillar.' Be specific with data."
+      },
+      {
+        beat: "The Month 2 Plan",
+        notes: "Talking point: 'Month 2 is where the compounding begins. Here's the plan: community launch (founding member offer), first paid digital product, weekly game trend reports, and the established creator consulting funnel. The goal for Month 2: 500 subscribers (YPP threshold), 3M Shorts views (YPP threshold), and first $1,000 in non-AdSense revenue. Here's the exact content calendar for Month 2.'"
+      },
+      {
+        beat: "The Call to Action — The Community Invitation",
+        notes: "Say: 'If this 30-day series helped you, share it with one creator who's trying to build a Roblox Shorts channel. And if you want to build your channel with a community behind you — comment IN below and I'll send you the founding member details for the Roblox Shorts community I'm launching this month. Subscribe — because Month 2 starts Monday.'"
+      }
+    ],
+    cta: {
+      text: "If this 30-day series helped you, share it with one creator. And if you want to build your Roblox Shorts channel with a community behind you — comment 'IN' and I'll send you the details",
+      type: "Share + Community Trigger",
+      notes: "The share CTA is the most powerful organic growth driver — one share to the right creator can bring in 10 new subscribers. The 'IN' comment trigger is your community waitlist closer. This is the video where you convert viewers into community members."
+    },
+    proTip: "This is your most important video of the entire 30 days. Spend extra time on the thumbnail — it should show a before/after: Day 1 YouTube Studio (0 subscribers) on one side, Day 30 analytics on the other. This thumbnail alone can drive 50K+ views if the numbers are compelling."
+  }
+];
